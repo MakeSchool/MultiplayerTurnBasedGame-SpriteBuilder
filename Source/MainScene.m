@@ -11,14 +11,16 @@
 
 @implementation MainScene {
     CCNode *_tableViewContentNode;
+    CCTableView *_tableView;
 }
 
 - (void)didLoadFromCCB {
-    CCTableView *tableView = [[CCTableView alloc] init];
-    [_tableViewContentNode addChild:tableView];
-    tableView.contentSizeType = CCSizeTypeNormalized;
-    tableView.contentSize = CGSizeMake(1.f, 1.f);
-    tableView.dataSource = self;
+    _tableView = [[CCTableView alloc] init];
+    [_tableViewContentNode addChild:_tableView];
+    _tableView.contentSizeType = CCSizeTypeNormalized;
+    _tableView.contentSize = CGSizeMake(1.f, 1.f);
+    _tableView.dataSource = self;
+    [_tableView setTarget:self selector:@selector(tableViewCellSelected:)];
 }
 
 #pragma mark - CCTableViewDataSource Protocol
@@ -35,10 +37,13 @@
     
     return cell;
 }
+
 - (NSUInteger) tableViewNumberOfRows:(CCTableView*) tableView {
     return 10;
 }
 
-//- (float) tableView:(CCTableView*)tableView heightForRowAtIndex:(NSUInteger) index;
+- (void)tableViewCellSelected:(CCTableViewCell*)sender {
+    CCLOG(@"Index selected:%d", _tableView.selectedRow);
+}
 
 @end
