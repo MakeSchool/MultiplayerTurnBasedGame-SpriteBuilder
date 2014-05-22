@@ -1729,6 +1729,7 @@
 				62709AE8192E7116005E6B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62709AE9192E7116005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_DebugTests" */ = {
 			isa = XCConfigurationList;
@@ -1737,6 +1738,7 @@
 				62709AEB192E7116005E6B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62709BA0192E8FB0005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_Debug_Resources" */ = {
 			isa = XCConfigurationList;
@@ -1745,6 +1747,7 @@
 				62709BA2192E8FB0005E6B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
