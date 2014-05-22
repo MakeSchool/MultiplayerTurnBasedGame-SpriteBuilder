@@ -8,6 +8,8 @@
 
 #import "MainScene.h"
 #import "CCTableView.h"
+#import "PlayerCell.h"
+#import <mgwuSDK/MGWU.h>
 
 @implementation MainScene {
     CCNode *_tableViewContentNode;
@@ -23,19 +25,33 @@
     [_tableView setTarget:self selector:@selector(tableViewCellSelected:)];
 }
 
+- (void)onEnterTransitionDidFinish {
+    [super onEnterTransitionDidFinish];
+    
+    [MGWU getMyInfoWithCallback:@selector(loadedUserInfo:) onTarget:self];
+}
+
+#pragma mark - MGWUSDK Callbacks
+
+- (void)loadedUserInfo:(NSDictionary *)userInfo {
+    
+}
+
 #pragma mark - CCTableViewDataSource Protocol
 
 - (CCTableViewCell*) tableView:(CCTableView*)tableView nodeForRowAtIndex:(NSUInteger) index {
     CCTableViewCell *cell = [[CCTableViewCell alloc] init];
+    PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
+    cellContent.nameLabel.string = [NSString stringWithFormat:@"Player %d", index];
+    [cell addChild:cellContent];
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);
-    
-    CCNodeColor *colorNode = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:1.f blue:0.5]];
-    colorNode.contentSizeType = CCSizeTypeNormalized;
-    colorNode.contentSize = CGSizeMake(1.f, 1.f);
-    [cell addChild:colorNode];
-    
+
     return cell;
+}
+
+- (float) tableView:(CCTableView*)tableView heightForRowAtIndex:(NSUInteger) index {
+    return 50;
 }
 
 - (NSUInteger) tableViewNumberOfRows:(CCTableView*) tableView {

@@ -27,6 +27,7 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import <mgwuSDK/MGWU.h>
 
 @implementation AppController
 
@@ -54,7 +55,14 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    [MGWU loadMGWU:@"SBMutliplayerTemplate"];
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [MGWU handleURL:url];
 }
 
 - (CCScene*) startScene
