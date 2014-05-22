@@ -1,0 +1,1752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		541E564616BA3DE40012B913 /* mgwuLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564416BA3DE40012B913 /* mgwuLogoDark.png */; };
+		541E564716BA3DE40012B913 /* mgwuLogoDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564516BA3DE40012B913 /* mgwuLogoDark@2x.png */; };
+		541E564C16BA431A0012B913 /* mgwuPlaceholderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564816BA431A0012B913 /* mgwuPlaceholderIcon.png */; };
+		541E564D16BA431A0012B913 /* mgwuPlaceholderIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564916BA431A0012B913 /* mgwuPlaceholderIconDark.png */; };
+		541E564E16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564A16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png */; };
+		541E564F16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564B16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png */; };
+		541ED0C715F9AA47004E6F02 /* CrossPromoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 541ED0C415F9AA47004E6F02 /* CrossPromoViewController.h */; };
+		541ED0C815F9AA47004E6F02 /* CrossPromoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 541ED0C515F9AA47004E6F02 /* CrossPromoViewController.m */; };
+		541ED0C915F9AA47004E6F02 /* CrossPromoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541ED0C615F9AA47004E6F02 /* CrossPromoViewController.xib */; };
+		541ED0CD15F9AB22004E6F02 /* MGWUGameCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 541ED0CB15F9AB22004E6F02 /* MGWUGameCell.h */; };
+		541ED0CE15F9AB22004E6F02 /* MGWUGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 541ED0CC15F9AB22004E6F02 /* MGWUGameCell.m */; };
+		542B9F4216B86BD3009724B4 /* AppIconCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542B9F4016B86BD3009724B4 /* AppIconCache.m */; };
+		542B9F4316B86BD3009724B4 /* AppIconCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542B9F4116B86BD3009724B4 /* AppIconCache.h */; };
+		542E7F5E1787482200D601A7 /* MGWUAboutFooter-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F521787481F00D601A7 /* MGWUAboutFooter-Portrait~ipad.png */; };
+		542E7F5F1787482200D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F531787481F00D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png */; };
+		542E7F601787482200D601A7 /* MGWUAboutFooter-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F541787481F00D601A7 /* MGWUAboutFooter-Landscape~ipad.png */; };
+		542E7F611787482200D601A7 /* MGWUBackground-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F551787482000D601A7 /* MGWUBackground-Landscape~ipad.png */; };
+		542E7F621787482200D601A7 /* MGWUBackground-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F561787482000D601A7 /* MGWUBackground-Landscape@2x~ipad.png */; };
+		542E7F631787482200D601A7 /* MGWUBackground-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F571787482000D601A7 /* MGWUBackground-Portrait~ipad.png */; };
+		542E7F641787482200D601A7 /* MGWUBackground-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F581787482000D601A7 /* MGWUBackground-Portrait@2x~ipad.png */; };
+		542E7F651787482200D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F591787482100D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png */; };
+		542E7F661787482200D601A7 /* MGWUBackgroundDark-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5A1787482100D601A7 /* MGWUBackgroundDark-Portrait~ipad.png */; };
+		542E7F671787482200D601A7 /* MGWUBackgroundDark-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5B1787482100D601A7 /* MGWUBackgroundDark-Landscape~ipad.png */; };
+		542E7F681787482200D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5C1787482100D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png */; };
+		542E7F691787482200D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5D1787482100D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png */; };
+		543927AE1793B2510016C4EB /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543927AD1793B2510016C4EB /* AWSS3.framework */; };
+		547D082B17B7F60B00707F4B /* MGWUServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 547D082917B7F60B00707F4B /* MGWUServerRequest.h */; };
+		547D082C17B7F60B00707F4B /* MGWUServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D082A17B7F60B00707F4B /* MGWUServerRequest.m */; };
+		548439FF15FAD62600B8CCAA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548439FE15FAD62600B8CCAA /* MessageUI.framework */; };
+		54843A0615FAD66500B8CCAA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0015FAD66500B8CCAA /* CFNetwork.framework */; };
+		54843A0915FAD66500B8CCAA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0315FAD66500B8CCAA /* Security.framework */; };
+		54843A0A15FAD66500B8CCAA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0415FAD66500B8CCAA /* StoreKit.framework */; };
+		54843A0B15FAD66500B8CCAA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0515FAD66500B8CCAA /* SystemConfiguration.framework */; };
+		548ADF63160B9C2C002DC16F /* MGWUNotificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 548ADF5B160B9C2C002DC16F /* MGWUNotificationHandler.h */; };
+		548ADF64160B9C2C002DC16F /* MGWUNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 548ADF5C160B9C2C002DC16F /* MGWUNotificationHandler.m */; };
+		548ADF65160B9C2C002DC16F /* MGWUNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 548ADF5D160B9C2C002DC16F /* MGWUNotification.h */; };
+		548ADF66160B9C2C002DC16F /* MGWUNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 548ADF5E160B9C2C002DC16F /* MGWUNotification.m */; };
+		548ADF67160B9C2C002DC16F /* mgwu-gk-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 548ADF60160B9C2C002DC16F /* mgwu-gk-notification.png */; };
+		548ADF68160B9C2C002DC16F /* mgwu-gk-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548ADF61160B9C2C002DC16F /* mgwu-gk-notification@2x.png */; };
+		549D38E215F0438A000F7C0B /* MGWUIAPHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38E015F0438A000F7C0B /* MGWUIAPHelper.h */; };
+		549D38E315F0438A000F7C0B /* MGWUIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38E115F0438A000F7C0B /* MGWUIAPHelper.m */; };
+		549D38E615F060FA000F7C0B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D38E515F060FA000F7C0B /* Crashlytics.framework */; };
+		549D38F015F0616B000F7C0B /* TJCOpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EA15F0616B000F7C0B /* TJCOpenUDID.h */; };
+		549D38F115F0616B000F7C0B /* TJCOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38EB15F0616B000F7C0B /* TJCOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		549D38F215F0616B000F7C0B /* TapjoyConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EC15F0616B000F7C0B /* TapjoyConnect.h */; };
+		549D38F315F0616B000F7C0B /* TapjoyConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38ED15F0616B000F7C0B /* TapjoyConnect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		549D38F415F0616B000F7C0B /* TapjoyConnectConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EE15F0616B000F7C0B /* TapjoyConnectConstants.h */; };
+		549D38F515F0616B000F7C0B /* TJCConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EF15F0616B000F7C0B /* TJCConfig.h */; };
+		549D390815F06179000F7C0B /* MGWUAppirater.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38F715F06179000F7C0B /* MGWUAppirater.h */; };
+		549D390915F06179000F7C0B /* MGWUAppirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38F815F06179000F7C0B /* MGWUAppirater.m */; };
+		54A03D4115E181B5008ACCD4 /* MGWURainbow.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A03D3F15E181B5008ACCD4 /* MGWURainbow.h */; };
+		54A03D4215E181B5008ACCD4 /* MGWURainbow.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A03D4015E181B5008ACCD4 /* MGWURainbow.m */; };
+		54A2DA9B1746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA991746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png */; };
+		54A2DA9C1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9A1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png */; };
+		54A2DAA21746F234002C2723 /* MGWUAboutFooter-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9D1746F233002C2723 /* MGWUAboutFooter-Portrait~iphone.png */; };
+		54A2DAA31746F234002C2723 /* MGWUAboutFooter-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9E1746F233002C2723 /* MGWUAboutFooter-Landscape~iphone.png */; };
+		54A2DAA41746F234002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9F1746F233002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png */; };
+		54A2DAA51746F234002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DAA01746F233002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png */; };
+		54A2DAA61746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DAA11746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png */; };
+		54A8DA131797B22000A9FE4C /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A8DA121797B22000A9FE4C /* AWSRuntime.framework */; };
+		54AF079416234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078816234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png */; };
+		54AF079516234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078916234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png */; };
+		54AF079616234F97008B605D /* FBLoginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078A16234F97008B605D /* FBLoginButton@2x.png */; };
+		54AF079716234F97008B605D /* FBLoginButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078B16234F97008B605D /* FBLoginButtonPressed@2x.png */; };
+		54AF079816234F97008B605D /* FBNoThanksButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078C16234F97008B605D /* FBNoThanksButton@2x.png */; };
+		54AF079916234F97008B605D /* FBNoThanksButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078D16234F97008B605D /* FBNoThanksButtonPressed@2x.png */; };
+		54AF079A16234F97008B605D /* FBNoThanksButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078E16234F97008B605D /* FBNoThanksButton.png */; };
+		54AF079B16234F97008B605D /* FBNoThanksButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078F16234F97008B605D /* FBNoThanksButtonPressed.png */; };
+		54AF079C16234F97008B605D /* FBLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079016234F97008B605D /* FBLoginButton.png */; };
+		54AF079D16234F97008B605D /* FBLoginButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079116234F97008B605D /* FBLoginButtonPressed.png */; };
+		54AF079E16234F97008B605D /* MGWUBackground-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079216234F97008B605D /* MGWUBackground-Landscape~iphone.png */; };
+		54AF079F16234F97008B605D /* MGWUBackground-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079316234F97008B605D /* MGWUBackground-Portrait~iphone.png */; };
+		54AF07A21623519F008B605D /* mgwuLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF07A11623519F008B605D /* mgwuLogo@2x.png */; };
+		54AF07A316235B60008B605D /* FacebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E615D7886A00AB4885 /* FacebookIcon.png */; };
+		54AF09061623914F008B605D /* hipmob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AF09051623914F008B605D /* hipmob.framework */; };
+		54AF0918162391A9008B605D /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0908162391A9008B605D /* aqua.png */; };
+		54AF0919162391A9008B605D /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0909162391A9008B605D /* bluechatbubble.png */; };
+		54AF091A162391A9008B605D /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090A162391A9008B605D /* green.png */; };
+		54AF091B162391A9008B605D /* grey-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090B162391A9008B605D /* grey-background.png */; };
+		54AF091D162391A9008B605D /* hipmob.back.btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090D162391A9008B605D /* hipmob.back.btn.png */; };
+		54AF091E162391A9008B605D /* hipmob.send.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090E162391A9008B605D /* hipmob.send.png */; };
+		54AF091F162391A9008B605D /* hipmobsend_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090F162391A9008B605D /* hipmobsend_field.png */; };
+		54AF0920162391A9008B605D /* hipmobsend_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0910162391A9008B605D /* hipmobsend_field@2x.png */; };
+		54AF0921162391A9008B605D /* operator.available.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0911162391A9008B605D /* operator.available.png */; };
+		54AF0922162391A9008B605D /* operator.connecting.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0912162391A9008B605D /* operator.connecting.png */; };
+		54AF0923162391A9008B605D /* operator.unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0913162391A9008B605D /* operator.unavailable.png */; };
+		54AF0924162391A9008B605D /* send-button-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0914162391A9008B605D /* send-button-active.png */; };
+		54AF0925162391A9008B605D /* send-button-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0915162391A9008B605D /* send-button-inactive.png */; };
+		54AF0926162391A9008B605D /* send-button-instate.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0916162391A9008B605D /* send-button-instate.png */; };
+		54AF0927162391A9008B605D /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0917162391A9008B605D /* send-field-landscape.png */; };
+		54C263F516AF727100118231 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0215FAD66500B8CCAA /* libicucore.dylib */; };
+		54C263F616AF728800118231 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0115FAD66500B8CCAA /* CoreTelephony.framework */; };
+		54D718ED15D7886A00AB4885 /* MGWU.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718C415D7886A00AB4885 /* MGWU.m */; };
+		54D718EE15D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D718C515D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib */; };
+		54D718EF15D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D718C615D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib */; };
+		54D718F015D7886A00AB4885 /* MGWUFBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718C715D7886A00AB4885 /* MGWUFBLoginViewController.m */; };
+		54D718F115D7886A00AB4885 /* MGWUFBLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718C815D7886A00AB4885 /* MGWUFBLoginViewController.h */; };
+		54D718F215D7886A00AB4885 /* MGWUJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CA15D7886A00AB4885 /* MGWUJsonParser.h */; };
+		54D718F315D7886A00AB4885 /* MGWUJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CB15D7886A00AB4885 /* MGWUJsonParser.m */; };
+		54D718F415D7886A00AB4885 /* MGWUJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CC15D7886A00AB4885 /* MGWUJsonStreamParser.h */; };
+		54D718F515D7886A00AB4885 /* MGWUJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CD15D7886A00AB4885 /* MGWUJsonStreamParser.m */; };
+		54D718F615D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CE15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h */; };
+		54D718F715D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CF15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m */; };
+		54D718F815D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D015D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h */; };
+		54D718F915D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D115D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m */; };
+		54D718FA15D7886A00AB4885 /* MGWUJsonStreamParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D215D7886A00AB4885 /* MGWUJsonStreamParserState.h */; };
+		54D718FB15D7886A00AB4885 /* MGWUJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D315D7886A00AB4885 /* MGWUJsonStreamParserState.m */; };
+		54D718FC15D7886A00AB4885 /* MGWUJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D415D7886A00AB4885 /* MGWUJsonStreamWriter.h */; };
+		54D718FD15D7886A00AB4885 /* MGWUJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D515D7886A00AB4885 /* MGWUJsonStreamWriter.m */; };
+		54D718FE15D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D615D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h */; };
+		54D718FF15D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D715D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m */; };
+		54D7190015D7886A00AB4885 /* MGWUJsonStreamWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D815D7886A00AB4885 /* MGWUJsonStreamWriterState.h */; };
+		54D7190115D7886A00AB4885 /* MGWUJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D915D7886A00AB4885 /* MGWUJsonStreamWriterState.m */; };
+		54D7190215D7886A00AB4885 /* MGWUJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DA15D7886A00AB4885 /* MGWUJsonTokeniser.h */; };
+		54D7190315D7886A00AB4885 /* MGWUJsonUTF8Stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DB15D7886A00AB4885 /* MGWUJsonUTF8Stream.h */; };
+		54D7190415D7886A00AB4885 /* MGWUJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DC15D7886A00AB4885 /* MGWUJsonUTF8Stream.m */; };
+		54D7190515D7886A00AB4885 /* MGWUJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DD15D7886A00AB4885 /* MGWUJsonWriter.h */; };
+		54D7190615D7886A00AB4885 /* MGWUJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DE15D7886A00AB4885 /* MGWUJsonWriter.m */; };
+		54D7190715D7886A00AB4885 /* MWGUJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DF15D7886A00AB4885 /* MWGUJsonTokeniser.m */; };
+		54D7190B15D7886A00AB4885 /* MGWU.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718E315D7886A00AB4885 /* MGWU.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54D7190C15D7886A00AB4885 /* fb_connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E415D7886A00AB4885 /* fb_connect.png */; };
+		54D7190D15D7886A00AB4885 /* mgwuLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E515D7886A00AB4885 /* mgwuLogo.png */; };
+		54D7190F15D7886A00AB4885 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D718E715D7886A00AB4885 /* FacebookSDK.framework */; };
+		54D7191015D7886A00AB4885 /* MGWUSecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718E815D7886A00AB4885 /* MGWUSecureUDID.m */; };
+		54D7191215D7886A00AB4885 /* MGWUMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718EA15D7886A00AB4885 /* MGWUMBProgressHUD.m */; };
+		54D7191315D7886A00AB4885 /* MGWUMBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718EB15D7886A00AB4885 /* MGWUMBProgressHUD.h */; };
+		54D7191415D7886A00AB4885 /* MGWUSecureUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718EC15D7886A00AB4885 /* MGWUSecureUDID.h */; };
+		54D7191715D788E700AB4885 /* MGWUClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7191515D788E700AB4885 /* MGWUClose@2x.png */; };
+		54D7191815D788E700AB4885 /* MGWUClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7191615D788E700AB4885 /* MGWUClose.png */; };
+		54D7191D15D78E5100AB4885 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D718BB15D7883500AB4885 /* InfoPlist.strings */; };
+		54DF4ABB15F5843800F8FA05 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 54DF4ABA15F5843800F8FA05 /* FacebookSDKResources.bundle */; };
+		54E0773015E83117005BEF94 /* Facebook.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E0772F15E83117005BEF94 /* Facebook.h */; };
+		54E81777162DF4FA000CB2FC /* mgwu-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E81775162DF4F9000CB2FC /* mgwu-m.png */; };
+		54E8177A162DF548000CB2FC /* mgwu-m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E81779162DF548000CB2FC /* mgwu-m@2x.png */; };
+		54F85B97161884A20080F11A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F85B96161884A20080F11A /* Social.framework */; };
+		54F85BD1161B5FB80080F11A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F85BD0161B5FB80080F11A /* AdSupport.framework */; };
+		54F9AD9C169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9A169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib */; };
+		54F9AD9D169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9B169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib */; };
+		54F9ADA1169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9F169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png */; };
+		54F9ADA2169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F9ADA0169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png */; };
+		62709ACB192E7116005E6B14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CDCDBB192E6D0600CEFF41 /* Foundation.framework */; };
+		62709AD8192E7116005E6B14 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CDCDC9192E6D0600CEFF41 /* XCTest.framework */; };
+		62709AD9192E7116005E6B14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CDCDBB192E6D0600CEFF41 /* Foundation.framework */; };
+		62709ADA192E7116005E6B14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CDCDCC192E6D0700CEFF41 /* UIKit.framework */; };
+		62709ADD192E7116005E6B14 /* libmgwuSDK_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62709ACA192E7116005E6B14 /* libmgwuSDK_Debug.a */; };
+		62709AEC192E7176005E6B14 /* MGWU.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718C415D7886A00AB4885 /* MGWU.m */; };
+		62709AED192E7176005E6B14 /* MGWUServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D082A17B7F60B00707F4B /* MGWUServerRequest.m */; };
+		62709AEE192E7176005E6B14 /* CrossPromoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 541ED0C515F9AA47004E6F02 /* CrossPromoViewController.m */; };
+		62709AEF192E7176005E6B14 /* AppIconCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542B9F4016B86BD3009724B4 /* AppIconCache.m */; };
+		62709AF0192E7176005E6B14 /* MGWUGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 541ED0CC15F9AB22004E6F02 /* MGWUGameCell.m */; };
+		62709AF1192E7176005E6B14 /* MGWURainbow.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A03D4015E181B5008ACCD4 /* MGWURainbow.m */; };
+		62709AF2192E7176005E6B14 /* MGWUFBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718C715D7886A00AB4885 /* MGWUFBLoginViewController.m */; };
+		62709AF3192E7176005E6B14 /* MGWUSecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718E815D7886A00AB4885 /* MGWUSecureUDID.m */; };
+		62709AF4192E7176005E6B14 /* MGWUMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718EA15D7886A00AB4885 /* MGWUMBProgressHUD.m */; };
+		62709AF5192E7176005E6B14 /* MGWUIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38E115F0438A000F7C0B /* MGWUIAPHelper.m */; };
+		62709AF6192E7176005E6B14 /* MGWUNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 548ADF5C160B9C2C002DC16F /* MGWUNotificationHandler.m */; };
+		62709AF7192E7176005E6B14 /* MGWUNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 548ADF5E160B9C2C002DC16F /* MGWUNotification.m */; };
+		62709AF8192E7176005E6B14 /* MGWUAppirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38F815F06179000F7C0B /* MGWUAppirater.m */; };
+		62709AF9192E7176005E6B14 /* TJCOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38EB15F0616B000F7C0B /* TJCOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		62709AFA192E7176005E6B14 /* TapjoyConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D38ED15F0616B000F7C0B /* TapjoyConnect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		62709AFB192E7176005E6B14 /* MGWUJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CB15D7886A00AB4885 /* MGWUJsonParser.m */; };
+		62709AFC192E7176005E6B14 /* MGWUJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CD15D7886A00AB4885 /* MGWUJsonStreamParser.m */; };
+		62709AFD192E7176005E6B14 /* MGWUJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718CF15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m */; };
+		62709AFE192E7176005E6B14 /* MGWUJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D115D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m */; };
+		62709AFF192E7176005E6B14 /* MGWUJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D315D7886A00AB4885 /* MGWUJsonStreamParserState.m */; };
+		62709B00192E7176005E6B14 /* MGWUJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D515D7886A00AB4885 /* MGWUJsonStreamWriter.m */; };
+		62709B01192E7176005E6B14 /* MGWUJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D715D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m */; };
+		62709B02192E7176005E6B14 /* MGWUJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718D915D7886A00AB4885 /* MGWUJsonStreamWriterState.m */; };
+		62709B03192E7176005E6B14 /* MGWUJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DC15D7886A00AB4885 /* MGWUJsonUTF8Stream.m */; };
+		62709B04192E7176005E6B14 /* MGWUJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DE15D7886A00AB4885 /* MGWUJsonWriter.m */; };
+		62709B05192E7176005E6B14 /* MWGUJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D718DF15D7886A00AB4885 /* MWGUJsonTokeniser.m */; };
+		62709B06192E718B005E6B14 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F85BD0161B5FB80080F11A /* AdSupport.framework */; };
+		62709B07192E7194005E6B14 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0015FAD66500B8CCAA /* CFNetwork.framework */; };
+		62709B08192E719D005E6B14 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0115FAD66500B8CCAA /* CoreTelephony.framework */; };
+		62709B09192E71A7005E6B14 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0215FAD66500B8CCAA /* libicucore.dylib */; };
+		62709B0A192E71B1005E6B14 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0315FAD66500B8CCAA /* Security.framework */; };
+		62709B0B192E71B7005E6B14 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0415FAD66500B8CCAA /* StoreKit.framework */; };
+		62709B0C192E71C1005E6B14 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54843A0515FAD66500B8CCAA /* SystemConfiguration.framework */; };
+		62709B0D192E71CD005E6B14 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548439FE15FAD62600B8CCAA /* MessageUI.framework */; };
+		62709B0E192E71ED005E6B14 /* hipmob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AF09051623914F008B605D /* hipmob.framework */; };
+		62709B0F192E71F6005E6B14 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D718E715D7886A00AB4885 /* FacebookSDK.framework */; };
+		62709B10192E71F9005E6B14 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543927AD1793B2510016C4EB /* AWSS3.framework */; };
+		62709B11192E71FC005E6B14 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A8DA121797B22000A9FE4C /* AWSRuntime.framework */; };
+		62709B12192E7217005E6B14 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D38E515F060FA000F7C0B /* Crashlytics.framework */; };
+		62709B1D192E742E005E6B14 /* MGWU.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718E315D7886A00AB4885 /* MGWU.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62709B1E192E7C05005E6B14 /* Facebook.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E0772F15E83117005BEF94 /* Facebook.h */; };
+		62709B1F192E7C2C005E6B14 /* MGWUServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 547D082917B7F60B00707F4B /* MGWUServerRequest.h */; };
+		62709B20192E7C2C005E6B14 /* CrossPromoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 541ED0C415F9AA47004E6F02 /* CrossPromoViewController.h */; };
+		62709B21192E7C2C005E6B14 /* AppIconCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542B9F4116B86BD3009724B4 /* AppIconCache.h */; };
+		62709B22192E7C2C005E6B14 /* MGWUGameCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 541ED0CB15F9AB22004E6F02 /* MGWUGameCell.h */; };
+		62709B23192E7C2C005E6B14 /* MGWURainbow.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A03D3F15E181B5008ACCD4 /* MGWURainbow.h */; };
+		62709B24192E7C2C005E6B14 /* MGWUFBLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718C815D7886A00AB4885 /* MGWUFBLoginViewController.h */; };
+		62709B25192E7C2C005E6B14 /* MGWUSecureUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718EC15D7886A00AB4885 /* MGWUSecureUDID.h */; };
+		62709B26192E7C2C005E6B14 /* MGWUMBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718EB15D7886A00AB4885 /* MGWUMBProgressHUD.h */; };
+		62709B27192E7C2C005E6B14 /* MGWUIAPHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38E015F0438A000F7C0B /* MGWUIAPHelper.h */; };
+		62709B28192E7C2C005E6B14 /* MGWUNotificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 548ADF5B160B9C2C002DC16F /* MGWUNotificationHandler.h */; };
+		62709B29192E7C2C005E6B14 /* MGWUNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 548ADF5D160B9C2C002DC16F /* MGWUNotification.h */; };
+		62709B2A192E7C2C005E6B14 /* MGWUAppirater.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38F715F06179000F7C0B /* MGWUAppirater.h */; };
+		62709B2B192E7C2C005E6B14 /* TJCOpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EA15F0616B000F7C0B /* TJCOpenUDID.h */; };
+		62709B2C192E7C2C005E6B14 /* TapjoyConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EC15F0616B000F7C0B /* TapjoyConnect.h */; };
+		62709B2D192E7C2C005E6B14 /* TapjoyConnectConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EE15F0616B000F7C0B /* TapjoyConnectConstants.h */; };
+		62709B2E192E7C2C005E6B14 /* TJCConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 549D38EF15F0616B000F7C0B /* TJCConfig.h */; };
+		62709B2F192E7C2D005E6B14 /* MGWUJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CA15D7886A00AB4885 /* MGWUJsonParser.h */; };
+		62709B30192E7C2D005E6B14 /* MGWUJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CC15D7886A00AB4885 /* MGWUJsonStreamParser.h */; };
+		62709B31192E7C2D005E6B14 /* MGWUJsonStreamParserAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718CE15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h */; };
+		62709B32192E7C2D005E6B14 /* MGWUJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D015D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h */; };
+		62709B33192E7C2D005E6B14 /* MGWUJsonStreamParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D215D7886A00AB4885 /* MGWUJsonStreamParserState.h */; };
+		62709B34192E7C2D005E6B14 /* MGWUJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D415D7886A00AB4885 /* MGWUJsonStreamWriter.h */; };
+		62709B35192E7C2D005E6B14 /* MGWUJsonStreamWriterAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D615D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h */; };
+		62709B36192E7C2D005E6B14 /* MGWUJsonStreamWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718D815D7886A00AB4885 /* MGWUJsonStreamWriterState.h */; };
+		62709B37192E7C2D005E6B14 /* MGWUJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DA15D7886A00AB4885 /* MGWUJsonTokeniser.h */; };
+		62709B38192E7C2D005E6B14 /* MGWUJsonUTF8Stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DB15D7886A00AB4885 /* MGWUJsonUTF8Stream.h */; };
+		62709B39192E7C2D005E6B14 /* MGWUJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D718DD15D7886A00AB4885 /* MGWUJsonWriter.h */; };
+		62709B6B192E8318005E6B14 /* hipmob.framework in Sources */ = {isa = PBXBuildFile; fileRef = 54AF09051623914F008B605D /* hipmob.framework */; };
+		62709B6C192E8343005E6B14 /* AWSRuntime.framework in Sources */ = {isa = PBXBuildFile; fileRef = 54A8DA121797B22000A9FE4C /* AWSRuntime.framework */; };
+		62709B6D192E8343005E6B14 /* AWSS3.framework in Sources */ = {isa = PBXBuildFile; fileRef = 543927AD1793B2510016C4EB /* AWSS3.framework */; };
+		62709B6E192E8343005E6B14 /* Crashlytics.framework in Sources */ = {isa = PBXBuildFile; fileRef = 549D38E515F060FA000F7C0B /* Crashlytics.framework */; };
+		62709B6F192E8343005E6B14 /* FacebookSDK.framework in Sources */ = {isa = PBXBuildFile; fileRef = 54D718E715D7886A00AB4885 /* FacebookSDK.framework */; };
+		62709B98192E8FB0005E6B14 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62709B97192E8FB0005E6B14 /* CoreFoundation.framework */; };
+		62709B9E192E8FB0005E6B14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62709B9C192E8FB0005E6B14 /* InfoPlist.strings */; };
+		62709BA3192E902B005E6B14 /* CrossPromoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541ED0C615F9AA47004E6F02 /* CrossPromoViewController.xib */; };
+		62709BA4192E902B005E6B14 /* MGWUFacebookLoginLandscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D718C515D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib */; };
+		62709BA5192E902B005E6B14 /* MGWUFacebookLoginPortrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D718C615D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib */; };
+		62709BA6192E902B005E6B14 /* MGWUFacebookLoginLandscapeDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9A169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib */; };
+		62709BA7192E902B005E6B14 /* MGWUFacebookLoginPortraitDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9B169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib */; };
+		62709BA8192E902B005E6B14 /* mgwu-gk-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 548ADF60160B9C2C002DC16F /* mgwu-gk-notification.png */; };
+		62709BA9192E902B005E6B14 /* mgwu-gk-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548ADF61160B9C2C002DC16F /* mgwu-gk-notification@2x.png */; };
+		62709BAA192E902B005E6B14 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0908162391A9008B605D /* aqua.png */; };
+		62709BAB192E902B005E6B14 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0909162391A9008B605D /* bluechatbubble.png */; };
+		62709BAC192E902B005E6B14 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090A162391A9008B605D /* green.png */; };
+		62709BAD192E902B005E6B14 /* grey-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090B162391A9008B605D /* grey-background.png */; };
+		62709BAE192E902B005E6B14 /* hipmob-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090C162391A9008B605D /* hipmob-Info.plist */; };
+		62709BAF192E902B005E6B14 /* hipmob.back.btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090D162391A9008B605D /* hipmob.back.btn.png */; };
+		62709BB0192E902B005E6B14 /* hipmob.send.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090E162391A9008B605D /* hipmob.send.png */; };
+		62709BB1192E902B005E6B14 /* hipmobsend_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF090F162391A9008B605D /* hipmobsend_field.png */; };
+		62709BB2192E902B005E6B14 /* hipmobsend_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0910162391A9008B605D /* hipmobsend_field@2x.png */; };
+		62709BB3192E902B005E6B14 /* operator.available.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0911162391A9008B605D /* operator.available.png */; };
+		62709BB4192E902B005E6B14 /* operator.connecting.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0912162391A9008B605D /* operator.connecting.png */; };
+		62709BB5192E902B005E6B14 /* operator.unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0913162391A9008B605D /* operator.unavailable.png */; };
+		62709BB6192E902B005E6B14 /* send-button-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0914162391A9008B605D /* send-button-active.png */; };
+		62709BB7192E902B005E6B14 /* send-button-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0915162391A9008B605D /* send-button-inactive.png */; };
+		62709BB8192E902B005E6B14 /* send-button-instate.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0916162391A9008B605D /* send-button-instate.png */; };
+		62709BB9192E902B005E6B14 /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF0917162391A9008B605D /* send-field-landscape.png */; };
+		62709BBA192E903A005E6B14 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF07A416235E73008B605D /* Logo.png */; };
+		62709BBB192E903A005E6B14 /* mgwu-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E81775162DF4F9000CB2FC /* mgwu-m.png */; };
+		62709BBC192E903A005E6B14 /* mgwu-m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E81779162DF548000CB2FC /* mgwu-m@2x.png */; };
+		62709BBD192E903A005E6B14 /* FBLoginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078A16234F97008B605D /* FBLoginButton@2x.png */; };
+		62709BBE192E903A005E6B14 /* FBLoginButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078B16234F97008B605D /* FBLoginButtonPressed@2x.png */; };
+		62709BBF192E903A005E6B14 /* FBNoThanksButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078C16234F97008B605D /* FBNoThanksButton@2x.png */; };
+		62709BC0192E903A005E6B14 /* FBNoThanksButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078D16234F97008B605D /* FBNoThanksButtonPressed@2x.png */; };
+		62709BC1192E903A005E6B14 /* FBNoThanksButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078E16234F97008B605D /* FBNoThanksButton.png */; };
+		62709BC2192E903A005E6B14 /* FBNoThanksButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078F16234F97008B605D /* FBNoThanksButtonPressed.png */; };
+		62709BC3192E903A005E6B14 /* FBLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079016234F97008B605D /* FBLoginButton.png */; };
+		62709BC4192E903A005E6B14 /* FBLoginButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079116234F97008B605D /* FBLoginButtonPressed.png */; };
+		62709BC5192E903A005E6B14 /* MGWUBackground-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079316234F97008B605D /* MGWUBackground-Portrait~iphone.png */; };
+		62709BC6192E903A005E6B14 /* MGWUBackground-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078916234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png */; };
+		62709BC7192E903A005E6B14 /* MGWUBackground-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF079216234F97008B605D /* MGWUBackground-Landscape~iphone.png */; };
+		62709BC8192E903A005E6B14 /* MGWUBackground-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF078816234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png */; };
+		62709BC9192E903A005E6B14 /* MGWUBackgroundDark-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AD9F169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png */; };
+		62709BCA192E903A005E6B14 /* MGWUBackgroundDark-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA991746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png */; };
+		62709BCB192E903A005E6B14 /* MGWUBackgroundDark-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F9ADA0169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png */; };
+		62709BCC192E903A005E6B14 /* MGWUBackgroundDark-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9A1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png */; };
+		62709BCD192E903A005E6B14 /* MGWUBackground-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F571787482000D601A7 /* MGWUBackground-Portrait~ipad.png */; };
+		62709BCE192E903A005E6B14 /* MGWUBackground-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F581787482000D601A7 /* MGWUBackground-Portrait@2x~ipad.png */; };
+		62709BCF192E903A005E6B14 /* MGWUBackground-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F551787482000D601A7 /* MGWUBackground-Landscape~ipad.png */; };
+		62709BD0192E903A005E6B14 /* MGWUBackground-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F561787482000D601A7 /* MGWUBackground-Landscape@2x~ipad.png */; };
+		62709BD1192E903A005E6B14 /* MGWUBackgroundDark-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5A1787482100D601A7 /* MGWUBackgroundDark-Portrait~ipad.png */; };
+		62709BD2192E903A005E6B14 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F591787482100D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png */; };
+		62709BD3192E903A005E6B14 /* MGWUBackgroundDark-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5B1787482100D601A7 /* MGWUBackgroundDark-Landscape~ipad.png */; };
+		62709BD4192E903A005E6B14 /* MGWUBackgroundDark-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5D1787482100D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png */; };
+		62709BD5192E903A005E6B14 /* MGWUAboutFooter-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9D1746F233002C2723 /* MGWUAboutFooter-Portrait~iphone.png */; };
+		62709BD6192E903A005E6B14 /* MGWUAboutFooter-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9F1746F233002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png */; };
+		62709BD7192E903A005E6B14 /* MGWUAboutFooter-Landscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DA9E1746F233002C2723 /* MGWUAboutFooter-Landscape~iphone.png */; };
+		62709BD8192E903A005E6B14 /* MGWUAboutFooter-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DAA11746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png */; };
+		62709BD9192E903A005E6B14 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2DAA01746F233002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png */; };
+		62709BDA192E903A005E6B14 /* MGWUAboutFooter-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F521787481F00D601A7 /* MGWUAboutFooter-Portrait~ipad.png */; };
+		62709BDB192E903A005E6B14 /* MGWUAboutFooter-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F531787481F00D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png */; };
+		62709BDC192E903A005E6B14 /* MGWUAboutFooter-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F541787481F00D601A7 /* MGWUAboutFooter-Landscape~ipad.png */; };
+		62709BDD192E903A005E6B14 /* MGWUAboutFooter-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 542E7F5C1787482100D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png */; };
+		62709BDE192E903A005E6B14 /* fb_connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E415D7886A00AB4885 /* fb_connect.png */; };
+		62709BDF192E903A005E6B14 /* mgwuPlaceholderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564816BA431A0012B913 /* mgwuPlaceholderIcon.png */; };
+		62709BE0192E903A005E6B14 /* mgwuPlaceholderIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564916BA431A0012B913 /* mgwuPlaceholderIconDark.png */; };
+		62709BE1192E903A005E6B14 /* mgwuPlaceholderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564A16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png */; };
+		62709BE2192E903A005E6B14 /* mgwuPlaceholderIconDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564B16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png */; };
+		62709BE3192E903A005E6B14 /* mgwuLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E515D7886A00AB4885 /* mgwuLogo.png */; };
+		62709BE4192E903A005E6B14 /* mgwuLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF07A11623519F008B605D /* mgwuLogo@2x.png */; };
+		62709BE5192E903A005E6B14 /* mgwuLogoDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564416BA3DE40012B913 /* mgwuLogoDark.png */; };
+		62709BE6192E903A005E6B14 /* mgwuLogoDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541E564516BA3DE40012B913 /* mgwuLogoDark@2x.png */; };
+		62709BE7192E903A005E6B14 /* FacebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D718E615D7886A00AB4885 /* FacebookIcon.png */; };
+		62709BE8192E903A005E6B14 /* MGWUClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7191515D788E700AB4885 /* MGWUClose@2x.png */; };
+		62709BE9192E903A005E6B14 /* MGWUClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7191615D788E700AB4885 /* MGWUClose.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62709ADB192E7116005E6B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54D718A915D7883500AB4885 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62709AC9192E7116005E6B14;
+			remoteInfo = mgwuSDK_Debug;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		62709AC8192E7116005E6B14 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		541E564416BA3DE40012B913 /* mgwuLogoDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mgwuLogoDark.png; sourceTree = "<group>"; };
+		541E564516BA3DE40012B913 /* mgwuLogoDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwuLogoDark@2x.png"; sourceTree = "<group>"; };
+		541E564816BA431A0012B913 /* mgwuPlaceholderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mgwuPlaceholderIcon.png; sourceTree = "<group>"; };
+		541E564916BA431A0012B913 /* mgwuPlaceholderIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mgwuPlaceholderIconDark.png; sourceTree = "<group>"; };
+		541E564A16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwuPlaceholderIcon@2x.png"; sourceTree = "<group>"; };
+		541E564B16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwuPlaceholderIconDark@2x.png"; sourceTree = "<group>"; };
+		541ED0C415F9AA47004E6F02 /* CrossPromoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossPromoViewController.h; sourceTree = "<group>"; };
+		541ED0C515F9AA47004E6F02 /* CrossPromoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossPromoViewController.m; sourceTree = "<group>"; };
+		541ED0C615F9AA47004E6F02 /* CrossPromoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrossPromoViewController.xib; sourceTree = "<group>"; };
+		541ED0CB15F9AB22004E6F02 /* MGWUGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUGameCell.h; sourceTree = "<group>"; };
+		541ED0CC15F9AB22004E6F02 /* MGWUGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUGameCell.m; sourceTree = "<group>"; };
+		542B9F4016B86BD3009724B4 /* AppIconCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIconCache.m; sourceTree = "<group>"; };
+		542B9F4116B86BD3009724B4 /* AppIconCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIconCache.h; sourceTree = "<group>"; };
+		542E7F521787481F00D601A7 /* MGWUAboutFooter-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Portrait~ipad.png"; sourceTree = "<group>"; };
+		542E7F531787481F00D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		542E7F541787481F00D601A7 /* MGWUAboutFooter-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Landscape~ipad.png"; sourceTree = "<group>"; };
+		542E7F551787482000D601A7 /* MGWUBackground-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Landscape~ipad.png"; sourceTree = "<group>"; };
+		542E7F561787482000D601A7 /* MGWUBackground-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		542E7F571787482000D601A7 /* MGWUBackground-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Portrait~ipad.png"; sourceTree = "<group>"; };
+		542E7F581787482000D601A7 /* MGWUBackground-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		542E7F591787482100D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		542E7F5A1787482100D601A7 /* MGWUBackgroundDark-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Portrait~ipad.png"; sourceTree = "<group>"; };
+		542E7F5B1787482100D601A7 /* MGWUBackgroundDark-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Landscape~ipad.png"; sourceTree = "<group>"; };
+		542E7F5C1787482100D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		542E7F5D1787482100D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		543927AD1793B2510016C4EB /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		547D082917B7F60B00707F4B /* MGWUServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUServerRequest.h; sourceTree = "<group>"; };
+		547D082A17B7F60B00707F4B /* MGWUServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUServerRequest.m; sourceTree = "<group>"; };
+		548439FE15FAD62600B8CCAA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		54843A0015FAD66500B8CCAA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		54843A0115FAD66500B8CCAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		54843A0215FAD66500B8CCAA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		54843A0315FAD66500B8CCAA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		54843A0415FAD66500B8CCAA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		54843A0515FAD66500B8CCAA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		548ADF5B160B9C2C002DC16F /* MGWUNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUNotificationHandler.h; sourceTree = "<group>"; };
+		548ADF5C160B9C2C002DC16F /* MGWUNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUNotificationHandler.m; sourceTree = "<group>"; };
+		548ADF5D160B9C2C002DC16F /* MGWUNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUNotification.h; sourceTree = "<group>"; };
+		548ADF5E160B9C2C002DC16F /* MGWUNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUNotification.m; sourceTree = "<group>"; };
+		548ADF60160B9C2C002DC16F /* mgwu-gk-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwu-gk-notification.png"; sourceTree = "<group>"; };
+		548ADF61160B9C2C002DC16F /* mgwu-gk-notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwu-gk-notification@2x.png"; sourceTree = "<group>"; };
+		549D38E015F0438A000F7C0B /* MGWUIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUIAPHelper.h; sourceTree = "<group>"; };
+		549D38E115F0438A000F7C0B /* MGWUIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUIAPHelper.m; sourceTree = "<group>"; };
+		549D38E515F060FA000F7C0B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		549D38EA15F0616B000F7C0B /* TJCOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCOpenUDID.h; sourceTree = "<group>"; };
+		549D38EB15F0616B000F7C0B /* TJCOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJCOpenUDID.m; sourceTree = "<group>"; };
+		549D38EC15F0616B000F7C0B /* TapjoyConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnect.h; sourceTree = "<group>"; };
+		549D38ED15F0616B000F7C0B /* TapjoyConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapjoyConnect.m; sourceTree = "<group>"; };
+		549D38EE15F0616B000F7C0B /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
+		549D38EF15F0616B000F7C0B /* TJCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCConfig.h; sourceTree = "<group>"; };
+		549D38F715F06179000F7C0B /* MGWUAppirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUAppirater.h; sourceTree = "<group>"; };
+		549D38F815F06179000F7C0B /* MGWUAppirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUAppirater.m; sourceTree = "<group>"; };
+		549D390515F06179000F7C0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		54A03D3F15E181B5008ACCD4 /* MGWURainbow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWURainbow.h; sourceTree = "<group>"; };
+		54A03D4015E181B5008ACCD4 /* MGWURainbow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWURainbow.m; sourceTree = "<group>"; };
+		54A2DA991746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Portrait@2x~iphone.png"; sourceTree = "<group>"; };
+		54A2DA9A1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
+		54A2DA9D1746F233002C2723 /* MGWUAboutFooter-Portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Portrait~iphone.png"; sourceTree = "<group>"; };
+		54A2DA9E1746F233002C2723 /* MGWUAboutFooter-Landscape~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Landscape~iphone.png"; sourceTree = "<group>"; };
+		54A2DA9F1746F233002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Portrait@2x~iphone.png"; sourceTree = "<group>"; };
+		54A2DAA01746F233002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Landscape-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		54A2DAA11746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUAboutFooter-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
+		54A8DA121797B22000A9FE4C /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSRuntime.framework; sourceTree = "<group>"; };
+		54AF078816234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
+		54AF078916234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Portrait@2x~iphone.png"; sourceTree = "<group>"; };
+		54AF078A16234F97008B605D /* FBLoginButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLoginButton@2x.png"; sourceTree = "<group>"; };
+		54AF078B16234F97008B605D /* FBLoginButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLoginButtonPressed@2x.png"; sourceTree = "<group>"; };
+		54AF078C16234F97008B605D /* FBNoThanksButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBNoThanksButton@2x.png"; sourceTree = "<group>"; };
+		54AF078D16234F97008B605D /* FBNoThanksButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBNoThanksButtonPressed@2x.png"; sourceTree = "<group>"; };
+		54AF078E16234F97008B605D /* FBNoThanksButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBNoThanksButton.png; sourceTree = "<group>"; };
+		54AF078F16234F97008B605D /* FBNoThanksButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBNoThanksButtonPressed.png; sourceTree = "<group>"; };
+		54AF079016234F97008B605D /* FBLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLoginButton.png; sourceTree = "<group>"; };
+		54AF079116234F97008B605D /* FBLoginButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLoginButtonPressed.png; sourceTree = "<group>"; };
+		54AF079216234F97008B605D /* MGWUBackground-Landscape~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Landscape~iphone.png"; sourceTree = "<group>"; };
+		54AF079316234F97008B605D /* MGWUBackground-Portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackground-Portrait~iphone.png"; sourceTree = "<group>"; };
+		54AF07A11623519F008B605D /* mgwuLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwuLogo@2x.png"; sourceTree = "<group>"; };
+		54AF07A416235E73008B605D /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		54AF09051623914F008B605D /* hipmob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = hipmob.framework; sourceTree = "<group>"; };
+		54AF0908162391A9008B605D /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
+		54AF0909162391A9008B605D /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
+		54AF090A162391A9008B605D /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		54AF090B162391A9008B605D /* grey-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grey-background.png"; sourceTree = "<group>"; };
+		54AF090C162391A9008B605D /* hipmob-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "hipmob-Info.plist"; sourceTree = "<group>"; };
+		54AF090D162391A9008B605D /* hipmob.back.btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hipmob.back.btn.png; sourceTree = "<group>"; };
+		54AF090E162391A9008B605D /* hipmob.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hipmob.send.png; sourceTree = "<group>"; };
+		54AF090F162391A9008B605D /* hipmobsend_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hipmobsend_field.png; sourceTree = "<group>"; };
+		54AF0910162391A9008B605D /* hipmobsend_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hipmobsend_field@2x.png"; sourceTree = "<group>"; };
+		54AF0911162391A9008B605D /* operator.available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operator.available.png; sourceTree = "<group>"; };
+		54AF0912162391A9008B605D /* operator.connecting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operator.connecting.png; sourceTree = "<group>"; };
+		54AF0913162391A9008B605D /* operator.unavailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operator.unavailable.png; sourceTree = "<group>"; };
+		54AF0914162391A9008B605D /* send-button-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-button-active.png"; sourceTree = "<group>"; };
+		54AF0915162391A9008B605D /* send-button-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-button-inactive.png"; sourceTree = "<group>"; };
+		54AF0916162391A9008B605D /* send-button-instate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-button-instate.png"; sourceTree = "<group>"; };
+		54AF0917162391A9008B605D /* send-field-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-field-landscape.png"; sourceTree = "<group>"; };
+		54D718B615D7883500AB4885 /* mgwuSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mgwuSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54D718BA15D7883500AB4885 /* mgwuSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mgwuSDK-Info.plist"; sourceTree = "<group>"; };
+		54D718BC15D7883500AB4885 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		54D718BE15D7883500AB4885 /* mgwuSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mgwuSDK-Prefix.pch"; sourceTree = "<group>"; };
+		54D718C415D7886A00AB4885 /* MGWU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWU.m; sourceTree = "<group>"; };
+		54D718C515D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGWUFacebookLoginLandscape.xib; sourceTree = "<group>"; };
+		54D718C615D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGWUFacebookLoginPortrait.xib; sourceTree = "<group>"; };
+		54D718C715D7886A00AB4885 /* MGWUFBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUFBLoginViewController.m; sourceTree = "<group>"; };
+		54D718C815D7886A00AB4885 /* MGWUFBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUFBLoginViewController.h; sourceTree = "<group>"; };
+		54D718CA15D7886A00AB4885 /* MGWUJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonParser.h; sourceTree = "<group>"; };
+		54D718CB15D7886A00AB4885 /* MGWUJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonParser.m; sourceTree = "<group>"; };
+		54D718CC15D7886A00AB4885 /* MGWUJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamParser.h; sourceTree = "<group>"; };
+		54D718CD15D7886A00AB4885 /* MGWUJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamParser.m; sourceTree = "<group>"; };
+		54D718CE15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		54D718CF15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		54D718D015D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		54D718D115D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		54D718D215D7886A00AB4885 /* MGWUJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamParserState.h; sourceTree = "<group>"; };
+		54D718D315D7886A00AB4885 /* MGWUJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamParserState.m; sourceTree = "<group>"; };
+		54D718D415D7886A00AB4885 /* MGWUJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamWriter.h; sourceTree = "<group>"; };
+		54D718D515D7886A00AB4885 /* MGWUJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamWriter.m; sourceTree = "<group>"; };
+		54D718D615D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		54D718D715D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		54D718D815D7886A00AB4885 /* MGWUJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonStreamWriterState.h; sourceTree = "<group>"; };
+		54D718D915D7886A00AB4885 /* MGWUJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonStreamWriterState.m; sourceTree = "<group>"; };
+		54D718DA15D7886A00AB4885 /* MGWUJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonTokeniser.h; sourceTree = "<group>"; };
+		54D718DB15D7886A00AB4885 /* MGWUJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonUTF8Stream.h; sourceTree = "<group>"; };
+		54D718DC15D7886A00AB4885 /* MGWUJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonUTF8Stream.m; sourceTree = "<group>"; };
+		54D718DD15D7886A00AB4885 /* MGWUJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUJsonWriter.h; sourceTree = "<group>"; };
+		54D718DE15D7886A00AB4885 /* MGWUJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUJsonWriter.m; sourceTree = "<group>"; };
+		54D718DF15D7886A00AB4885 /* MWGUJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGUJsonTokeniser.m; sourceTree = "<group>"; };
+		54D718E315D7886A00AB4885 /* MGWU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWU.h; sourceTree = "<group>"; };
+		54D718E415D7886A00AB4885 /* fb_connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_connect.png; sourceTree = "<group>"; };
+		54D718E515D7886A00AB4885 /* mgwuLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mgwuLogo.png; sourceTree = "<group>"; };
+		54D718E615D7886A00AB4885 /* FacebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookIcon.png; sourceTree = "<group>"; };
+		54D718E715D7886A00AB4885 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		54D718E815D7886A00AB4885 /* MGWUSecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUSecureUDID.m; sourceTree = "<group>"; };
+		54D718EA15D7886A00AB4885 /* MGWUMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUMBProgressHUD.m; sourceTree = "<group>"; };
+		54D718EB15D7886A00AB4885 /* MGWUMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUMBProgressHUD.h; sourceTree = "<group>"; };
+		54D718EC15D7886A00AB4885 /* MGWUSecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUSecureUDID.h; sourceTree = "<group>"; };
+		54D7191515D788E700AB4885 /* MGWUClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUClose@2x.png"; sourceTree = "<group>"; };
+		54D7191615D788E700AB4885 /* MGWUClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MGWUClose.png; sourceTree = "<group>"; };
+		54DF4ABA15F5843800F8FA05 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		54E0772F15E83117005BEF94 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = FacebookSDK.framework/Versions/A/DeprecatedHeaders/Facebook.h; sourceTree = "<group>"; };
+		54E81775162DF4F9000CB2FC /* mgwu-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwu-m.png"; sourceTree = "<group>"; };
+		54E81779162DF548000CB2FC /* mgwu-m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mgwu-m@2x.png"; sourceTree = "<group>"; };
+		54F85B96161884A20080F11A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		54F85BD0161B5FB80080F11A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		54F9AD9A169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGWUFacebookLoginLandscapeDark.xib; sourceTree = "<group>"; };
+		54F9AD9B169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGWUFacebookLoginPortraitDark.xib; sourceTree = "<group>"; };
+		54F9AD9F169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Portrait~iphone.png"; sourceTree = "<group>"; };
+		54F9ADA0169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGWUBackgroundDark-Landscape~iphone.png"; sourceTree = "<group>"; };
+		62709ACA192E7116005E6B14 /* libmgwuSDK_Debug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmgwuSDK_Debug.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		62709AD7192E7116005E6B14 /* mgwuSDK_DebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mgwuSDK_DebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62709B96192E8FB0005E6B14 /* mgwuSDK_Debug_Resources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mgwuSDK_Debug_Resources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		62709B97192E8FB0005E6B14 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		62709B9B192E8FB0005E6B14 /* mgwuSDK_Debug_Resources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mgwuSDK_Debug_Resources-Info.plist"; sourceTree = "<group>"; };
+		62709B9D192E8FB0005E6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		62709B9F192E8FB0005E6B14 /* mgwuSDK_Debug_Resources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mgwuSDK_Debug_Resources-Prefix.pch"; sourceTree = "<group>"; };
+		62CDCDBB192E6D0600CEFF41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		62CDCDC9192E6D0600CEFF41 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		62CDCDCC192E6D0700CEFF41 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		62CDCE9E192E6FC200CEFF41 /* mgwuSDK copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mgwuSDK copy-Info.plist"; path = "/Users/benjaminencz/Development/MGWU/SpriteBuilder_Testing/MultiplayerTurnBasedGame.spritebuilder/Source/Frameworks/mgwuSDK copy-Info.plist"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54D718B015D7883500AB4885 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F85BD1161B5FB80080F11A /* AdSupport.framework in Frameworks */,
+				54F85B97161884A20080F11A /* Social.framework in Frameworks */,
+				54843A0615FAD66500B8CCAA /* CFNetwork.framework in Frameworks */,
+				54C263F616AF728800118231 /* CoreTelephony.framework in Frameworks */,
+				54C263F516AF727100118231 /* libicucore.dylib in Frameworks */,
+				54843A0915FAD66500B8CCAA /* Security.framework in Frameworks */,
+				54843A0A15FAD66500B8CCAA /* StoreKit.framework in Frameworks */,
+				54843A0B15FAD66500B8CCAA /* SystemConfiguration.framework in Frameworks */,
+				548439FF15FAD62600B8CCAA /* MessageUI.framework in Frameworks */,
+				54D7190F15D7886A00AB4885 /* FacebookSDK.framework in Frameworks */,
+				549D38E615F060FA000F7C0B /* Crashlytics.framework in Frameworks */,
+				54AF09061623914F008B605D /* hipmob.framework in Frameworks */,
+				543927AE1793B2510016C4EB /* AWSS3.framework in Frameworks */,
+				54A8DA131797B22000A9FE4C /* AWSRuntime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709AC7192E7116005E6B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709B0D192E71CD005E6B14 /* MessageUI.framework in Frameworks */,
+				62709B0C192E71C1005E6B14 /* SystemConfiguration.framework in Frameworks */,
+				62709B11192E71FC005E6B14 /* AWSRuntime.framework in Frameworks */,
+				62709B0B192E71B7005E6B14 /* StoreKit.framework in Frameworks */,
+				62709B0A192E71B1005E6B14 /* Security.framework in Frameworks */,
+				62709B09192E71A7005E6B14 /* libicucore.dylib in Frameworks */,
+				62709B12192E7217005E6B14 /* Crashlytics.framework in Frameworks */,
+				62709B08192E719D005E6B14 /* CoreTelephony.framework in Frameworks */,
+				62709B07192E7194005E6B14 /* CFNetwork.framework in Frameworks */,
+				62709B06192E718B005E6B14 /* AdSupport.framework in Frameworks */,
+				62709B10192E71F9005E6B14 /* AWSS3.framework in Frameworks */,
+				62709B0F192E71F6005E6B14 /* FacebookSDK.framework in Frameworks */,
+				62709ACB192E7116005E6B14 /* Foundation.framework in Frameworks */,
+				62709B0E192E71ED005E6B14 /* hipmob.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709AD4192E7116005E6B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709ADD192E7116005E6B14 /* libmgwuSDK_Debug.a in Frameworks */,
+				62709AD8192E7116005E6B14 /* XCTest.framework in Frameworks */,
+				62709ADA192E7116005E6B14 /* UIKit.framework in Frameworks */,
+				62709AD9192E7116005E6B14 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709B93192E8FB0005E6B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709B98192E8FB0005E6B14 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		540DD53415DB22F400FAFDCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				54AF090716239186008B605D /* Hipmob */,
+				54AF07A416235E73008B605D /* Logo.png */,
+				54E81775162DF4F9000CB2FC /* mgwu-m.png */,
+				54E81779162DF548000CB2FC /* mgwu-m@2x.png */,
+				54AF078A16234F97008B605D /* FBLoginButton@2x.png */,
+				54AF078B16234F97008B605D /* FBLoginButtonPressed@2x.png */,
+				54AF078C16234F97008B605D /* FBNoThanksButton@2x.png */,
+				54AF078D16234F97008B605D /* FBNoThanksButtonPressed@2x.png */,
+				54AF078E16234F97008B605D /* FBNoThanksButton.png */,
+				54AF078F16234F97008B605D /* FBNoThanksButtonPressed.png */,
+				54AF079016234F97008B605D /* FBLoginButton.png */,
+				54AF079116234F97008B605D /* FBLoginButtonPressed.png */,
+				54AF079316234F97008B605D /* MGWUBackground-Portrait~iphone.png */,
+				54AF078916234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png */,
+				54AF079216234F97008B605D /* MGWUBackground-Landscape~iphone.png */,
+				54AF078816234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png */,
+				54F9AD9F169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png */,
+				54A2DA991746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png */,
+				54F9ADA0169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png */,
+				54A2DA9A1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png */,
+				542E7F571787482000D601A7 /* MGWUBackground-Portrait~ipad.png */,
+				542E7F581787482000D601A7 /* MGWUBackground-Portrait@2x~ipad.png */,
+				542E7F551787482000D601A7 /* MGWUBackground-Landscape~ipad.png */,
+				542E7F561787482000D601A7 /* MGWUBackground-Landscape@2x~ipad.png */,
+				542E7F5A1787482100D601A7 /* MGWUBackgroundDark-Portrait~ipad.png */,
+				542E7F591787482100D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png */,
+				542E7F5B1787482100D601A7 /* MGWUBackgroundDark-Landscape~ipad.png */,
+				542E7F5D1787482100D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png */,
+				54A2DA9D1746F233002C2723 /* MGWUAboutFooter-Portrait~iphone.png */,
+				54A2DA9F1746F233002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png */,
+				54A2DA9E1746F233002C2723 /* MGWUAboutFooter-Landscape~iphone.png */,
+				54A2DAA11746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png */,
+				54A2DAA01746F233002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png */,
+				542E7F521787481F00D601A7 /* MGWUAboutFooter-Portrait~ipad.png */,
+				542E7F531787481F00D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png */,
+				542E7F541787481F00D601A7 /* MGWUAboutFooter-Landscape~ipad.png */,
+				542E7F5C1787482100D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png */,
+				54D718E415D7886A00AB4885 /* fb_connect.png */,
+				541E564816BA431A0012B913 /* mgwuPlaceholderIcon.png */,
+				541E564916BA431A0012B913 /* mgwuPlaceholderIconDark.png */,
+				541E564A16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png */,
+				541E564B16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png */,
+				54D718E515D7886A00AB4885 /* mgwuLogo.png */,
+				54AF07A11623519F008B605D /* mgwuLogo@2x.png */,
+				541E564416BA3DE40012B913 /* mgwuLogoDark.png */,
+				541E564516BA3DE40012B913 /* mgwuLogoDark@2x.png */,
+				54D718E615D7886A00AB4885 /* FacebookIcon.png */,
+				54D7191515D788E700AB4885 /* MGWUClose@2x.png */,
+				54D7191615D788E700AB4885 /* MGWUClose.png */,
+				54DF4ABA15F5843800F8FA05 /* FacebookSDKResources.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		548ADF59160B9C2C002DC16F /* megastep-GKAchievementNotification-98c6802 */ = {
+			isa = PBXGroup;
+			children = (
+				548ADF5B160B9C2C002DC16F /* MGWUNotificationHandler.h */,
+				548ADF5C160B9C2C002DC16F /* MGWUNotificationHandler.m */,
+				548ADF5D160B9C2C002DC16F /* MGWUNotification.h */,
+				548ADF5E160B9C2C002DC16F /* MGWUNotification.m */,
+				548ADF5F160B9C2C002DC16F /* images */,
+			);
+			path = "megastep-GKAchievementNotification-98c6802";
+			sourceTree = "<group>";
+		};
+		548ADF5F160B9C2C002DC16F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				548ADF60160B9C2C002DC16F /* mgwu-gk-notification.png */,
+				548ADF61160B9C2C002DC16F /* mgwu-gk-notification@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		549D38E715F0616B000F7C0B /* TapjoyConnect */ = {
+			isa = PBXGroup;
+			children = (
+				549D38E815F0616B000F7C0B /* Components */,
+				549D38EC15F0616B000F7C0B /* TapjoyConnect.h */,
+				549D38ED15F0616B000F7C0B /* TapjoyConnect.m */,
+				549D38EE15F0616B000F7C0B /* TapjoyConnectConstants.h */,
+				549D38EF15F0616B000F7C0B /* TJCConfig.h */,
+			);
+			path = TapjoyConnect;
+			sourceTree = "<group>";
+		};
+		549D38E815F0616B000F7C0B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				549D38E915F0616B000F7C0B /* TJCExtensions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		549D38E915F0616B000F7C0B /* TJCExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				549D38EA15F0616B000F7C0B /* TJCOpenUDID.h */,
+				549D38EB15F0616B000F7C0B /* TJCOpenUDID.m */,
+			);
+			path = TJCExtensions;
+			sourceTree = "<group>";
+		};
+		549D38F615F06179000F7C0B /* arashpayan-appirater-ae36b81 */ = {
+			isa = PBXGroup;
+			children = (
+				549D38F715F06179000F7C0B /* MGWUAppirater.h */,
+				549D38F815F06179000F7C0B /* MGWUAppirater.m */,
+				549D390515F06179000F7C0B /* README.md */,
+			);
+			path = "arashpayan-appirater-ae36b81";
+			sourceTree = "<group>";
+		};
+		54AF090716239186008B605D /* Hipmob */ = {
+			isa = PBXGroup;
+			children = (
+				54AF0908162391A9008B605D /* aqua.png */,
+				54AF0909162391A9008B605D /* bluechatbubble.png */,
+				54AF090A162391A9008B605D /* green.png */,
+				54AF090B162391A9008B605D /* grey-background.png */,
+				54AF090C162391A9008B605D /* hipmob-Info.plist */,
+				54AF090D162391A9008B605D /* hipmob.back.btn.png */,
+				54AF090E162391A9008B605D /* hipmob.send.png */,
+				54AF090F162391A9008B605D /* hipmobsend_field.png */,
+				54AF0910162391A9008B605D /* hipmobsend_field@2x.png */,
+				54AF0911162391A9008B605D /* operator.available.png */,
+				54AF0912162391A9008B605D /* operator.connecting.png */,
+				54AF0913162391A9008B605D /* operator.unavailable.png */,
+				54AF0914162391A9008B605D /* send-button-active.png */,
+				54AF0915162391A9008B605D /* send-button-inactive.png */,
+				54AF0916162391A9008B605D /* send-button-instate.png */,
+				54AF0917162391A9008B605D /* send-field-landscape.png */,
+			);
+			name = Hipmob;
+			sourceTree = "<group>";
+		};
+		54D718A715D7883500AB4885 = {
+			isa = PBXGroup;
+			children = (
+				54F85BD0161B5FB80080F11A /* AdSupport.framework */,
+				54F85B96161884A20080F11A /* Social.framework */,
+				54843A0015FAD66500B8CCAA /* CFNetwork.framework */,
+				54843A0115FAD66500B8CCAA /* CoreTelephony.framework */,
+				54843A0215FAD66500B8CCAA /* libicucore.dylib */,
+				54843A0315FAD66500B8CCAA /* Security.framework */,
+				54843A0415FAD66500B8CCAA /* StoreKit.framework */,
+				54843A0515FAD66500B8CCAA /* SystemConfiguration.framework */,
+				548439FE15FAD62600B8CCAA /* MessageUI.framework */,
+				54D718B815D7883500AB4885 /* mgwuSDK */,
+				62709B99192E8FB0005E6B14 /* mgwuSDK_Debug_Resources */,
+				62CDCDBA192E6D0600CEFF41 /* Frameworks */,
+				54D718B715D7883500AB4885 /* Products */,
+				62CDCE9E192E6FC200CEFF41 /* mgwuSDK copy-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		54D718B715D7883500AB4885 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54D718B615D7883500AB4885 /* mgwuSDK.framework */,
+				62709ACA192E7116005E6B14 /* libmgwuSDK_Debug.a */,
+				62709AD7192E7116005E6B14 /* mgwuSDK_DebugTests.xctest */,
+				62709B96192E8FB0005E6B14 /* mgwuSDK_Debug_Resources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54D718B815D7883500AB4885 /* mgwuSDK */ = {
+			isa = PBXGroup;
+			children = (
+				54AF09051623914F008B605D /* hipmob.framework */,
+				54E0772F15E83117005BEF94 /* Facebook.h */,
+				54D718E315D7886A00AB4885 /* MGWU.h */,
+				54D718C415D7886A00AB4885 /* MGWU.m */,
+				547D082917B7F60B00707F4B /* MGWUServerRequest.h */,
+				547D082A17B7F60B00707F4B /* MGWUServerRequest.m */,
+				541ED0C415F9AA47004E6F02 /* CrossPromoViewController.h */,
+				541ED0C515F9AA47004E6F02 /* CrossPromoViewController.m */,
+				541ED0C615F9AA47004E6F02 /* CrossPromoViewController.xib */,
+				542B9F4116B86BD3009724B4 /* AppIconCache.h */,
+				542B9F4016B86BD3009724B4 /* AppIconCache.m */,
+				541ED0CB15F9AB22004E6F02 /* MGWUGameCell.h */,
+				541ED0CC15F9AB22004E6F02 /* MGWUGameCell.m */,
+				54A03D3F15E181B5008ACCD4 /* MGWURainbow.h */,
+				54A03D4015E181B5008ACCD4 /* MGWURainbow.m */,
+				54D718C715D7886A00AB4885 /* MGWUFBLoginViewController.m */,
+				54D718C815D7886A00AB4885 /* MGWUFBLoginViewController.h */,
+				54D718C515D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib */,
+				54D718C615D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib */,
+				54F9AD9A169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib */,
+				54F9AD9B169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib */,
+				54D718EC15D7886A00AB4885 /* MGWUSecureUDID.h */,
+				54D718E815D7886A00AB4885 /* MGWUSecureUDID.m */,
+				54D718EA15D7886A00AB4885 /* MGWUMBProgressHUD.m */,
+				54D718EB15D7886A00AB4885 /* MGWUMBProgressHUD.h */,
+				549D38E015F0438A000F7C0B /* MGWUIAPHelper.h */,
+				549D38E115F0438A000F7C0B /* MGWUIAPHelper.m */,
+				548ADF59160B9C2C002DC16F /* megastep-GKAchievementNotification-98c6802 */,
+				549D38F615F06179000F7C0B /* arashpayan-appirater-ae36b81 */,
+				54A8DA121797B22000A9FE4C /* AWSRuntime.framework */,
+				543927AD1793B2510016C4EB /* AWSS3.framework */,
+				549D38E715F0616B000F7C0B /* TapjoyConnect */,
+				549D38E515F060FA000F7C0B /* Crashlytics.framework */,
+				54D718C915D7886A00AB4885 /* Json */,
+				54D718E715D7886A00AB4885 /* FacebookSDK.framework */,
+				540DD53415DB22F400FAFDCE /* Resources */,
+				54D718B915D7883500AB4885 /* Supporting Files */,
+			);
+			path = mgwuSDK;
+			sourceTree = "<group>";
+		};
+		54D718B915D7883500AB4885 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54D718BA15D7883500AB4885 /* mgwuSDK-Info.plist */,
+				54D718BB15D7883500AB4885 /* InfoPlist.strings */,
+				54D718BE15D7883500AB4885 /* mgwuSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54D718C915D7886A00AB4885 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				54D718CA15D7886A00AB4885 /* MGWUJsonParser.h */,
+				54D718CB15D7886A00AB4885 /* MGWUJsonParser.m */,
+				54D718CC15D7886A00AB4885 /* MGWUJsonStreamParser.h */,
+				54D718CD15D7886A00AB4885 /* MGWUJsonStreamParser.m */,
+				54D718CE15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h */,
+				54D718CF15D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m */,
+				54D718D015D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h */,
+				54D718D115D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m */,
+				54D718D215D7886A00AB4885 /* MGWUJsonStreamParserState.h */,
+				54D718D315D7886A00AB4885 /* MGWUJsonStreamParserState.m */,
+				54D718D415D7886A00AB4885 /* MGWUJsonStreamWriter.h */,
+				54D718D515D7886A00AB4885 /* MGWUJsonStreamWriter.m */,
+				54D718D615D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h */,
+				54D718D715D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m */,
+				54D718D815D7886A00AB4885 /* MGWUJsonStreamWriterState.h */,
+				54D718D915D7886A00AB4885 /* MGWUJsonStreamWriterState.m */,
+				54D718DA15D7886A00AB4885 /* MGWUJsonTokeniser.h */,
+				54D718DB15D7886A00AB4885 /* MGWUJsonUTF8Stream.h */,
+				54D718DC15D7886A00AB4885 /* MGWUJsonUTF8Stream.m */,
+				54D718DD15D7886A00AB4885 /* MGWUJsonWriter.h */,
+				54D718DE15D7886A00AB4885 /* MGWUJsonWriter.m */,
+				54D718DF15D7886A00AB4885 /* MWGUJsonTokeniser.m */,
+			);
+			name = Json;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		62709B99192E8FB0005E6B14 /* mgwuSDK_Debug_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62709B9A192E8FB0005E6B14 /* Supporting Files */,
+			);
+			path = mgwuSDK_Debug_Resources;
+			sourceTree = "<group>";
+		};
+		62709B9A192E8FB0005E6B14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62709B9B192E8FB0005E6B14 /* mgwuSDK_Debug_Resources-Info.plist */,
+				62709B9C192E8FB0005E6B14 /* InfoPlist.strings */,
+				62709B9F192E8FB0005E6B14 /* mgwuSDK_Debug_Resources-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62CDCDBA192E6D0600CEFF41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62CDCDBB192E6D0600CEFF41 /* Foundation.framework */,
+				62CDCDC9192E6D0600CEFF41 /* XCTest.framework */,
+				62CDCDCC192E6D0700CEFF41 /* UIKit.framework */,
+				62709B97192E8FB0005E6B14 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		54D718B115D7883500AB4885 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54D7190B15D7886A00AB4885 /* MGWU.h in Headers */,
+				54D718F115D7886A00AB4885 /* MGWUFBLoginViewController.h in Headers */,
+				54D718F215D7886A00AB4885 /* MGWUJsonParser.h in Headers */,
+				54D718F415D7886A00AB4885 /* MGWUJsonStreamParser.h in Headers */,
+				54D718F615D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.h in Headers */,
+				54D718F815D7886A00AB4885 /* MGWUJsonStreamParserAdapter.h in Headers */,
+				54D718FA15D7886A00AB4885 /* MGWUJsonStreamParserState.h in Headers */,
+				54D718FC15D7886A00AB4885 /* MGWUJsonStreamWriter.h in Headers */,
+				54D718FE15D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.h in Headers */,
+				54D7190015D7886A00AB4885 /* MGWUJsonStreamWriterState.h in Headers */,
+				54D7190215D7886A00AB4885 /* MGWUJsonTokeniser.h in Headers */,
+				54D7190315D7886A00AB4885 /* MGWUJsonUTF8Stream.h in Headers */,
+				54D7190515D7886A00AB4885 /* MGWUJsonWriter.h in Headers */,
+				54D7191315D7886A00AB4885 /* MGWUMBProgressHUD.h in Headers */,
+				54D7191415D7886A00AB4885 /* MGWUSecureUDID.h in Headers */,
+				54A03D4115E181B5008ACCD4 /* MGWURainbow.h in Headers */,
+				54E0773015E83117005BEF94 /* Facebook.h in Headers */,
+				549D38E215F0438A000F7C0B /* MGWUIAPHelper.h in Headers */,
+				549D38F015F0616B000F7C0B /* TJCOpenUDID.h in Headers */,
+				549D38F215F0616B000F7C0B /* TapjoyConnect.h in Headers */,
+				549D38F415F0616B000F7C0B /* TapjoyConnectConstants.h in Headers */,
+				549D38F515F0616B000F7C0B /* TJCConfig.h in Headers */,
+				549D390815F06179000F7C0B /* MGWUAppirater.h in Headers */,
+				541ED0C715F9AA47004E6F02 /* CrossPromoViewController.h in Headers */,
+				541ED0CD15F9AB22004E6F02 /* MGWUGameCell.h in Headers */,
+				548ADF63160B9C2C002DC16F /* MGWUNotificationHandler.h in Headers */,
+				548ADF65160B9C2C002DC16F /* MGWUNotification.h in Headers */,
+				542B9F4316B86BD3009724B4 /* AppIconCache.h in Headers */,
+				547D082B17B7F60B00707F4B /* MGWUServerRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709B1C192E7425005E6B14 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709B1D192E742E005E6B14 /* MGWU.h in Headers */,
+				62709B1F192E7C2C005E6B14 /* MGWUServerRequest.h in Headers */,
+				62709B20192E7C2C005E6B14 /* CrossPromoViewController.h in Headers */,
+				62709B21192E7C2C005E6B14 /* AppIconCache.h in Headers */,
+				62709B22192E7C2C005E6B14 /* MGWUGameCell.h in Headers */,
+				62709B23192E7C2C005E6B14 /* MGWURainbow.h in Headers */,
+				62709B24192E7C2C005E6B14 /* MGWUFBLoginViewController.h in Headers */,
+				62709B25192E7C2C005E6B14 /* MGWUSecureUDID.h in Headers */,
+				62709B26192E7C2C005E6B14 /* MGWUMBProgressHUD.h in Headers */,
+				62709B27192E7C2C005E6B14 /* MGWUIAPHelper.h in Headers */,
+				62709B28192E7C2C005E6B14 /* MGWUNotificationHandler.h in Headers */,
+				62709B29192E7C2C005E6B14 /* MGWUNotification.h in Headers */,
+				62709B2A192E7C2C005E6B14 /* MGWUAppirater.h in Headers */,
+				62709B2B192E7C2C005E6B14 /* TJCOpenUDID.h in Headers */,
+				62709B2C192E7C2C005E6B14 /* TapjoyConnect.h in Headers */,
+				62709B2D192E7C2C005E6B14 /* TapjoyConnectConstants.h in Headers */,
+				62709B2E192E7C2C005E6B14 /* TJCConfig.h in Headers */,
+				62709B2F192E7C2D005E6B14 /* MGWUJsonParser.h in Headers */,
+				62709B30192E7C2D005E6B14 /* MGWUJsonStreamParser.h in Headers */,
+				62709B31192E7C2D005E6B14 /* MGWUJsonStreamParserAccumulator.h in Headers */,
+				62709B32192E7C2D005E6B14 /* MGWUJsonStreamParserAdapter.h in Headers */,
+				62709B33192E7C2D005E6B14 /* MGWUJsonStreamParserState.h in Headers */,
+				62709B34192E7C2D005E6B14 /* MGWUJsonStreamWriter.h in Headers */,
+				62709B35192E7C2D005E6B14 /* MGWUJsonStreamWriterAccumulator.h in Headers */,
+				62709B36192E7C2D005E6B14 /* MGWUJsonStreamWriterState.h in Headers */,
+				62709B37192E7C2D005E6B14 /* MGWUJsonTokeniser.h in Headers */,
+				62709B38192E7C2D005E6B14 /* MGWUJsonUTF8Stream.h in Headers */,
+				62709B39192E7C2D005E6B14 /* MGWUJsonWriter.h in Headers */,
+				62709B1E192E7C05005E6B14 /* Facebook.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		54D718B515D7883500AB4885 /* mgwuSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54D718C115D7883500AB4885 /* Build configuration list for PBXNativeTarget "mgwuSDK" */;
+			buildPhases = (
+				54D718AE15D7883500AB4885 /* ShellScript */,
+				54D718AF15D7883500AB4885 /* Sources */,
+				54D718B015D7883500AB4885 /* Frameworks */,
+				54D718B115D7883500AB4885 /* Headers */,
+				54D718B215D7883500AB4885 /* Resources */,
+				54D718B315D7883500AB4885 /* ShellScript */,
+				54D718B415D7883500AB4885 /* ShellScript */,
+				54F0D3FE15DCC9B2002F30FF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgwuSDK;
+			productName = mgwuSDK;
+			productReference = 54D718B615D7883500AB4885 /* mgwuSDK.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+		62709AC9192E7116005E6B14 /* mgwuSDK_Debug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62709AE6192E7116005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_Debug" */;
+			buildPhases = (
+				62709AC6192E7116005E6B14 /* Sources */,
+				62709AC7192E7116005E6B14 /* Frameworks */,
+				62709AC8192E7116005E6B14 /* CopyFiles */,
+				62709B1C192E7425005E6B14 /* Headers */,
+				62709B3A192E7C51005E6B14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgwuSDK_Debug;
+			productName = mgwuSDK_Debug;
+			productReference = 62709ACA192E7116005E6B14 /* libmgwuSDK_Debug.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		62709AD6192E7116005E6B14 /* mgwuSDK_DebugTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62709AE9192E7116005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_DebugTests" */;
+			buildPhases = (
+				62709AD3192E7116005E6B14 /* Sources */,
+				62709AD4192E7116005E6B14 /* Frameworks */,
+				62709AD5192E7116005E6B14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62709ADC192E7116005E6B14 /* PBXTargetDependency */,
+			);
+			name = mgwuSDK_DebugTests;
+			productName = mgwuSDK_DebugTests;
+			productReference = 62709AD7192E7116005E6B14 /* mgwuSDK_DebugTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		62709B95192E8FB0005E6B14 /* mgwuSDK_Debug_Resources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62709BA0192E8FB0005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_Debug_Resources" */;
+			buildPhases = (
+				62709B92192E8FB0005E6B14 /* Sources */,
+				62709B93192E8FB0005E6B14 /* Frameworks */,
+				62709B94192E8FB0005E6B14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgwuSDK_Debug_Resources;
+			productName = mgwuSDK_Debug_Resources;
+			productReference = 62709B96192E8FB0005E6B14 /* mgwuSDK_Debug_Resources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54D718A915D7883500AB4885 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "makegameswithus inc.";
+				TargetAttributes = {
+					62709AD6192E7116005E6B14 = {
+						TestTargetID = 54D718B515D7883500AB4885;
+					};
+				};
+			};
+			buildConfigurationList = 54D718AC15D7883500AB4885 /* Build configuration list for PBXProject "mgwuSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				da,
+				de,
+				es,
+				fr,
+				it,
+				ja,
+				ko,
+				nl,
+				pl,
+				pt,
+				ru,
+				sv,
+			);
+			mainGroup = 54D718A715D7883500AB4885;
+			productRefGroup = 54D718B715D7883500AB4885 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54D718B515D7883500AB4885 /* mgwuSDK */,
+				62709AC9192E7116005E6B14 /* mgwuSDK_Debug */,
+				62709AD6192E7116005E6B14 /* mgwuSDK_DebugTests */,
+				62709B95192E8FB0005E6B14 /* mgwuSDK_Debug_Resources */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54D718B215D7883500AB4885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54AF07A316235B60008B605D /* FacebookIcon.png in Resources */,
+				54D7191D15D78E5100AB4885 /* InfoPlist.strings in Resources */,
+				54D718EE15D7886A00AB4885 /* MGWUFacebookLoginLandscape.xib in Resources */,
+				54D718EF15D7886A00AB4885 /* MGWUFacebookLoginPortrait.xib in Resources */,
+				54D7190C15D7886A00AB4885 /* fb_connect.png in Resources */,
+				54D7190D15D7886A00AB4885 /* mgwuLogo.png in Resources */,
+				54D7191715D788E700AB4885 /* MGWUClose@2x.png in Resources */,
+				54D7191815D788E700AB4885 /* MGWUClose.png in Resources */,
+				54DF4ABB15F5843800F8FA05 /* FacebookSDKResources.bundle in Resources */,
+				541ED0C915F9AA47004E6F02 /* CrossPromoViewController.xib in Resources */,
+				548ADF67160B9C2C002DC16F /* mgwu-gk-notification.png in Resources */,
+				548ADF68160B9C2C002DC16F /* mgwu-gk-notification@2x.png in Resources */,
+				54AF079416234F97008B605D /* MGWUBackground-Landscape@2x~iphone.png in Resources */,
+				54AF079516234F97008B605D /* MGWUBackground-Portrait@2x~iphone.png in Resources */,
+				54AF079616234F97008B605D /* FBLoginButton@2x.png in Resources */,
+				54AF079716234F97008B605D /* FBLoginButtonPressed@2x.png in Resources */,
+				54AF079816234F97008B605D /* FBNoThanksButton@2x.png in Resources */,
+				54AF079916234F97008B605D /* FBNoThanksButtonPressed@2x.png in Resources */,
+				54AF079A16234F97008B605D /* FBNoThanksButton.png in Resources */,
+				54AF079B16234F97008B605D /* FBNoThanksButtonPressed.png in Resources */,
+				54AF079C16234F97008B605D /* FBLoginButton.png in Resources */,
+				54AF079D16234F97008B605D /* FBLoginButtonPressed.png in Resources */,
+				54AF079E16234F97008B605D /* MGWUBackground-Landscape~iphone.png in Resources */,
+				54AF079F16234F97008B605D /* MGWUBackground-Portrait~iphone.png in Resources */,
+				54AF07A21623519F008B605D /* mgwuLogo@2x.png in Resources */,
+				54AF0918162391A9008B605D /* aqua.png in Resources */,
+				54AF0919162391A9008B605D /* bluechatbubble.png in Resources */,
+				54AF091A162391A9008B605D /* green.png in Resources */,
+				54AF091B162391A9008B605D /* grey-background.png in Resources */,
+				54AF091D162391A9008B605D /* hipmob.back.btn.png in Resources */,
+				54AF091E162391A9008B605D /* hipmob.send.png in Resources */,
+				54AF091F162391A9008B605D /* hipmobsend_field.png in Resources */,
+				54AF0920162391A9008B605D /* hipmobsend_field@2x.png in Resources */,
+				54AF0921162391A9008B605D /* operator.available.png in Resources */,
+				54AF0922162391A9008B605D /* operator.connecting.png in Resources */,
+				54AF0923162391A9008B605D /* operator.unavailable.png in Resources */,
+				54AF0924162391A9008B605D /* send-button-active.png in Resources */,
+				54AF0925162391A9008B605D /* send-button-inactive.png in Resources */,
+				54AF0926162391A9008B605D /* send-button-instate.png in Resources */,
+				54AF0927162391A9008B605D /* send-field-landscape.png in Resources */,
+				54E81777162DF4FA000CB2FC /* mgwu-m.png in Resources */,
+				54E8177A162DF548000CB2FC /* mgwu-m@2x.png in Resources */,
+				54F9AD9C169BCD72008466C2 /* MGWUFacebookLoginLandscapeDark.xib in Resources */,
+				54F9AD9D169BCD72008466C2 /* MGWUFacebookLoginPortraitDark.xib in Resources */,
+				54F9ADA1169BCE83008466C2 /* MGWUBackgroundDark-Portrait~iphone.png in Resources */,
+				54F9ADA2169BCE83008466C2 /* MGWUBackgroundDark-Landscape~iphone.png in Resources */,
+				541E564616BA3DE40012B913 /* mgwuLogoDark.png in Resources */,
+				541E564716BA3DE40012B913 /* mgwuLogoDark@2x.png in Resources */,
+				541E564C16BA431A0012B913 /* mgwuPlaceholderIcon.png in Resources */,
+				541E564D16BA431A0012B913 /* mgwuPlaceholderIconDark.png in Resources */,
+				541E564E16BA431A0012B913 /* mgwuPlaceholderIcon@2x.png in Resources */,
+				541E564F16BA431A0012B913 /* mgwuPlaceholderIconDark@2x.png in Resources */,
+				54A2DA9B1746F0F4002C2723 /* MGWUBackgroundDark-Portrait@2x~iphone.png in Resources */,
+				54A2DA9C1746F0F4002C2723 /* MGWUBackgroundDark-Landscape@2x~iphone.png in Resources */,
+				54A2DAA21746F234002C2723 /* MGWUAboutFooter-Portrait~iphone.png in Resources */,
+				54A2DAA31746F234002C2723 /* MGWUAboutFooter-Landscape~iphone.png in Resources */,
+				54A2DAA41746F234002C2723 /* MGWUAboutFooter-Portrait@2x~iphone.png in Resources */,
+				54A2DAA51746F234002C2723 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png in Resources */,
+				54A2DAA61746F234002C2723 /* MGWUAboutFooter-Landscape@2x~iphone.png in Resources */,
+				542E7F5E1787482200D601A7 /* MGWUAboutFooter-Portrait~ipad.png in Resources */,
+				542E7F5F1787482200D601A7 /* MGWUAboutFooter-Portrait@2x~ipad.png in Resources */,
+				542E7F601787482200D601A7 /* MGWUAboutFooter-Landscape~ipad.png in Resources */,
+				542E7F611787482200D601A7 /* MGWUBackground-Landscape~ipad.png in Resources */,
+				542E7F621787482200D601A7 /* MGWUBackground-Landscape@2x~ipad.png in Resources */,
+				542E7F631787482200D601A7 /* MGWUBackground-Portrait~ipad.png in Resources */,
+				542E7F641787482200D601A7 /* MGWUBackground-Portrait@2x~ipad.png in Resources */,
+				542E7F651787482200D601A7 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */,
+				542E7F661787482200D601A7 /* MGWUBackgroundDark-Portrait~ipad.png in Resources */,
+				542E7F671787482200D601A7 /* MGWUBackgroundDark-Landscape~ipad.png in Resources */,
+				542E7F681787482200D601A7 /* MGWUAboutFooter-Landscape@2x~ipad.png in Resources */,
+				542E7F691787482200D601A7 /* MGWUBackgroundDark-Landscape@2x~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709AD5192E7116005E6B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709B3A192E7C51005E6B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709B94192E8FB0005E6B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709BBA192E903A005E6B14 /* Logo.png in Resources */,
+				62709BBB192E903A005E6B14 /* mgwu-m.png in Resources */,
+				62709BBC192E903A005E6B14 /* mgwu-m@2x.png in Resources */,
+				62709BBD192E903A005E6B14 /* FBLoginButton@2x.png in Resources */,
+				62709BBE192E903A005E6B14 /* FBLoginButtonPressed@2x.png in Resources */,
+				62709BBF192E903A005E6B14 /* FBNoThanksButton@2x.png in Resources */,
+				62709BC0192E903A005E6B14 /* FBNoThanksButtonPressed@2x.png in Resources */,
+				62709BC1192E903A005E6B14 /* FBNoThanksButton.png in Resources */,
+				62709BC2192E903A005E6B14 /* FBNoThanksButtonPressed.png in Resources */,
+				62709BC3192E903A005E6B14 /* FBLoginButton.png in Resources */,
+				62709BC4192E903A005E6B14 /* FBLoginButtonPressed.png in Resources */,
+				62709BC5192E903A005E6B14 /* MGWUBackground-Portrait~iphone.png in Resources */,
+				62709BC6192E903A005E6B14 /* MGWUBackground-Portrait@2x~iphone.png in Resources */,
+				62709BC7192E903A005E6B14 /* MGWUBackground-Landscape~iphone.png in Resources */,
+				62709BC8192E903A005E6B14 /* MGWUBackground-Landscape@2x~iphone.png in Resources */,
+				62709BC9192E903A005E6B14 /* MGWUBackgroundDark-Portrait~iphone.png in Resources */,
+				62709BCA192E903A005E6B14 /* MGWUBackgroundDark-Portrait@2x~iphone.png in Resources */,
+				62709BCB192E903A005E6B14 /* MGWUBackgroundDark-Landscape~iphone.png in Resources */,
+				62709BCC192E903A005E6B14 /* MGWUBackgroundDark-Landscape@2x~iphone.png in Resources */,
+				62709BCD192E903A005E6B14 /* MGWUBackground-Portrait~ipad.png in Resources */,
+				62709BCE192E903A005E6B14 /* MGWUBackground-Portrait@2x~ipad.png in Resources */,
+				62709BCF192E903A005E6B14 /* MGWUBackground-Landscape~ipad.png in Resources */,
+				62709BD0192E903A005E6B14 /* MGWUBackground-Landscape@2x~ipad.png in Resources */,
+				62709BD1192E903A005E6B14 /* MGWUBackgroundDark-Portrait~ipad.png in Resources */,
+				62709BD2192E903A005E6B14 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */,
+				62709BD3192E903A005E6B14 /* MGWUBackgroundDark-Landscape~ipad.png in Resources */,
+				62709BD4192E903A005E6B14 /* MGWUBackgroundDark-Landscape@2x~ipad.png in Resources */,
+				62709BD5192E903A005E6B14 /* MGWUAboutFooter-Portrait~iphone.png in Resources */,
+				62709BD6192E903A005E6B14 /* MGWUAboutFooter-Portrait@2x~iphone.png in Resources */,
+				62709BD7192E903A005E6B14 /* MGWUAboutFooter-Landscape~iphone.png in Resources */,
+				62709BD8192E903A005E6B14 /* MGWUAboutFooter-Landscape@2x~iphone.png in Resources */,
+				62709BD9192E903A005E6B14 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png in Resources */,
+				62709BDA192E903A005E6B14 /* MGWUAboutFooter-Portrait~ipad.png in Resources */,
+				62709BDB192E903A005E6B14 /* MGWUAboutFooter-Portrait@2x~ipad.png in Resources */,
+				62709BDC192E903A005E6B14 /* MGWUAboutFooter-Landscape~ipad.png in Resources */,
+				62709BDD192E903A005E6B14 /* MGWUAboutFooter-Landscape@2x~ipad.png in Resources */,
+				62709BDE192E903A005E6B14 /* fb_connect.png in Resources */,
+				62709BDF192E903A005E6B14 /* mgwuPlaceholderIcon.png in Resources */,
+				62709BE0192E903A005E6B14 /* mgwuPlaceholderIconDark.png in Resources */,
+				62709BE1192E903A005E6B14 /* mgwuPlaceholderIcon@2x.png in Resources */,
+				62709BE2192E903A005E6B14 /* mgwuPlaceholderIconDark@2x.png in Resources */,
+				62709BE3192E903A005E6B14 /* mgwuLogo.png in Resources */,
+				62709BE4192E903A005E6B14 /* mgwuLogo@2x.png in Resources */,
+				62709BE5192E903A005E6B14 /* mgwuLogoDark.png in Resources */,
+				62709BE6192E903A005E6B14 /* mgwuLogoDark@2x.png in Resources */,
+				62709BE7192E903A005E6B14 /* FacebookIcon.png in Resources */,
+				62709BE8192E903A005E6B14 /* MGWUClose@2x.png in Resources */,
+				62709BE9192E903A005E6B14 /* MGWUClose.png in Resources */,
+				62709BA3192E902B005E6B14 /* CrossPromoViewController.xib in Resources */,
+				62709BA4192E902B005E6B14 /* MGWUFacebookLoginLandscape.xib in Resources */,
+				62709BA5192E902B005E6B14 /* MGWUFacebookLoginPortrait.xib in Resources */,
+				62709BA6192E902B005E6B14 /* MGWUFacebookLoginLandscapeDark.xib in Resources */,
+				62709BA7192E902B005E6B14 /* MGWUFacebookLoginPortraitDark.xib in Resources */,
+				62709BA8192E902B005E6B14 /* mgwu-gk-notification.png in Resources */,
+				62709BA9192E902B005E6B14 /* mgwu-gk-notification@2x.png in Resources */,
+				62709BAA192E902B005E6B14 /* aqua.png in Resources */,
+				62709BAB192E902B005E6B14 /* bluechatbubble.png in Resources */,
+				62709BAC192E902B005E6B14 /* green.png in Resources */,
+				62709BAD192E902B005E6B14 /* grey-background.png in Resources */,
+				62709BAE192E902B005E6B14 /* hipmob-Info.plist in Resources */,
+				62709BAF192E902B005E6B14 /* hipmob.back.btn.png in Resources */,
+				62709BB0192E902B005E6B14 /* hipmob.send.png in Resources */,
+				62709BB1192E902B005E6B14 /* hipmobsend_field.png in Resources */,
+				62709BB2192E902B005E6B14 /* hipmobsend_field@2x.png in Resources */,
+				62709BB3192E902B005E6B14 /* operator.available.png in Resources */,
+				62709BB4192E902B005E6B14 /* operator.connecting.png in Resources */,
+				62709BB5192E902B005E6B14 /* operator.unavailable.png in Resources */,
+				62709BB6192E902B005E6B14 /* send-button-active.png in Resources */,
+				62709BB7192E902B005E6B14 /* send-button-inactive.png in Resources */,
+				62709BB8192E902B005E6B14 /* send-button-instate.png in Resources */,
+				62709BB9192E902B005E6B14 /* send-field-landscape.png in Resources */,
+				62709B9E192E8FB0005E6B14 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54D718AE15D7883500AB4885 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		54D718B315D7883500AB4885 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n  if [ -n \"$FIND_OPTS\" ]; then\n    FIND_OPTS=\"$FIND_OPTS -o\"\n  fi\n  FIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\n  for ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\n    PUBLIC_HEADER=$(basename $ORIG_HEADER)\n    RELATIVE_PATH=$(dirname $ORIG_HEADER)\n    if [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\n      mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n      mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\n    fi\n  done\nfi\n";
+		};
+		54D718B415D7883500AB4885 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sfh \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
+		};
+		54F0D3FE15DCC9B2002F30FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Remove old framework from git repo\nrm -rf /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework\n\n# Copy latest build to git repo\ncp -R /Users/Ashu/Library/Developer/Xcode/DerivedData/mgwuSDK-drinbkchddjdbdbkaeexwfsiehxn/Build/Products/${CONFIGURATION}-iphoneos/mgwuSDK.embeddedframework /Users/Ashu/Desktop/makegameswithus/mgwuSDK/\n\n# Copy crashlytics script to mgwuSDK\ncp -R /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/Crashlytics.framework/run /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework/mgwuSDK.framework/\n# Copy facebook sdk and crashlytics and hipmob into embeddedframework\n#cp -R /Users/Ashu/Documents/FacebookSDK/FacebookSDKResources.bundle /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework/\n#cp -R /Users/Ashu/Documents/FacebookSDK/FacebookSDK.framework /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework/\n#cp -R /Users/Ashu/Documents/CrashlyticsSDK/Crashlytics.framework /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework/\n#cp -R /Users/Ashu/Documents/HipmobSDK/hipmob.embeddedframework /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework/\n\n# Since this script is run twice, first time through, create archive folder for build\nif [ ! -d \"/Users/Ashu/Desktop/makegameswithus/OldSDKBuilds/$(date +%F_%H.%M)\" ]; then\n  mkdir /Users/Ashu/Desktop/makegameswithus/OldSDKBuilds/$(date +%F_%H.%M)\nelse\n# Second time through copy embedded framework into archive folder\n  cp -R /Users/Ashu/Desktop/makegameswithus/mgwuSDK/mgwuSDK.embeddedframework /Users/Ashu/Desktop/makegameswithus/OldSDKBuilds/$(date +%F_%H.%M)/\n# Copy uncompiled sdk into archive folder\n  cp -R /Users/Ashu/Desktop/mgwuSDK/mgwuSDK /Users/Ashu/Desktop/makegameswithus/OldSDKBuilds/$(date +%F_%H.%M)/\n\n# Increment build number in .m file, awk requires temp file, maybe switch to sed later\n  cp /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/MGWU.m /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.m\n  awk '{if ($1 == \"#define\" && $2 == \"MGWU_BUILD_NUMBER\") printf(\"%s %s %d\\n\", $1, $2, $3 + 1); else print $0;}' /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.m > /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/MGWU.m\n  rm /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.m\n\n# Increment build number in .h file\n  cp /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/MGWU.h /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.h\n  awk '{if ($1 == \"//\" && $2 == \"MGWU_BUILD_NUMBER\") printf(\"%s  %s %d\\n\", $1, $2, $3 + 1); else print $0;}' /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.h > /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/MGWU.h\n  rm /Users/Ashu/Desktop/mgwuSDK/mgwuSDK/tempMGWU.h\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54D718AF15D7883500AB4885 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54D718ED15D7886A00AB4885 /* MGWU.m in Sources */,
+				54D718F015D7886A00AB4885 /* MGWUFBLoginViewController.m in Sources */,
+				54D718F315D7886A00AB4885 /* MGWUJsonParser.m in Sources */,
+				54D718F515D7886A00AB4885 /* MGWUJsonStreamParser.m in Sources */,
+				54D718F715D7886A00AB4885 /* MGWUJsonStreamParserAccumulator.m in Sources */,
+				54D718F915D7886A00AB4885 /* MGWUJsonStreamParserAdapter.m in Sources */,
+				54D718FB15D7886A00AB4885 /* MGWUJsonStreamParserState.m in Sources */,
+				54D718FD15D7886A00AB4885 /* MGWUJsonStreamWriter.m in Sources */,
+				54D718FF15D7886A00AB4885 /* MGWUJsonStreamWriterAccumulator.m in Sources */,
+				54D7190115D7886A00AB4885 /* MGWUJsonStreamWriterState.m in Sources */,
+				54D7190415D7886A00AB4885 /* MGWUJsonUTF8Stream.m in Sources */,
+				54D7190615D7886A00AB4885 /* MGWUJsonWriter.m in Sources */,
+				54D7190715D7886A00AB4885 /* MWGUJsonTokeniser.m in Sources */,
+				54D7191015D7886A00AB4885 /* MGWUSecureUDID.m in Sources */,
+				54D7191215D7886A00AB4885 /* MGWUMBProgressHUD.m in Sources */,
+				54A03D4215E181B5008ACCD4 /* MGWURainbow.m in Sources */,
+				549D38E315F0438A000F7C0B /* MGWUIAPHelper.m in Sources */,
+				549D38F115F0616B000F7C0B /* TJCOpenUDID.m in Sources */,
+				549D38F315F0616B000F7C0B /* TapjoyConnect.m in Sources */,
+				549D390915F06179000F7C0B /* MGWUAppirater.m in Sources */,
+				541ED0C815F9AA47004E6F02 /* CrossPromoViewController.m in Sources */,
+				541ED0CE15F9AB22004E6F02 /* MGWUGameCell.m in Sources */,
+				548ADF64160B9C2C002DC16F /* MGWUNotificationHandler.m in Sources */,
+				548ADF66160B9C2C002DC16F /* MGWUNotification.m in Sources */,
+				542B9F4216B86BD3009724B4 /* AppIconCache.m in Sources */,
+				547D082C17B7F60B00707F4B /* MGWUServerRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709AC6192E7116005E6B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62709B6C192E8343005E6B14 /* AWSRuntime.framework in Sources */,
+				62709B6D192E8343005E6B14 /* AWSS3.framework in Sources */,
+				62709B6E192E8343005E6B14 /* Crashlytics.framework in Sources */,
+				62709B6F192E8343005E6B14 /* FacebookSDK.framework in Sources */,
+				62709B6B192E8318005E6B14 /* hipmob.framework in Sources */,
+				62709AEC192E7176005E6B14 /* MGWU.m in Sources */,
+				62709AED192E7176005E6B14 /* MGWUServerRequest.m in Sources */,
+				62709AEE192E7176005E6B14 /* CrossPromoViewController.m in Sources */,
+				62709AEF192E7176005E6B14 /* AppIconCache.m in Sources */,
+				62709AF0192E7176005E6B14 /* MGWUGameCell.m in Sources */,
+				62709AF1192E7176005E6B14 /* MGWURainbow.m in Sources */,
+				62709AF2192E7176005E6B14 /* MGWUFBLoginViewController.m in Sources */,
+				62709AF3192E7176005E6B14 /* MGWUSecureUDID.m in Sources */,
+				62709AF4192E7176005E6B14 /* MGWUMBProgressHUD.m in Sources */,
+				62709AF5192E7176005E6B14 /* MGWUIAPHelper.m in Sources */,
+				62709AF6192E7176005E6B14 /* MGWUNotificationHandler.m in Sources */,
+				62709AF7192E7176005E6B14 /* MGWUNotification.m in Sources */,
+				62709AF8192E7176005E6B14 /* MGWUAppirater.m in Sources */,
+				62709AF9192E7176005E6B14 /* TJCOpenUDID.m in Sources */,
+				62709AFA192E7176005E6B14 /* TapjoyConnect.m in Sources */,
+				62709AFB192E7176005E6B14 /* MGWUJsonParser.m in Sources */,
+				62709AFC192E7176005E6B14 /* MGWUJsonStreamParser.m in Sources */,
+				62709AFD192E7176005E6B14 /* MGWUJsonStreamParserAccumulator.m in Sources */,
+				62709AFE192E7176005E6B14 /* MGWUJsonStreamParserAdapter.m in Sources */,
+				62709AFF192E7176005E6B14 /* MGWUJsonStreamParserState.m in Sources */,
+				62709B00192E7176005E6B14 /* MGWUJsonStreamWriter.m in Sources */,
+				62709B01192E7176005E6B14 /* MGWUJsonStreamWriterAccumulator.m in Sources */,
+				62709B02192E7176005E6B14 /* MGWUJsonStreamWriterState.m in Sources */,
+				62709B03192E7176005E6B14 /* MGWUJsonUTF8Stream.m in Sources */,
+				62709B04192E7176005E6B14 /* MGWUJsonWriter.m in Sources */,
+				62709B05192E7176005E6B14 /* MWGUJsonTokeniser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709AD3192E7116005E6B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62709B92192E8FB0005E6B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62709ADC192E7116005E6B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62709AC9192E7116005E6B14 /* mgwuSDK_Debug */;
+			targetProxy = 62709ADB192E7116005E6B14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54D718BB15D7883500AB4885 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54D718BC15D7883500AB4885 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		62709B9C192E8FB0005E6B14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62709B9D192E8FB0005E6B14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54D718BF15D7883500AB4885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		54D718C015D7883500AB4885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54D718C215D7883500AB4885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mgwuSDK\"",
+					"\"$(SRCROOT)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK/mgwuSDK-Prefix.pch";
+				INFOPLIST_FILE = "mgwuSDK/mgwuSDK-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				VALID_ARCHS = "armv7 armv7s i386";
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		54D718C315D7883500AB4885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mgwuSDK\"",
+					"\"$(SRCROOT)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK/mgwuSDK-Prefix.pch";
+				INFOPLIST_FILE = "mgwuSDK/mgwuSDK-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				VALID_ARCHS = "armv7 armv7s i386";
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		62709AE7192E7116005E6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEAD_CODE_STRIPPING = YES;
+				DSTROOT = /tmp/mgwuSDK_Debug.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mgwuSDK",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug/mgwuSDK_Debug-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "18D84403-392D-4C50-BA7D-C45F153D06AB";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
+			};
+			name = Debug;
+		};
+		62709AE8192E7116005E6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEAD_CODE_STRIPPING = YES;
+				DSTROOT = /tmp/mgwuSDK_Debug.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mgwuSDK",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug/mgwuSDK_Debug-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "18D84403-392D-4C50-BA7D-C45F153D06AB";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
+			};
+			name = Release;
+		};
+		62709AEA192E7116005E6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mgwuSDK.framework/Versions/A/mgwuSDK";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug/mgwuSDK_Debug-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "mgwuSDK_DebugTests/mgwuSDK_DebugTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		62709AEB192E7116005E6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mgwuSDK.framework/Versions/A/mgwuSDK";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug/mgwuSDK_Debug-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "mgwuSDK_DebugTests/mgwuSDK_DebugTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		62709BA1192E8FB0005E6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug_Resources/mgwuSDK_Debug_Resources-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "mgwuSDK_Debug_Resources/mgwuSDK_Debug_Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		62709BA2192E8FB0005E6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mgwuSDK_Debug_Resources/mgwuSDK_Debug_Resources-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "mgwuSDK_Debug_Resources/mgwuSDK_Debug_Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54D718AC15D7883500AB4885 /* Build configuration list for PBXProject "mgwuSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54D718BF15D7883500AB4885 /* Debug */,
+				54D718C015D7883500AB4885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54D718C115D7883500AB4885 /* Build configuration list for PBXNativeTarget "mgwuSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54D718C215D7883500AB4885 /* Debug */,
+				54D718C315D7883500AB4885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62709AE6192E7116005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_Debug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62709AE7192E7116005E6B14 /* Debug */,
+				62709AE8192E7116005E6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		62709AE9192E7116005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_DebugTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62709AEA192E7116005E6B14 /* Debug */,
+				62709AEB192E7116005E6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		62709BA0192E8FB0005E6B14 /* Build configuration list for PBXNativeTarget "mgwuSDK_Debug_Resources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62709BA1192E8FB0005E6B14 /* Debug */,
+				62709BA2192E8FB0005E6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54D718A915D7883500AB4885 /* Project object */;
+}

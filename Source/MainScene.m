@@ -9,7 +9,7 @@
 #import "MainScene.h"
 #import "CCTableView.h"
 #import "PlayerCell.h"
-#import <mgwuSDK/MGWU.h>
+#import "MGWU.h"
 
 @implementation MainScene {
     CCNode *_tableViewContentNode;
@@ -34,7 +34,7 @@
 #pragma mark - MGWUSDK Callbacks
 
 - (void)loadedUserInfo:(NSDictionary *)userInfo {
-    
+    NSLog(@"Test");
 }
 
 #pragma mark - CCTableViewDataSource Protocol

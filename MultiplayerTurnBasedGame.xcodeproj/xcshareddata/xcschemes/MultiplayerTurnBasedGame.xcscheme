@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-               BuildableName = "MultiplayerTurnBasedGame.app"
+               BuildableName = "SBMutliplayerTemplate.app"
                BlueprintName = "MultiplayerTurnBasedGame"
                ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
             </BuildableReference>
@@ -28,12 +28,22 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "62709AAE192E70EE005E6B14"
+               BuildableName = "mgwuSDK_DebugTests.xctest"
+               BlueprintName = "mgwuSDK_DebugTests"
+               ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
@@ -52,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
@@ -70,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
