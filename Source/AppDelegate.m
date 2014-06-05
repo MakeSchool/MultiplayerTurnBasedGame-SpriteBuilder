@@ -55,7 +55,7 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
-    [MGWU loadMGWU:@"SBMutliplayerTemplate"];
+    [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
     
     return YES;
 }

@@ -16,6 +16,8 @@
     CCTableView *_tableView;
 }
 
+#pragma mark - Lifecycle
+
 - (void)didLoadFromCCB {
     _tableView = [[CCTableView alloc] init];
     [_tableViewContentNode addChild:_tableView];
@@ -35,6 +37,10 @@
 
 - (void)loadedUserInfo:(NSDictionary *)userInfo {
   NSLog(@"User Info");
+}
+
+- (void)receivedRandomGame:(NSDictionary *)gameInfo {
+  NSLog(@"Game Info");
 }
 
 #pragma mark - CCTableViewDataSource Protocol
@@ -60,6 +66,13 @@
 
 - (void)tableViewCellSelected:(CCTableViewCell*)sender {
     CCLOG(@"Index selected:%d", _tableView.selectedRow);
+    [MGWU getMyInfoWithCallback:@selector(loadedUserInfo:) onTarget:self];
+}
+
+#pragma mark - Button Callbacks
+
+- (void)playNow {
+  [MGWU getRandomGameWithCallback:@selector(receivedRandomGame:) onTarget:self];
 }
 
 @end
