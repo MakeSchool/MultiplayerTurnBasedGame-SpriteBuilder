@@ -34,7 +34,7 @@
 #pragma mark - MGWUSDK Callbacks
 
 - (void)loadedUserInfo:(NSDictionary *)userInfo {
-    
+  NSLog(@"User Info");
 }
 
 #pragma mark - CCTableViewDataSource Protocol

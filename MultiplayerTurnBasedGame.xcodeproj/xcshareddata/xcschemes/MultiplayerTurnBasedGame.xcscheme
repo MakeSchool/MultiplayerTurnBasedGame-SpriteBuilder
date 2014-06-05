@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-               BuildableName = "MultiplayerTurnBasedGame.app"
+               BuildableName = "SBMutliplayerTemplate.app"
                BlueprintName = "MultiplayerTurnBasedGame"
                ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "MultiplayerTurnBasedGame.app"
+            BuildableName = "SBMutliplayerTemplate.app"
             BlueprintName = "MultiplayerTurnBasedGame"
             ReferencedContainer = "container:MultiplayerTurnBasedGame.xcodeproj">
          </BuildableReference>
