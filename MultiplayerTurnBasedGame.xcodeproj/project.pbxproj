@@ -96,6 +96,8 @@
 		624B46A619412FBC00A81B57 /* send-button-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 624B456F1940E90400A81B57 /* send-button-inactive.png */; };
 		624B46A719412FBC00A81B57 /* send-button-instate.png in Resources */ = {isa = PBXBuildFile; fileRef = 624B45701940E90400A81B57 /* send-button-instate.png */; };
 		624B46A819412FBC00A81B57 /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 624B45711940E90400A81B57 /* send-field-landscape.png */; };
+		62C4F43619427DD80047553C /* PreMatchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C4F43519427DD80047553C /* PreMatchScene.m */; };
+		62C4F43A19427F9E0047553C /* GuessScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C4F43919427F9E0047553C /* GuessScene.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -235,6 +237,10 @@
 		624B45BD1940EAE800A81B57 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		624B45BF1940EB3F00A81B57 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		624B45C11940EB5E00A81B57 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		62C4F43419427DD80047553C /* PreMatchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreMatchScene.h; path = Source/PreMatchScene.h; sourceTree = "<group>"; };
+		62C4F43519427DD80047553C /* PreMatchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreMatchScene.m; path = Source/PreMatchScene.m; sourceTree = "<group>"; };
+		62C4F43819427F9E0047553C /* GuessScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuessScene.h; path = Source/GuessScene.h; sourceTree = "<group>"; };
+		62C4F43919427F9E0047553C /* GuessScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuessScene.m; path = Source/GuessScene.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -411,6 +417,10 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				62468AC1192D6EEE00E41128 /* PlayerCell.h */,
 				62468AC2192D6EEE00E41128 /* PlayerCell.m */,
+				62C4F43419427DD80047553C /* PreMatchScene.h */,
+				62C4F43519427DD80047553C /* PreMatchScene.m */,
+				62C4F43819427F9E0047553C /* GuessScene.h */,
+				62C4F43919427F9E0047553C /* GuessScene.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -694,6 +704,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				62468AC3192D6EEE00E41128 /* PlayerCell.m in Sources */,
+				62C4F43619427DD80047553C /* PreMatchScene.m in Sources */,
+				62C4F43A19427F9E0047553C /* GuessScene.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,

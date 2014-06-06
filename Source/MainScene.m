@@ -14,6 +14,7 @@
 @implementation MainScene {
     CCNode *_tableViewContentNode;
     CCTableView *_tableView;
+    CCTextField *_textField;
 }
 
 #pragma mark - Lifecycle
@@ -41,6 +42,8 @@
 
 - (void)receivedRandomGame:(NSDictionary *)gameInfo {
   NSLog(@"Game Info");
+  CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+  [[CCDirector sharedDirector] pushScene:scene];
 }
 
 #pragma mark - CCTableViewDataSource Protocol
