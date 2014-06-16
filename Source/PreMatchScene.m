@@ -11,7 +11,7 @@
 @implementation PreMatchScene
 
 - (void)startGame {
-  CCScene *guessScene = [CCBReader loadAsScene:@"GuessScene"];
+  CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
   [[CCDirector sharedDirector] pushScene:guessScene];
 }
 
