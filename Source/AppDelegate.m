@@ -28,8 +28,12 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 #import <mgwuSDK/MGWU.h>
+#import "UserInfo.h"
+#import "MainScene.h"
 
-@implementation AppController
+@implementation AppController {
+  CCScene *_startScene;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -52,11 +56,13 @@
     
     // Do any extra configuration of Cocos2d here (the example line changes the pixel format for faster rendering, but with less colors)
     //[cocos2dSetup setObject:kEAGLColorFormatRGB565 forKey:CCConfigPixelFormat];
-    
+  
     [self setupCocos2dWithOptions:cocos2dSetup];
-    
+  
     [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
-    
+    MainScene *mainScene = _startScene.children[0];
+    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:mainScene];
+  
     return YES;
 }
 
@@ -67,7 +73,9 @@
 
 - (CCScene*) startScene
 {
-    return [CCBReader loadAsScene:@"MainScene"];
+  _startScene = [CCBReader loadAsScene:@"MainScene"];
+  
+  return _startScene;
 }
 
 @end

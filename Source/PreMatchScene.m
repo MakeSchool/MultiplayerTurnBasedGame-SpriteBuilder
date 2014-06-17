@@ -7,12 +7,26 @@
 //
 
 #import "PreMatchScene.h"
+#import <mgwuSDK/MGWU.h>
+#import "UserInfo.h"
 
-@implementation PreMatchScene
+@implementation PreMatchScene {
+  CCLabelTTF *_playerNameLabel;
+  CCLabelTTF *_opponentNameLabel;
+}
 
 - (void)startGame {
   CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
   [[CCDirector sharedDirector] pushScene:guessScene];
+}
+
+- (void)onEnter {
+  [super onEnter];
+  
+  NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
+  
+  _playerNameLabel.string = [UserInfo sharedUserInfo].name;
+  _opponentNameLabel.string = self.game[@"opponent"];
 }
 
 @end

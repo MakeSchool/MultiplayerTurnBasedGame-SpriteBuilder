@@ -10,4 +10,6 @@
 
 @interface PreMatchScene : CCNode
 
+@property (nonatomic, copy) NSDictionary *game;
+
 @end

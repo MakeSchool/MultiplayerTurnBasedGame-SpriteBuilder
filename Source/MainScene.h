@@ -10,4 +10,6 @@
 
 @interface MainScene : CCNode <CCTableViewDataSource>
 
+- (void)loadedUserInfo:(NSDictionary *)userInfo;
+
 @end

@@ -10,6 +10,8 @@
 #import "CCTableView.h"
 #import "PlayerCell.h"
 #import <mgwuSDK/MGWU.h>
+#import "PreMatchScene.h"
+#import "UserInfo.h"
 
 @implementation MainScene {
     CCNode *_tableViewContentNode;
@@ -30,8 +32,7 @@
 
 - (void)onEnterTransitionDidFinish {
     [super onEnterTransitionDidFinish];
-    
-    [MGWU getMyInfoWithCallback:@selector(loadedUserInfo:) onTarget:self];
+  
 }
 
 #pragma mark - MGWUSDK Callbacks
@@ -41,8 +42,16 @@
 }
 
 - (void)receivedRandomGame:(NSDictionary *)gameInfo {
-  NSLog(@"Game Info");
+
+  if (gameInfo[@"gameid"]) {
+    // if server returns game, continue that game
+  } else {
+    // if the server responds with no existing random game, start a new one
+  }
+  
   CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+  PreMatchScene *prematchScene = scene.children[0];
+  prematchScene.game = gameInfo;
   [[CCDirector sharedDirector] pushScene:scene];
 }
 
@@ -69,7 +78,7 @@
 
 - (void)tableViewCellSelected:(CCTableViewCell*)sender {
     CCLOG(@"Index selected:%d", _tableView.selectedRow);
-    [MGWU getMyInfoWithCallback:@selector(loadedUserInfo:) onTarget:self];
+  [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
 }
 
 #pragma mark - Button Callbacks
