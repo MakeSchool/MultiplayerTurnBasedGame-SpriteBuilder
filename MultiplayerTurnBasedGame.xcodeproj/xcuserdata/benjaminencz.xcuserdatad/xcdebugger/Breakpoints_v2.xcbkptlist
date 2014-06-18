@@ -16,32 +16,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/MainScene.m"
-            timestampString = "424726516.416709"
+            timestampString = "424749948.642881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-loadedUserInfo:"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-tableView:heightForRowAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/UserInfo.m"
-            timestampString = "424726738.767082"
+            filePath = "Source/MainScene.m"
+            timestampString = "424749948.642881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-refreshCompleted:"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-tableViewNumberOfRows:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

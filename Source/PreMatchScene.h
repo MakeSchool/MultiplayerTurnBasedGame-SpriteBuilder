@@ -7,6 +7,7 @@
 //
 
 #import "CCScene.h"
+#import "GameplayScene.h"
 
 @interface PreMatchScene : CCNode
 

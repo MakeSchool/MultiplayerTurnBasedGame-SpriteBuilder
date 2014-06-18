@@ -17,6 +17,10 @@
 
 - (void)startGame {
   CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
+  
+  GameplayScene *gameplayScene = guessScene.children[0];
+  gameplayScene.game = self.game;
+  
   [[CCDirector sharedDirector] pushScene:guessScene];
 }
 

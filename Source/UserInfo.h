@@ -12,6 +12,10 @@
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *username;
+@property (nonatomic, strong) NSMutableArray *gamesTheirTurn;
+@property (nonatomic, strong) NSMutableArray *gamesYourTurn;
+@property (nonatomic, strong) NSMutableArray *gamesCompleted;
+@property (nonatomic, strong) NSMutableArray *allGames;
 
 + (instancetype)sharedUserInfo;
 
