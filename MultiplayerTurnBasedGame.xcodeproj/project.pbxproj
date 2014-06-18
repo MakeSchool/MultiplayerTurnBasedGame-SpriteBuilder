@@ -20,6 +20,18 @@
 		62468B65192D754B00E41128 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62468B64192D754B00E41128 /* StoreKit.framework */; };
 		62468B67192D755600E41128 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62468B66192D755600E41128 /* SystemConfiguration.framework */; };
 		62468B69192D756200E41128 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62468B68192D756200E41128 /* Twitter.framework */; };
+		625C135919524E3700FAD9FD /* SectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C135119524E3700FAD9FD /* SectionCell.m */; };
+		625C135A19524E3700FAD9FD /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C135319524E3700FAD9FD /* UserInfo.m */; };
+		625C135B19524E3700FAD9FD /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C135619524E3700FAD9FD /* GameplayScene.m */; };
+		625C135C19524E3700FAD9FD /* PreMatchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C135819524E3700FAD9FD /* PreMatchScene.m */; };
+		625C135F1952503200FAD9FD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C135E1952503200FAD9FD /* GLKit.framework */; };
+		625C1362195252F900FAD9FD /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C1360195252F900FAD9FD /* Tapjoy.framework */; };
+		625C1363195252F900FAD9FD /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 625C1361195252F900FAD9FD /* TapjoyResources.bundle */; };
+		625C13651952531300FAD9FD /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C13641952531300FAD9FD /* EventKit.framework */; };
+		625C13671952531B00FAD9FD /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C13661952531B00FAD9FD /* EventKitUI.framework */; };
+		625C13691952532700FAD9FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C13681952532700FAD9FD /* CoreLocation.framework */; };
+		625C136B1952535600FAD9FD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C136A1952535600FAD9FD /* MediaPlayer.framework */; };
+		625C136D1952536800FAD9FD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625C136C1952536800FAD9FD /* CoreMotion.framework */; };
 		62709B77192E843F005E6B14 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62709B72192E843F005E6B14 /* AWSRuntime.framework */; };
 		62709B78192E843F005E6B14 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62709B73192E843F005E6B14 /* AWSS3.framework */; };
 		62709B79192E843F005E6B14 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62709B74192E843F005E6B14 /* Crashlytics.framework */; };
@@ -129,8 +141,6 @@
 		62709CE3192E9196005E6B14 /* send-button-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 62709C72192E9196005E6B14 /* send-button-inactive.png */; };
 		62709CE4192E9196005E6B14 /* send-button-instate.png in Resources */ = {isa = PBXBuildFile; fileRef = 62709C73192E9196005E6B14 /* send-button-instate.png */; };
 		62709CE5192E9196005E6B14 /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 62709C74192E9196005E6B14 /* send-field-landscape.png */; };
-		62709CE6192E9196005E6B14 /* TJCOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 62709C79192E9196005E6B14 /* TJCOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		62709CE7192E9196005E6B14 /* TapjoyConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 62709C7B192E9196005E6B14 /* TapjoyConnect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -193,6 +203,23 @@
 		62468B64192D754B00E41128 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		62468B66192D755600E41128 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		62468B68192D756200E41128 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		625C135019524E3600FAD9FD /* SectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionCell.h; path = Source/SectionCell.h; sourceTree = "<group>"; };
+		625C135119524E3700FAD9FD /* SectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionCell.m; path = Source/SectionCell.m; sourceTree = "<group>"; };
+		625C135219524E3700FAD9FD /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Source/UserInfo.h; sourceTree = "<group>"; };
+		625C135319524E3700FAD9FD /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Source/UserInfo.m; sourceTree = "<group>"; };
+		625C135419524E3700FAD9FD /* GameDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDataUtils.h; path = Source/GameDataUtils.h; sourceTree = "<group>"; };
+		625C135519524E3700FAD9FD /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayScene.h; path = Source/GameplayScene.h; sourceTree = "<group>"; };
+		625C135619524E3700FAD9FD /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayScene.m; path = Source/GameplayScene.m; sourceTree = "<group>"; };
+		625C135719524E3700FAD9FD /* PreMatchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreMatchScene.h; path = Source/PreMatchScene.h; sourceTree = "<group>"; };
+		625C135819524E3700FAD9FD /* PreMatchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreMatchScene.m; path = Source/PreMatchScene.m; sourceTree = "<group>"; };
+		625C135E1952503200FAD9FD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		625C1360195252F900FAD9FD /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
+		625C1361195252F900FAD9FD /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		625C13641952531300FAD9FD /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		625C13661952531B00FAD9FD /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		625C13681952532700FAD9FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		625C136A1952535600FAD9FD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		625C136C1952536800FAD9FD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		62709AB0192E70EE005E6B14 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		62709B72192E843F005E6B14 /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSRuntime.framework; sourceTree = "<group>"; };
 		62709B73192E843F005E6B14 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
@@ -328,12 +355,6 @@
 		62709C72192E9196005E6B14 /* send-button-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-button-inactive.png"; sourceTree = "<group>"; };
 		62709C73192E9196005E6B14 /* send-button-instate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-button-instate.png"; sourceTree = "<group>"; };
 		62709C74192E9196005E6B14 /* send-field-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-field-landscape.png"; sourceTree = "<group>"; };
-		62709C78192E9196005E6B14 /* TJCOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCOpenUDID.h; sourceTree = "<group>"; };
-		62709C79192E9196005E6B14 /* TJCOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJCOpenUDID.m; sourceTree = "<group>"; };
-		62709C7A192E9196005E6B14 /* TapjoyConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnect.h; sourceTree = "<group>"; };
-		62709C7B192E9196005E6B14 /* TapjoyConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapjoyConnect.m; sourceTree = "<group>"; };
-		62709C7C192E9196005E6B14 /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
-		62709C7D192E9196005E6B14 /* TJCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCConfig.h; sourceTree = "<group>"; };
 		62709CE8192E92F1005E6B14 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = FacebookSDK.framework/Versions/A/DeprecatedHeaders/Facebook.h; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -375,6 +396,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625C136D1952536800FAD9FD /* CoreMotion.framework in Frameworks */,
+				625C136B1952535600FAD9FD /* MediaPlayer.framework in Frameworks */,
+				625C13691952532700FAD9FD /* CoreLocation.framework in Frameworks */,
+				625C13671952531B00FAD9FD /* EventKitUI.framework in Frameworks */,
+				625C13651952531300FAD9FD /* EventKit.framework in Frameworks */,
+				625C135F1952503200FAD9FD /* GLKit.framework in Frameworks */,
 				62468B69192D756200E41128 /* Twitter.framework in Frameworks */,
 				62468B67192D755600E41128 /* SystemConfiguration.framework in Frameworks */,
 				62709CA4192E9196005E6B14 /* hipmob.framework in Frameworks */,
@@ -385,6 +412,7 @@
 				62468B5F192D753000E41128 /* MessageUI.framework in Frameworks */,
 				62468B5D192D74EA00E41128 /* libicucore.dylib in Frameworks */,
 				62468B5B192D74E000E41128 /* CoreTelephony.framework in Frameworks */,
+				625C1362195252F900FAD9FD /* Tapjoy.framework in Frameworks */,
 				62468B59192D74DA00E41128 /* CFNetwork.framework in Frameworks */,
 				62468B57192D74CF00E41128 /* AdSupport.framework in Frameworks */,
 				62709C95192E9196005E6B14 /* FacebookSDK.framework in Frameworks */,
@@ -415,6 +443,12 @@
 		62709B71192E843F005E6B14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				625C136C1952536800FAD9FD /* CoreMotion.framework */,
+				625C136A1952535600FAD9FD /* MediaPlayer.framework */,
+				625C13681952532700FAD9FD /* CoreLocation.framework */,
+				625C13661952531B00FAD9FD /* EventKitUI.framework */,
+				625C13641952531300FAD9FD /* EventKit.framework */,
+				625C135E1952503200FAD9FD /* GLKit.framework */,
 				62709B72192E843F005E6B14 /* AWSRuntime.framework */,
 				62709B73192E843F005E6B14 /* AWSS3.framework */,
 				62709B74192E843F005E6B14 /* Crashlytics.framework */,
@@ -427,6 +461,8 @@
 		62709BEE192E9196005E6B14 /* mgwuSDK */ = {
 			isa = PBXGroup;
 			children = (
+				625C1360195252F900FAD9FD /* Tapjoy.framework */,
+				625C1361195252F900FAD9FD /* TapjoyResources.bundle */,
 				62709CE8192E92F1005E6B14 /* Facebook.h */,
 				62709BEF192E9196005E6B14 /* AppIconCache.h */,
 				62709BF0192E9196005E6B14 /* AppIconCache.m */,
@@ -529,7 +565,6 @@
 				62709C72192E9196005E6B14 /* send-button-inactive.png */,
 				62709C73192E9196005E6B14 /* send-button-instate.png */,
 				62709C74192E9196005E6B14 /* send-field-landscape.png */,
-				62709C75192E9196005E6B14 /* TapjoyConnect */,
 			);
 			name = mgwuSDK;
 			path = Source/mgwuSDK;
@@ -595,35 +630,6 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		62709C75192E9196005E6B14 /* TapjoyConnect */ = {
-			isa = PBXGroup;
-			children = (
-				62709C76192E9196005E6B14 /* Components */,
-				62709C7A192E9196005E6B14 /* TapjoyConnect.h */,
-				62709C7B192E9196005E6B14 /* TapjoyConnect.m */,
-				62709C7C192E9196005E6B14 /* TapjoyConnectConstants.h */,
-				62709C7D192E9196005E6B14 /* TJCConfig.h */,
-			);
-			path = TapjoyConnect;
-			sourceTree = "<group>";
-		};
-		62709C76192E9196005E6B14 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				62709C77192E9196005E6B14 /* TJCExtensions */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		62709C77192E9196005E6B14 /* TJCExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				62709C78192E9196005E6B14 /* TJCOpenUDID.h */,
-				62709C79192E9196005E6B14 /* TJCOpenUDID.m */,
-			);
-			path = TJCExtensions;
-			sourceTree = "<group>";
-		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +641,15 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				625C135019524E3600FAD9FD /* SectionCell.h */,
+				625C135119524E3700FAD9FD /* SectionCell.m */,
+				625C135219524E3700FAD9FD /* UserInfo.h */,
+				625C135319524E3700FAD9FD /* UserInfo.m */,
+				625C135419524E3700FAD9FD /* GameDataUtils.h */,
+				625C135519524E3700FAD9FD /* GameplayScene.h */,
+				625C135619524E3700FAD9FD /* GameplayScene.m */,
+				625C135719524E3700FAD9FD /* PreMatchScene.h */,
+				625C135819524E3700FAD9FD /* PreMatchScene.m */,
 				62709BEE192E9196005E6B14 /* mgwuSDK */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
@@ -895,6 +910,7 @@
 				62709CA2192E9196005E6B14 /* hipmob-Info.plist in Resources */,
 				62709CC5192E9196005E6B14 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */,
 				62709CE5192E9196005E6B14 /* send-field-landscape.png in Resources */,
+				625C1363195252F900FAD9FD /* TapjoyResources.bundle in Resources */,
 				62709CC8192E9196005E6B14 /* MGWUBackgroundDark-Portrait~iphone.png in Resources */,
 				62709C99192E9196005E6B14 /* FBLoginButton@2x.png in Resources */,
 				62709CA5192E9196005E6B14 /* hipmob.send.png in Resources */,
@@ -925,12 +941,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				62468AC3192D6EEE00E41128 /* PlayerCell.m in Sources */,
+				625C135919524E3700FAD9FD /* SectionCell.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				62709CD0192E9196005E6B14 /* MGWUGameCell.m in Sources */,
 				62709C8E192E9196005E6B14 /* MGWUJsonWriter.m in Sources */,
 				62709CD1192E9196005E6B14 /* MGWUIAPHelper.m in Sources */,
 				62709C80192E9196005E6B14 /* MGWUAppirater.m in Sources */,
 				62709C7E192E9196005E6B14 /* AppIconCache.m in Sources */,
+				625C135C19524E3700FAD9FD /* PreMatchScene.m in Sources */,
 				62709C91192E9196005E6B14 /* CrossPromoViewController.m in Sources */,
 				62709C87192E9196005E6B14 /* MGWUJsonStreamParserAccumulator.m in Sources */,
 				62709C86192E9196005E6B14 /* MGWUJsonStreamParser.m in Sources */,
@@ -939,19 +957,19 @@
 				62709CAC192E9196005E6B14 /* MGWUNotificationHandler.m in Sources */,
 				62709C8C192E9196005E6B14 /* MGWUJsonStreamWriterState.m in Sources */,
 				62709CDD192E9196005E6B14 /* MGWUSecureUDID.m in Sources */,
+				625C135A19524E3700FAD9FD /* UserInfo.m in Sources */,
 				62709C8F192E9196005E6B14 /* MWGUJsonTokeniser.m in Sources */,
 				62709CCF192E9196005E6B14 /* MGWUFBLoginViewController.m in Sources */,
 				62709CDB192E9196005E6B14 /* MGWURainbow.m in Sources */,
 				62709C8B192E9196005E6B14 /* MGWUJsonStreamWriterAccumulator.m in Sources */,
 				62709C88192E9196005E6B14 /* MGWUJsonStreamParserAdapter.m in Sources */,
-				62709CE6192E9196005E6B14 /* TJCOpenUDID.m in Sources */,
+				625C135B19524E3700FAD9FD /* GameplayScene.m in Sources */,
 				62709CAF192E9196005E6B14 /* MGWU.m in Sources */,
 				62709C89192E9196005E6B14 /* MGWUJsonStreamParserState.m in Sources */,
 				62709CDE192E9196005E6B14 /* MGWUServerRequest.m in Sources */,
 				62709C8D192E9196005E6B14 /* MGWUJsonUTF8Stream.m in Sources */,
 				62709C8A192E9196005E6B14 /* MGWUJsonStreamWriter.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
-				62709CE7192E9196005E6B14 /* TapjoyConnect.m in Sources */,
 				62709C85192E9196005E6B14 /* MGWUJsonParser.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
@@ -1049,7 +1067,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Source/Frameworks/mgwuSDK.embeddedframework",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Source/mgwuSDK",
 				);
@@ -1090,7 +1107,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Source/Frameworks/mgwuSDK.embeddedframework",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Source/mgwuSDK",
 				);

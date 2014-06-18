@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 makegameswithus inc. All rights reserved.
 //
 
-#define MGWU_BUILD_NUMBER 428
+#define MGWU_BUILD_NUMBER 474
 
 #import <CommonCrypto/CommonCryptor.h>
 #import <CommonCrypto/CommonDigest.h>
@@ -22,7 +22,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <hipmob/hipmob.h>
 #import <AWSS3/AWSS3.h>
-#import "TapjoyConnect.h"
+#import <Tapjoy/Tapjoy.h>
 #import "MGWUAppirater.h"
 #endif
 
@@ -106,6 +106,7 @@ static BOOL noFacebook;
 static BOOL noFacebookPrompt;
 static BOOL preFacebook;
 static BOOL noOpenGraph;
+static NSMutableArray *facebookPermissions;
 static int numOpens;
 static NSNumber *build;
 static UIBackgroundTaskIdentifier bgTask;
@@ -235,6 +236,10 @@ static AmazonS3Client *s3;
 	preFacebook = FALSE;
 	noFacebookPrompt = FALSE;
 	
+	facebookPermissions = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbpermissions"];
+	if (!facebookPermissions)
+		facebookPermissions = [NSMutableArray arrayWithArray:@[@"email", @"publish_actions", @"user_friends"]];
+	
 	me = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbobject_self"];
 	username = [me objectForKey:@"username"];
 	if (!username)
@@ -329,6 +334,12 @@ static AmazonS3Client *s3;
 {
 	noFacebookPrompt = TRUE;
 }
+	
++ (void)setExtraFacebookPermissions:(NSArray*)permissions
+{
+	[facebookPermissions addObjectsFromArray:permissions];
+	
+}
 
 + (void)useIAPs
 {
@@ -411,7 +422,7 @@ static AmazonS3Client *s3;
 #ifndef APPORTABLE //APPORTABLE TODO: replace with android tapjoy
 	NSAssert(tapappid && tapseckey, @"[MGWU] Need AppID and Secret Key");
 	
-	[TapjoyConnect requestTapjoyConnect:tapappid secretKey:tapseckey];
+	[Tapjoy requestTapjoyConnect:tapappid secretKey:tapseckey];
 #endif
 }
 
@@ -489,11 +500,8 @@ static AmazonS3Client *s3;
 	
 	if (!FBSession.activeSession.isOpen) {
 		
-		NSArray *perms = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbpermissions"];
-		if (!perms)
-			perms = @[@"email", @"publish_actions", @"user_friends"];
         // create a fresh session object
-        FBSession.activeSession = [[FBSession alloc] initWithPermissions:perms];
+        FBSession.activeSession = [[FBSession alloc] initWithPermissions:facebookPermissions];
         
         // if we don't have a cached token, a call to open here would cause UX for login to
         // occur; we don't want that to happen unless the user clicks the login button, and so
@@ -515,6 +523,11 @@ static AmazonS3Client *s3;
 				fbtoken = FBSession.activeSession.accessToken;
 				long long time = [FBSession.activeSession.expirationDate timeIntervalSince1970];
 				fbexp = [NSNumber numberWithLongLong:time];
+				
+				NSString *fields = @"id,name";
+				for (NSString *p in facebookPermissions)
+					if ([p rangeOfString:@"friends_"].location != NSNotFound)
+						fields = [fields stringByAppendingFormat:@",%@", [[[p stringByReplacingOccurrencesOfString:@"friends_" withString:@""] stringByReplacingOccurrencesOfString:@"_me" withString:@""] stringByReplacingOccurrencesOfString:@"_history" withString:@""]];
 
 				[[NSUserDefaults standardUserDefaults] setObject:fbtoken forKey:@"mgwu_fbtoken"];
 				[[NSUserDefaults standardUserDefaults] setObject:fbexp forKey:@"mgwu_fbexp"];
@@ -525,30 +538,17 @@ static AmazonS3Client *s3;
 				[c addRequest:r1 completionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 					if (result)
 					{
-						
-						if ([[result allKeys] containsObject:@"username"])
-						{
-							[result setObject:[[result objectForKey:@"username"] stringByReplacingOccurrencesOfString:@"." withString:@"_"] forKey:@"username"];
-							username = [result objectForKey:@"username"];
-						}
-						else
-							username = [result objectForKey:@"id"];
-						
+						username = [result objectForKey:@"id"];
 						me = result;
 						[[NSUserDefaults standardUserDefaults] setObject:result forKey:@"mgwu_fbobject_self"];
-						
-						//NSLog(@"got self");
 					}
 				}];
 				
-				FBRequest *r2 = [[FBRequest alloc] initWithSession:FBSession.activeSession graphPath:@"me/friends" parameters:@{ @"fields" : @"id,name,username,installed,devices" } HTTPMethod:nil];
-				
+				FBRequest *r2 = [[FBRequest alloc] initWithSession:FBSession.activeSession graphPath:@"me/friends" parameters:@{ @"fields" : fields } HTTPMethod:nil];
 				[c addRequest:r2 completionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 					if (result)
 					{
 						NSMutableArray* friendsPlaying = [[NSMutableArray alloc] init];
-						NSMutableArray* friendsToInvite = [[NSMutableArray alloc] init];
-						NSMutableDictionary* usernameToId = [[NSMutableDictionary alloc] init];
 						NSMutableArray *friendsPlayingGame = [[NSMutableArray alloc] init];
 						
 						NSArray *dd = [result objectForKey:@"data"];
@@ -561,46 +561,15 @@ static AmazonS3Client *s3;
 						
 						for (NSMutableDictionary *f in d)
 						{
-							if (![[f allKeys] containsObject:@"username"])
-								[f setObject:[f objectForKey:@"id"] forKey:@"username"];
-							else
-								[f setObject:[[f objectForKey:@"username"] stringByReplacingOccurrencesOfString:@"." withString:@"_"] forKey:@"username"];
+							[f setObject:[f objectForKey:@"id"] forKey:@"username"];
 							
-							[usernameToId setObject:[f objectForKey:@"id"] forKey:[f objectForKey:@"username"]];
-							
-							if ([[f allKeys] containsObject:@"installed"] && [[f objectForKey:@"installed"] boolValue] == YES)
-							{
-								[friendsPlaying addObject:[f objectForKey:@"id"]];
-								[f removeObjectForKey:@"id"];
-								[friendsPlayingGame addObject:f];
-							}
-							else
-							{
-								for (NSDictionary *d in [f objectForKey:@"devices"])
-								{
-#ifndef APPORTABLE
-									if ([[d objectForKey:@"os"] isEqualToString:@"iOS"])
-									{
-										[f removeObjectForKey:@"id"];
-										[friendsToInvite addObject:f];
-										break;
-									}
-#else
-									if ([[d objectForKey:@"os"] isEqualToString:@"iOS"] || [[d objectForKey:@"os"] isEqualToString:@"Android"])
-									{
-										[f removeObjectForKey:@"id"];
-										[friendsToInvite addObject:f];
-										break;
-									}
-#endif
-								}
-							}
+							[friendsPlaying addObject:[f objectForKey:@"id"]];
+							[f removeObjectForKey:@"id"];
+							[friendsPlayingGame addObject:f];
 						}
 						
 						[[NSUserDefaults standardUserDefaults] setObject:friendsPlayingGame forKey:@"mgwu_friendsplayinggame"];
 						[[NSUserDefaults standardUserDefaults] setObject:friendsPlaying forKey:@"mgwu_friendsplaying"];
-						[[NSUserDefaults standardUserDefaults] setObject:friendsToInvite forKey:@"mgwu_friendstoinvite"];
-						[[NSUserDefaults standardUserDefaults] setObject:usernameToId forKey:@"mgwu_usernametoid"];
 						[[NSUserDefaults standardUserDefaults] synchronize];
 						//NSLog(@"got friends");
 					}
@@ -674,8 +643,7 @@ static AmazonS3Client *s3;
 		[NSURLConnection connectionWithRequest:request delegate:nil];
 		
 		NSDictionary *event_params;
-		NSArray *perms = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbpermissions"];
-		if (perms && [perms containsObject:@"publish_actions"])
+		if ([facebookPermissions containsObject:@"publish_actions"])
 			event_params = @{@"publish_permission":@TRUE};
 		else
 			event_params = @{@"publish_permission":@FALSE};
@@ -702,11 +670,8 @@ static AmazonS3Client *s3;
 {
 	[MGWU logEvent:@"facebook_login_tapped"];
 	
-	NSArray *perms = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbpermissions"];
-	if (!perms)
-		perms = @[@"email", @"publish_actions", @"user_friends"];
 	// create a fresh session object
-	FBSession.activeSession = [[FBSession alloc] initWithPermissions:perms];
+	FBSession.activeSession = [[FBSession alloc] initWithPermissions:facebookPermissions];
 	
 	[FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
 														 FBSessionState status,
@@ -752,24 +717,20 @@ static AmazonS3Client *s3;
 		[[NSUserDefaults standardUserDefaults] setObject:fbtoken forKey:@"mgwu_fbtoken"];
 		[[NSUserDefaults standardUserDefaults] setObject:fbexp forKey:@"mgwu_fbexp"];
 		
+		NSString *fields = @"id,name";
+		for (NSString *p in facebookPermissions)
+			if ([p rangeOfString:@"friends_"].location != NSNotFound)
+				fields = [fields stringByAppendingFormat:@",%@", [[[p stringByReplacingOccurrencesOfString:@"friends_" withString:@""] stringByReplacingOccurrencesOfString:@"_me" withString:@""] stringByReplacingOccurrencesOfString:@"_history" withString:@""]];
+		
 		FBRequestConnection *c = [[FBRequestConnection alloc] init];
 		
 		FBRequest *r1 = [FBRequest requestForMe];
 		[c addRequest:r1 completionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 			if (result)
 			{
-				if ([[result allKeys] containsObject:@"username"])
-				{
-					[result setObject:[[result objectForKey:@"username"] stringByReplacingOccurrencesOfString:@"." withString:@"_"] forKey:@"username"];
-					username = [result objectForKey:@"username"];
-				}
-				else
-					username = [result objectForKey:@"id"];
-				
+				username = [result objectForKey:@"id"];
 				me = result;
 				[[NSUserDefaults standardUserDefaults] setObject:result forKey:@"mgwu_fbobject_self"];
-				
-				//NSLog(@"got self");
 			}
 		}];
 		
@@ -777,27 +738,22 @@ static AmazonS3Client *s3;
 		[c addRequest:r3 completionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 			if (result)
 			{
-				NSDictionary *p = [[result objectForKey:@"data"] objectAtIndex:0];
-				NSMutableArray *perms = [[NSMutableArray alloc] init];
-				if ([[p allKeys] containsObject:@"email"])
-					[perms addObject:@"email"];
-				if ([[p allKeys] containsObject:@"publish_actions"])
-					[perms addObject:@"publish_actions"];
-				[[NSUserDefaults standardUserDefaults] setObject:perms forKey:@"mgwu_fbpermissions"];
+				NSArray *d = [result objectForKey:@"data"];
+				facebookPermissions = [[NSMutableArray alloc] init];
+				for (NSDictionary *p in d)
+					if ([[p objectForKey:@"status"] isEqualToString:@"granted"] && ![[p objectForKey:@"permission"] isEqualToString:@"installed"] && ![[p objectForKey:@"permission"] isEqualToString:@"public_profile"])
+						[facebookPermissions addObject: [p objectForKey:@"permission"]];
+				[[NSUserDefaults standardUserDefaults] setObject:facebookPermissions forKey:@"mgwu_fbpermissions"];
 			}
 		}];
 		
-		FBRequest *r2 = [[FBRequest alloc] initWithSession:FBSession.activeSession graphPath:@"me/friends" parameters:@{ @"fields" : @"id,name,username,installed,devices" } HTTPMethod:nil];
-		
+		FBRequest *r2 = [[FBRequest alloc] initWithSession:FBSession.activeSession graphPath:@"me/friends" parameters:@{ @"fields" : fields } HTTPMethod:nil];
 		[c addRequest:r2 completionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 			if (result)
 			{
 				NSMutableArray *friendsPlaying = [[NSMutableArray alloc] init];
-				NSMutableArray *friendsToInvite = [[NSMutableArray alloc] init];
 				NSMutableArray *friendsPlayingGame = [[NSMutableArray alloc] init];
-				
-				NSMutableDictionary *usernameToId = [[NSMutableDictionary alloc] init];
-				
+								
 				NSArray *dd = [result objectForKey:@"data"];
 				
 				NSArray *d = [dd sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
@@ -808,48 +764,14 @@ static AmazonS3Client *s3;
 				
 				for (NSMutableDictionary *f in d)
 				{
-					if (![[f allKeys] containsObject:@"username"])
-						[f setObject:[f objectForKey:@"id"] forKey:@"username"];
-					else
-						[f setObject:[[f objectForKey:@"username"] stringByReplacingOccurrencesOfString:@"." withString:@"_"] forKey:@"username"];
-					
-					[usernameToId setObject:[f objectForKey:@"id"] forKey:[f objectForKey:@"username"]];
-					
-					if ([[f allKeys] containsObject:@"installed"] && [[f objectForKey:@"installed"] boolValue] == YES)
-					{
-						[friendsPlaying addObject:[f objectForKey:@"id"]];
-						[f removeObjectForKey:@"id"];
-						[friendsPlayingGame addObject:f];
-					}
-					else
-					{
-						for (NSDictionary *d in [f objectForKey:@"devices"])
-						{
-#ifndef APPORTABLE
-							if ([[d objectForKey:@"os"] isEqualToString:@"iOS"])
-							{
-								[f removeObjectForKey:@"id"];
-								[friendsToInvite addObject:f];
-								break;
-							}
-#else
-							if ([[d objectForKey:@"os"] isEqualToString:@"iOS"] || [[d objectForKey:@"os"] isEqualToString:@"Android"])
-							{
-								[f removeObjectForKey:@"id"];
-								[friendsToInvite addObject:f];
-								break;
-							}
-#endif
-						}
-					}
+					[f setObject:[f objectForKey:@"id"] forKey:@"username"];
+					[friendsPlaying addObject:[f objectForKey:@"id"]];
+					[friendsPlayingGame addObject:f];
 				}
 				
 				[[NSUserDefaults standardUserDefaults] setObject:friendsPlayingGame forKey:@"mgwu_friendsplayinggame"];
 				[[NSUserDefaults standardUserDefaults] setObject:friendsPlaying forKey:@"mgwu_friendsplaying"];
-				[[NSUserDefaults standardUserDefaults] setObject:friendsToInvite forKey:@"mgwu_friendstoinvite"];
-				[[NSUserDefaults standardUserDefaults] setObject:usernameToId forKey:@"mgwu_usernametoid"];
 				[[NSUserDefaults standardUserDefaults] synchronize];
-//				NSLog(@"got friends");
 				
 				serverData = @"Success";
 				[HUD removeFromSuperview];
@@ -1376,17 +1298,17 @@ static AmazonS3Client *s3;
 	[MGWUServerRequest requestWithParams:params withCallback:m onTarget:t];
 }
 
-+ (void)getAchievementsForPlayer:(NSString*)playername withCallback:(SEL)m onTarget:(id)t
++ (void)getAchievementsForPlayer:(NSString*)playerId withCallback:(SEL)m onTarget:(id)t
 {
-	NSAssert(playername && m && t, @"[MGWU] Need User, Callback Method and Target");
+	NSAssert(playerId && m && t, @"[MGWU] Need User, Callback Method and Target");
 	
 	if (!username)
 		return;
 	
 	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 	
-	[params setObject:playername forKey:@"user"];
-	[params setObject:[MGWU fbidFromUsername:playername] forKey:@"userfbid"];
+	[params setObject:playerId forKey:@"user"];
+	[params setObject:playerId forKey:@"userfbid"];
 	
 	[params setObject:@"getgamerach" forKey:@"endpoint"];
 	
@@ -1470,33 +1392,14 @@ static AmazonS3Client *s3;
 	}
 }
 
-+ (NSMutableArray *)friendsToInvite
-{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_friendstoinvite"];
-}
-
 + (NSMutableArray *)playingFriends
 {
 	return [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_friendsplayinggame"];
 }
-
-+ (void)getPlayerWithUsername:(NSString*)playername withCallback:(SEL)m onTarget:(id)t
+	
++ (BOOL)isFriend:(NSString*)friendId
 {
-	NSAssert(playername && m && t, @"[MGWU] Need username, Callback Method and Target");
-	
-	if (!username)
-		return;
-	
-	playername = [playername stringByReplacingOccurrencesOfString:@"." withString:@"_"];
-	
-	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-
-	[params setObject:playername forKey:@"user"];
-	[params setObject:username forKey:@"username"];
-	
-	[params setObject:@"getuser" forKey:@"endpoint"];
-
-	[MGWUServerRequest requestWithParams:params withCallback:m onTarget:t];
+	return [[[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_friendsplaying"] containsObject:friendId];
 }
 
 + (void)getRandomPlayerWithCallback:(SEL)m onTarget:(id)t
@@ -1525,6 +1428,7 @@ static AmazonS3Client *s3;
 	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 	
 	[params setObject:username forKey:@"username"];
+	[params setObject:[me objectForKey:@"name"] forKey:@"playername"];
 	
 	[params setObject:@"getrandomgame" forKey:@"endpoint"];
 	
@@ -1575,25 +1479,6 @@ static AmazonS3Client *s3;
 	[params setObject:@"deletegame" forKey:@"endpoint"];
 
 	[MGWUServerRequest requestWithParams:params withCallback:m onTarget:t];
-}
-
-+ (void)inviteFriend:(NSString*)friendname withMessage:(NSString*)message
-{
-	NSAssert(friendname && message, @"[MGWU] Need Friend and Message");
-	
-	if (![MGWU isFacebookActive])
-		return;
-	
-	NSString *fbid = [[[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_usernametoid"] objectForKey:friendname];
-	NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   message, @"message", nil];
-   // [params setObject: @"1" forKey:@"frictionless"];
-	[params setObject:fbid forKey:@"to"];
-    [facebook dialog:@"apprequests"
-				andParams:params
-			  andDelegate:mgwu];
-	
-	[MGWU logEvent:@"facebook_inviting"];
 }
 
 + (BOOL)canInviteFriends
@@ -1729,25 +1614,11 @@ static AmazonS3Client *s3;
 }
 #endif
 
-+ (BOOL)isFriend:(NSString*)friendname
++ (void)postToFriendsWall:(NSString*)friendId withTitle:(NSString*)title caption:(NSString*)caption andDescription:(NSString*)description
 {
-	if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_usernametoid"] objectForKey:friendname])
-		return TRUE;
-	else
-		return FALSE;
-}
-
-+ (NSString*)fbidFromUsername:(NSString*)friendname
-{
-	return [[[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_usernametoid"] objectForKey:friendname];
-}
-
-+ (void)postToFriendsWall:(NSString*)friendname withTitle:(NSString*)title caption:(NSString*)caption andDescription:(NSString*)description
-{
-	NSAssert(friendname && title && caption && description, @"[MGWU] Need Friend, Title, Caption and Description");
+	NSAssert(friendId && title && caption && description, @"[MGWU] Need Friend, Title, Caption and Description");
 	
-	NSString *fbid = [MGWU fbidFromUsername:friendname];
-	if (!fbid)
+	if (![self isFriend:friendId])
 	{
 		NSLog(@"[MGWU] User is not your friend");
 		return;
@@ -1758,7 +1629,7 @@ static AmazonS3Client *s3;
 	NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 								   appstoreurl, @"link",
 								   iconurl, @"picture",
-								   fbid, @"to",
+								   friendId, @"to",
 								   title, @"name",
 								   caption, @"caption",
 								   description, @"description",
@@ -2065,8 +1936,7 @@ static AmazonS3Client *s3;
 	[params setObject:username forKey:@"username"];
 	[params setObject:friendId forKey:@"friendid"];
 	[params setObject:message forKey:@"message"];
-	if ([MGWU isFriend:friendId])
-		[params setObject:[MGWU shortName:[me objectForKey:@"name"]] forKey:@"playername"];
+	[params setObject:[me objectForKey:@"name"] forKey:@"playername"];
 	
 	[params setObject:@"sendmessage" forKey:@"endpoint"];
 
@@ -2111,6 +1981,7 @@ static AmazonS3Client *s3;
 	[params setObject:gameData forKey:@"gamedata"];
 	[params setObject:friendId forKey:@"friendid"];
 	[params setObject:username forKey:@"username"];
+	[params setObject:[me objectForKey:@"name"] forKey:@"playername"];
 	[params setObject:message forKey:@"message"];
 	
 	[params setObject:@"move" forKey:@"endpoint"];

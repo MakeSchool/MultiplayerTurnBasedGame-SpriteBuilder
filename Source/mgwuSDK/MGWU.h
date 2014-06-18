@@ -10,7 +10,7 @@
 //
 //  Contains open source code and SDKs from Crashlytics, Inc. (SecureUDID, CrashlyticsSDK), Matej Bukovinski (MBProgressHUD), Stig Brautaset (SBJson), Ray Wenderlich (iAPHelper), Facebook (FacebookConnect iOS), Tapjoy (TapjoyConnect), Arash Payan (Appirater), Benjamin Borowski and Stephane Peter (GKAchievementNotification) thank you to all!
 //
-//  MGWU_BUILD_NUMBER 428
+//  MGWU_BUILD_NUMBER 474
 //
 
 #import <UIKit/UIKit.h>
@@ -130,12 +130,12 @@
 + (void)likeMGWU;
 + (void)shareWithTitle:(NSString*)title caption:(NSString*)caption andDescription:(NSString*)description;
 + (BOOL)handleURL:(NSURL*)url;
++ (void)setExtraFacebookPermissions:(NSArray*)permissions;
 
 //Open Graph (discuss with Ashu before using)
 + (BOOL)isOpenGraphActive;
 + (void)toggleOpenGraph;
 + (void)publishOpenGraphAction:(NSString*)action withParams:(NSDictionary *)ogparams;
-+ (NSString*)fbidFromUsername:(NSString*)friendname;
 
 //Single Player Games
 + (void)loginToFacebook;
@@ -148,9 +148,9 @@
 //Multiplayer Games
 + (void)forceFacebook;
 + (NSMutableArray *)friendsToInvite;
-+ (void)inviteFriend:(NSString*)friendname withMessage:(NSString*)message; //*
-+ (BOOL)isFriend:(NSString*)friendname;
-+ (void)postToFriendsWall:(NSString*)friendname withTitle:(NSString*)title caption:(NSString*)caption andDescription:(NSString*)description; //*
++ (void)inviteFriend:(NSString*)friendId withMessage:(NSString*)message; //*
++ (void)postToFriendsWall:(NSString*)friendId withTitle:(NSString*)title caption:(NSString*)caption andDescription:(NSString*)description; //*
++ (BOOL)isFriend:(NSString*)friendId;
 
 /////////////////////////////////////////////////////////////////////////////////
 //
@@ -174,8 +174,7 @@
 + (void)getRandomGameWithCallback:(SEL)m onTarget:(id)t;
 + (void)getGame:(int)gameId withCallback:(SEL)m onTarget:(id)t;
 + (void)deleteGame:(int)gameId withCallback:(SEL)m onTarget:(id)t;
-+ (void)getPlayerWithUsername:(NSString*)user withCallback:(SEL)m onTarget:(id)t;
-+ (void)getAchievementsForPlayer:(NSString*)playername withCallback:(SEL)m onTarget:(id)t;
++ (void)getAchievementsForPlayer:(NSString*)playerId withCallback:(SEL)m onTarget:(id)t;
 + (void)getRandomPlayerWithCallback:(SEL)m onTarget:(id)t;
 
 /////////////////////////////////////////////////////////////////////////////////
