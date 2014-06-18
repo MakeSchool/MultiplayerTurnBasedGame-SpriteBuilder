@@ -33,6 +33,7 @@
 
 @implementation AppController {
   CCScene *_startScene;
+  MainScene *_mainScene;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -60,8 +61,19 @@
     [self setupCocos2dWithOptions:cocos2dSetup];
   
     [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
-    MainScene *mainScene = _startScene.children[0];
-    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:mainScene];
+    [MGWU noFacebookPrompt];
+
+    NSDictionary *me = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbobject_self"];
+  
+    _mainScene = _startScene.children[0];
+  
+    if ([MGWU isFacebookActive]) {
+      [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
+    } else {
+      CCScene *fbLoginScene = [CCBReader loadAsScene:@"FacebookLoginScene" owner:self];
+      CCTransition *presentModalTransition = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.3f];
+      [[CCDirector sharedDirector] pushScene:fbLoginScene withTransition:presentModalTransition];
+    }
   
     return YES;
 }
@@ -69,6 +81,23 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     // attempt to extract a token from the url
     return [MGWU handleURL:url];
+}
+
+-(void) applicationDidBecomeActive:(UIApplication *)application {
+  if ([MGWU isFacebookActive]) {
+    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
+  }
+}
+
+- (void)facebookLoginButtonSelected {
+  [MGWU loginToFacebookWithCallback:@selector(facebookLoginCompleted:) onTarget:self];
+}
+
+- (void)facebookLoginCompleted:(id)serverData {
+  if ([serverData isEqualToString:@"Success"]) {
+    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
+    [[CCDirector sharedDirector] popScene];
+  }
 }
 
 - (CCScene*) startScene
