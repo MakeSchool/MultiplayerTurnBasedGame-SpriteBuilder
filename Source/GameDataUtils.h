@@ -18,4 +18,7 @@ extern NSString* friendNameForUsername(NSString *username);
  */
 extern NSNumber* doesPlayerHaveMatchWithFriend(NSString *username);
 
+
+extern NSDictionary* getMatchById(NSNumber *matchID);
+
 #endif

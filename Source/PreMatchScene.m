@@ -9,6 +9,7 @@
 #import "PreMatchScene.h"
 #import <mgwuSDK/MGWU.h>
 #import "UserInfo.h"
+#import "GameDataUtils.h"
 
 @implementation PreMatchScene {
   CCLabelTTF *_playerNameLabel;
@@ -30,7 +31,7 @@
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
   
   _playerNameLabel.string = [UserInfo sharedUserInfo].name;
-  _opponentNameLabel.string = self.game[@"opponent"];
+  _opponentNameLabel.string = getOpponentName(self.game);
 }
 
 @end

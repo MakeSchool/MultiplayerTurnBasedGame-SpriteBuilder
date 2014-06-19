@@ -8,9 +8,18 @@
 
 #import "CCNode.h"
 
+typedef NS_ENUM(NSInteger, PlayerCellActionType) {
+  PlayerCellActionTypeNone,
+  PlayerCellActionTypeShowGame,
+  PlayerCellActionTypeStartGame
+};
+
 @interface PlayerCell : CCNode
 
-@property (nonatomic, strong) CCLabelTTF *nameLabel;
-@property (nonatomic, strong) CCLabelTTF *actionLabel;
+@property (strong) CCLabelTTF *nameLabel;
+@property (strong) CCLabelTTF *actionLabel;
+
+@property (assign) PlayerCellActionType actionType;
+@property (nonatomic, weak) NSDictionary *player;
 
 @end

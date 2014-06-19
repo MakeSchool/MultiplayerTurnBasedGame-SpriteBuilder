@@ -10,13 +10,19 @@
 #import "PlayerCell.h"
 #import "UserInfo.h"
 #import "GameDataUtils.h"
+#import "PreMatchScene.h"
 
 @implementation FriendListScene {
   CCNode *_tableViewContentNode;
   CCTableView *_tableView;
+  NSMutableDictionary *_playerCellForIndex;
 }
 
 #pragma mark - Lifecycle
+
+- (void)dealloc {
+  [_tableView setTarget:nil selector:nil];
+}
 
 - (void)didLoadFromCCB {
   _tableView = [[CCTableView alloc] init];
@@ -28,7 +34,50 @@
 }
 
 - (void)tableViewCellSelected:(CCTableViewCell*)sender {
-  CCLOG(@"Index selected:%d", _tableView.selectedRow);
+  PlayerCell *selectedPlayerCell = [self cellContentForRowAtIndex:_tableView.selectedRow];
+  
+  NSDictionary *gameInfo = nil;
+  
+  if (selectedPlayerCell.actionType == PlayerCellActionTypeShowGame) {
+    NSNumber *matchID = doesPlayerHaveMatchWithFriend(selectedPlayerCell.player[@"username"]);
+    gameInfo = getMatchById(matchID);
+  } else if (selectedPlayerCell.actionType == PlayerCellActionTypeStartGame) {
+
+  }
+  
+  CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+  PreMatchScene *prematchScene = scene.children[0];
+  prematchScene.game = gameInfo;
+  [[CCDirector sharedDirector] pushScene:scene];
+}
+
+- (PlayerCell *)cellContentForRowAtIndex:(NSUInteger)index {
+  if (!_playerCellForIndex) {
+    _playerCellForIndex = [NSMutableDictionary dictionary];
+  }
+  
+  if (_playerCellForIndex[@(index)]) {
+    return _playerCellForIndex[@(index)];
+  } else {
+    PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
+    NSString *friendName = ([UserInfo sharedUserInfo].friends[index])[@"name"];
+    NSString *friendUsername = ([UserInfo sharedUserInfo].friends[index])[@"username"];
+    
+    cellContent.nameLabel.string = friendName;
+    cellContent.player = [UserInfo sharedUserInfo].friends[index];
+    
+    if (doesPlayerHaveMatchWithFriend(friendUsername)) {
+      cellContent.actionLabel.string = @"SHOW";
+      cellContent.actionType = PlayerCellActionTypeShowGame;
+    } else {
+      cellContent.actionLabel.string = @"PLAY";
+      cellContent.actionType = PlayerCellActionTypeStartGame;
+    }
+
+    _playerCellForIndex[@(index)] = cellContent;
+
+    return cellContent;
+  }
 }
 
 #pragma mark - CCTableViewDataSource Protocol
@@ -36,20 +85,10 @@
 - (CCTableViewCell*)tableView:(CCTableView*)tableView nodeForRowAtIndex:(NSUInteger)index {
   CCTableViewCell *cell = [[CCTableViewCell alloc] init];
   
-  PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
-  NSString *friendName = ([UserInfo sharedUserInfo].friends[index])[@"name"];
-  NSString *friendUsername = ([UserInfo sharedUserInfo].friends[index])[@"username"];
-  cellContent.nameLabel.string = friendName;
-  [cell addChild:cellContent];
+  [cell addChild:[self cellContentForRowAtIndex:index]];
   cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
   cell.contentSize = CGSizeMake(1.f, 50.f);
-  
-  if (doesPlayerHaveMatchWithFriend(friendUsername)) {
-    cellContent.actionLabel.string = @"SHOW";
-  } else {
-    cellContent.actionLabel.string = @"PLAY";
-  }
-  
+
   return cell;
 }
 

@@ -25,6 +25,10 @@
 
 #pragma mark - Lifecycle
 
+- (void)dealloc {
+  [_tableView setTarget:nil selector:nil];
+}
+
 - (void)didLoadFromCCB {
     _tableView = [[CCTableView alloc] init];
     [_tableViewContentNode addChild:_tableView];

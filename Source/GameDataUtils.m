@@ -48,3 +48,15 @@ NSNumber* doesPlayerHaveMatchWithFriend(NSString *username) {
   
   return nil;
 }
+
+NSDictionary* getMatchById(NSNumber *matchID) {
+  NSArray *games = [UserInfo sharedUserInfo].allGames;
+  
+  for (NSDictionary *game in games) {
+    if ([game[@"gameid"] isEqualToNumber:matchID]) {
+      return game;
+    }
+  }
+  
+  return nil;
+}
