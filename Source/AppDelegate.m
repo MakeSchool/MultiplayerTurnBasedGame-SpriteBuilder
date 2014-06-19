@@ -62,8 +62,6 @@
   
     [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
     [MGWU noFacebookPrompt];
-
-    NSDictionary *me = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbobject_self"];
   
     _mainScene = _startScene.children[0];
   

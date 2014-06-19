@@ -11,7 +11,7 @@
 
 #import "UserInfo.h"
 
-static NSString* getOpponentName(NSDictionary* gameData) {
+static NSString* getOpponentName(NSDictionary *gameData) {
   NSArray *players = gameData[@"players"];
   NSString *opponentName;
 
@@ -21,6 +21,19 @@ static NSString* getOpponentName(NSDictionary* gameData) {
     opponentName = [players objectAtIndex:0];
   
   return opponentName;
+}
+
+static NSString* friendNameForUsername(NSString *username) {
+  for (NSMutableDictionary *friend in [UserInfo sharedUserInfo].friends)
+  {
+    //Add friendName to game if you're friends
+    if ([[friend objectForKey:@"username"] isEqualToString:username])
+    {
+      return [friend objectForKey:@"name"];
+    }
+  }
+  
+  return @"Random Player";
 }
 
 #endif

@@ -40,6 +40,7 @@
 - (void)onEnterTransitionDidFinish {
     [super onEnterTransitionDidFinish];
   
+  [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
 }
 
 #pragma mark - MGWUSDK Callbacks
@@ -88,16 +89,17 @@
   } else {
     NSDictionary *currentGame = _allCells[index];
     PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
-    cellContent.nameLabel.string = getOpponentName(currentGame);
+    cellContent.nameLabel.string = friendNameForUsername(getOpponentName(currentGame));
     [cell addChild:cellContent];
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);
     
-    if (index < [[UserInfo sharedUserInfo].gamesYourTurn count]) {
+    //TODO: refactor this
+    if (index < [[UserInfo sharedUserInfo].gamesYourTurn count] + 1) {
       cellContent.actionLabel.string = @"PLAY";
-    } else if (index < [[UserInfo sharedUserInfo].gamesTheirTurn count]) {
+    } else if (index < [[UserInfo sharedUserInfo].gamesYourTurn count] + [[UserInfo sharedUserInfo].gamesTheirTurn count]+2) {
       cellContent.actionLabel.string = @"SHOW";
-    } else if (index < [[UserInfo sharedUserInfo].gamesCompleted count]) {
+    } else if (index < [[UserInfo sharedUserInfo].gamesCompleted count] + [[UserInfo sharedUserInfo].gamesYourTurn count] + [[UserInfo sharedUserInfo].gamesTheirTurn count] +3) {
       cellContent.actionLabel.string = @"REMATCH";
     }
   }

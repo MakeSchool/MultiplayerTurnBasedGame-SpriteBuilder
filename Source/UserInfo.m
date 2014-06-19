@@ -52,6 +52,7 @@
   // name and username
   _name = userInfo[@"info"][@"name"];
   _username = userInfo[@"info"][@"username"];
+  _friends = userInfo[@"friends"];
   [self splitGames:userInfo];
 }
 

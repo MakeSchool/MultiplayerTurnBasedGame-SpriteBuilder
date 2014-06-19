@@ -575,7 +575,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = SBVP8ED765;
+						DevelopmentTeam = UBXY3JK49V;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -834,8 +834,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = SBMutliplayerTemplate;
-				PROVISIONING_PROFILE = "18D84403-392D-4C50-BA7D-C45F153D06AB";
-				VALID_ARCHS = "arm7 armv7s i386";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "arm7 armv7s i386 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -872,9 +872,9 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = SBMutliplayerTemplate;
-				PROVISIONING_PROFILE = "18D84403-392D-4C50-BA7D-C45F153D06AB";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm7 armv7s i386";
+				VALID_ARCHS = "arm7 armv7s i386 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

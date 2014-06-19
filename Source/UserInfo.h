@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *gamesYourTurn;
 @property (nonatomic, strong) NSMutableArray *gamesCompleted;
 @property (nonatomic, strong) NSMutableArray *allGames;
+@property (nonatomic, strong) NSArray *friends;
 
 + (instancetype)sharedUserInfo;
 
