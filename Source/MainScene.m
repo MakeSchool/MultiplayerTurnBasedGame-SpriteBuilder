@@ -126,4 +126,9 @@
   [MGWU getRandomGameWithCallback:@selector(receivedRandomGame:) onTarget:self];
 }
 
+- (void)showFriendList {
+  CCScene *friendListScene = [CCBReader loadAsScene:@"FriendListScene"];
+  [[CCDirector sharedDirector] pushScene:friendListScene];
+}
+
 @end

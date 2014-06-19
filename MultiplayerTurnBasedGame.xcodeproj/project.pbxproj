@@ -99,6 +99,7 @@
 		624B46A819412FBC00A81B57 /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 624B45711940E90400A81B57 /* send-field-landscape.png */; };
 		625B9E98194FA67500DB3A3E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625B9E97194FA67500DB3A3E /* GLKit.framework */; };
 		625B9E9C1950C6F600DB3A3E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 625B9E9B1950C6F600DB3A3E /* UserInfo.m */; };
+		625C13731952730D00FAD9FD /* FriendListScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C13721952730D00FAD9FD /* FriendListScene.m */; };
 		62C4F43619427DD80047553C /* PreMatchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C4F43519427DD80047553C /* PreMatchScene.m */; };
 		62C4F43A19427F9E0047553C /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C4F43919427F9E0047553C /* GameplayScene.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -246,6 +247,8 @@
 		625B9E97194FA67500DB3A3E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		625B9E9A1950C6F600DB3A3E /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Source/UserInfo.h; sourceTree = "<group>"; };
 		625B9E9B1950C6F600DB3A3E /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Source/UserInfo.m; sourceTree = "<group>"; };
+		625C13711952730C00FAD9FD /* FriendListScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendListScene.h; path = Source/FriendListScene.h; sourceTree = "<group>"; };
+		625C13721952730D00FAD9FD /* FriendListScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendListScene.m; path = Source/FriendListScene.m; sourceTree = "<group>"; };
 		62C4F43419427DD80047553C /* PreMatchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreMatchScene.h; path = Source/PreMatchScene.h; sourceTree = "<group>"; };
 		62C4F43519427DD80047553C /* PreMatchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreMatchScene.m; path = Source/PreMatchScene.m; sourceTree = "<group>"; };
 		62C4F43819427F9E0047553C /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayScene.h; path = Source/GameplayScene.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				625B9E9A1950C6F600DB3A3E /* UserInfo.h */,
 				625B9E9B1950C6F600DB3A3E /* UserInfo.m */,
 				624331AA1951067A00EAB009 /* GameDataUtils.h */,
+				625C13711952730C00FAD9FD /* FriendListScene.h */,
+				625C13721952730D00FAD9FD /* FriendListScene.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625C13731952730D00FAD9FD /* FriendListScene.m in Sources */,
 				62468AC3192D6EEE00E41128 /* PlayerCell.m in Sources */,
 				62C4F43619427DD80047553C /* PreMatchScene.m in Sources */,
 				62C4F43A19427F9E0047553C /* GameplayScene.m in Sources */,

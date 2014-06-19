@@ -166,7 +166,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNode</string>
+				<string>TableViewContainer</string>
 				<key>memberVarAssignmentName</key>
 				<string>_tableViewContentNode</string>
 				<key>memberVarAssignmentType</key>
@@ -203,7 +203,7 @@
 						<key>value</key>
 						<array>
 							<real>1</real>
-							<real>156</real>
+							<real>172</real>
 							<integer>2</integer>
 							<integer>3</integer>
 						</array>
@@ -475,7 +475,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>40</real>
+							<real>0.0</real>
 							<integer>1</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -489,7 +489,7 @@
 						<key>value</key>
 						<array>
 							<real>1</real>
-							<real>40</real>
+							<real>54</real>
 							<integer>2</integer>
 							<integer>0</integer>
 						</array>
@@ -502,7 +502,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -629,7 +629,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>showFriendList</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -884,6 +884,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1349,7 +1351,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>98</real>
+							<real>114</real>
 							<integer>1</integer>
 							<integer>0</integer>
 							<integer>0</integer>
