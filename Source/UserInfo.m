@@ -43,7 +43,11 @@
 - (void)refreshCompleted:(NSDictionary *)userInfo {
   [self extractUserInformation:userInfo];
   
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
   [self.refreshTarget performSelector:self.refreshCallback withObject:userInfo];
+#pragma clang diagnostic pop
+  
 }
 
 #pragma mark - Extract User Information
@@ -52,8 +56,23 @@
   // name and username
   _name = userInfo[@"info"][@"name"];
   _username = userInfo[@"info"][@"username"];
-  _friends = userInfo[@"friends"];
   [self splitGames:userInfo];
+  
+  _friends = [NSMutableArray arrayWithArray:userInfo[@"friends"]];
+#ifdef DEBUG
+  // in debug mode add a test friend that always plays back immediately
+  NSDictionary *botFriend = @{
+    @"fbid" : [@(INT_MAX) stringValue],
+    @"lastplayed" : @"1403140089",
+    @"losses" : @(0),
+    @"name" : @"mgwu bot friend",
+    @"rankpoints" : @(0),
+    @"username" : @(746384398726503),
+    @"wins" : @(0),
+    };
+  
+  [_friends addObject:botFriend];
+#endif
 }
 
 - (void)splitGames:(NSDictionary *)userInfo {
@@ -79,15 +98,6 @@
 		if ([gameState isEqualToString:@"ended"])
 		{
 			[self.gamesCompleted addObject:game];
-//			for (NSMutableDictionary *friend in players)
-//			{
-				//Add friendName to game if you're friends
-//				if ([[friend objectForKey:@"username"] isEqualToString:oppName])
-//				{
-//					[game setObject:[friend objectForKey:@"name"] forKey:@"friendName"];
-//					break;
-//				}
-//			}
 		}
 		else if ([turn isEqualToString:self.username])
 		{
@@ -99,30 +109,10 @@
 			else
 				[savedGame setObject:[game objectForKey:@"newmessages"] forKey:@"newmessages"];
 			[self.gamesYourTurn addObject:savedGame];
-//			for (NSMutableDictionary *friend in playingFriends)
-//			{
-				//Add friendName to game if you're friends, remove the friend from list of players (so you can't start a new game with someone you're already playing)
-//				if ([[friend objectForKey:@"username"] isEqualToString:oppName])
-//				{
-//					[savedGame setObject:[friend objectForKey:@"name"] forKey:@"friendName"];
-//					[players removeObject:friend];
-//					break;
-//				}
-//			}
 		}
 		else
 		{
 			[self.gamesTheirTurn addObject:game];
-//			for (NSMutableDictionary *friend in playingFriends)
-//			{
-//				//Add friendName to game if you're friends, remove the friend from list of players (so you can't start a new game with someone you're already playing)
-//				if ([[friend objectForKey:@"username"] isEqualToString:oppName])
-//				{
-//					[game setObject:[friend objectForKey:@"name"] forKey:@"friendName"];
-//					[players removeObject:friend];
-//					break;
-//				}
-//			}
 		}
 	}
 }

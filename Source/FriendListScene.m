@@ -8,6 +8,8 @@
 
 #import "FriendListScene.h"
 #import "PlayerCell.h"
+#import "UserInfo.h"
+#import "GameDataUtils.h"
 
 @implementation FriendListScene {
   CCNode *_tableViewContentNode;
@@ -35,10 +37,18 @@
   CCTableViewCell *cell = [[CCTableViewCell alloc] init];
   
   PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
-  cellContent.nameLabel.string = @"Player";
+  NSString *friendName = ([UserInfo sharedUserInfo].friends[index])[@"name"];
+  NSString *friendUsername = ([UserInfo sharedUserInfo].friends[index])[@"username"];
+  cellContent.nameLabel.string = friendName;
   [cell addChild:cellContent];
   cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
   cell.contentSize = CGSizeMake(1.f, 50.f);
+  
+  if (doesPlayerHaveMatchWithFriend(friendUsername)) {
+    cellContent.actionLabel.string = @"SHOW";
+  } else {
+    cellContent.actionLabel.string = @"PLAY";
+  }
   
   return cell;
 }
@@ -48,7 +58,13 @@
 }
 
 - (NSUInteger) tableViewNumberOfRows:(CCTableView*) tableView {
-  return 10;
+  return [[UserInfo sharedUserInfo].friends count];
+}
+
+#pragma mark - Button Callbacks
+
+- (void)backButtonPressed {
+  [[CCDirector sharedDirector] popScene];
 }
 
 @end

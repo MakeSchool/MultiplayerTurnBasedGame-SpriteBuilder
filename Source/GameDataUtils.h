@@ -9,31 +9,13 @@
 #ifndef MultiplayerTurnBasedGame_GameDataUtils_h
 #define MultiplayerTurnBasedGame_GameDataUtils_h
 
-#import "UserInfo.h"
+extern NSString* getOpponentName(NSDictionary *gameData);
+extern NSString* friendNameForUsername(NSString *username);
 
-static NSString* getOpponentName(NSDictionary *gameData) {
-  NSArray *players = gameData[@"players"];
-  NSString *opponentName;
-
-  if ([[players objectAtIndex:0] isEqualToString:[UserInfo sharedUserInfo].username])
-    opponentName = [players objectAtIndex:1];
-  else
-    opponentName = [players objectAtIndex:0];
-  
-  return opponentName;
-}
-
-static NSString* friendNameForUsername(NSString *username) {
-  for (NSMutableDictionary *friend in [UserInfo sharedUserInfo].friends)
-  {
-    //Add friendName to game if you're friends
-    if ([[friend objectForKey:@"username"] isEqualToString:username])
-    {
-      return [friend objectForKey:@"name"];
-    }
-  }
-  
-  return @"Random Player";
-}
+/**
+ If player has a match with this friend, this method returns the game id.
+ If there's no match, this method returns nil.
+ */
+extern NSNumber* doesPlayerHaveMatchWithFriend(NSString *username);
 
 #endif
