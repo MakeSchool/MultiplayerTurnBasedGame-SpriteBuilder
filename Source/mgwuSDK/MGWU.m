@@ -1338,6 +1338,11 @@ static AmazonS3Client *s3;
 	return !preFacebook && FBSession.activeSession.isOpen && username;
 }
 
++ (BOOL)isFacebookLoginRequired
+{
+  return !(!preFacebook && (FBSession.activeSession != nil) && username);
+}
+
 + (void)toggleOpenGraph
 {
 	noOpenGraph = !noOpenGraph;

@@ -125,6 +125,7 @@
 + (void)preFacebook;
 + (void)noFacebookPrompt;
 + (BOOL)isFacebookActive;
++ (BOOL)isFacebookLoginRequired;
 + (NSString*)getUsername;
 + (void)likeAppWithPageId:(NSString*)pageid;
 + (void)likeMGWU;

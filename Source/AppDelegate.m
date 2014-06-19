@@ -62,31 +62,23 @@
   
     [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
     [MGWU noFacebookPrompt];
-
-    NSDictionary *me = [[NSUserDefaults standardUserDefaults] objectForKey:@"mgwu_fbobject_self"];
   
     _mainScene = _startScene.children[0];
   
-    if ([MGWU isFacebookActive]) {
+    if (![MGWU isFacebookLoginRequired]) {
       [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
     } else {
       CCScene *fbLoginScene = [CCBReader loadAsScene:@"FacebookLoginScene" owner:self];
       CCTransition *presentModalTransition = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.3f];
       [[CCDirector sharedDirector] pushScene:fbLoginScene withTransition:presentModalTransition];
     }
-  
+    
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     // attempt to extract a token from the url
     return [MGWU handleURL:url];
-}
-
--(void) applicationDidBecomeActive:(UIApplication *)application {
-  if ([MGWU isFacebookActive]) {
-    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
-  }
 }
 
 - (void)facebookLoginButtonSelected {
