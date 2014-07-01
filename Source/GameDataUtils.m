@@ -14,12 +14,18 @@ NSString* getOpponentName(NSDictionary *gameData) {
   NSArray *players = gameData[@"players"];
   NSString *opponentName;
   
-  if ([[players objectAtIndex:0] isEqualToString:[UserInfo sharedUserInfo].username])
-    opponentName = [players objectAtIndex:1];
-  else
-    opponentName = [players objectAtIndex:0];
-  
-  return opponentName;
+  if (players) {
+    
+    if ([[players objectAtIndex:0] isEqualToString:[UserInfo sharedUserInfo].username])
+      opponentName = [players objectAtIndex:1];
+    else
+      opponentName = [players objectAtIndex:0];
+    
+    return opponentName;
+    
+  } else {
+    return gameData[@"opponent"];
+  }
 }
 
 NSString* friendNameForUsername(NSString *username) {

@@ -1294,7 +1294,7 @@
 						<key>value</key>
 						<array>
 							<real>24</real>
-							<real>280.4000244140625</real>
+							<real>280</real>
 							<integer>1</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1360,7 +1360,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1369,8 +1369,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>130</real>
+							<real>22</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1389,7 +1389,7 @@
 						<key>type</key>
 						<string>IntegerLabeled</string>
 						<key>value</key>
-						<integer>0</integer>
+						<integer>1</integer>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1500,8 +1500,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>24</real>
-							<real>280.4000244140625</real>
+							<real>23</real>
+							<real>280</real>
 							<integer>2</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1567,7 +1567,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1576,8 +1576,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>130</real>
+							<real>24</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1588,7 +1588,7 @@
 						<key>type</key>
 						<string>IntegerLabeled</string>
 						<key>value</key>
-						<integer>0</integer>
+						<integer>2</integer>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1596,7 +1596,7 @@
 						<key>type</key>
 						<string>IntegerLabeled</string>
 						<key>value</key>
-						<integer>0</integer>
+						<integer>1</integer>
 					</dict>
 					<dict>
 						<key>name</key>
