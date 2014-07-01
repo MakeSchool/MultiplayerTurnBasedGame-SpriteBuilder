@@ -20,7 +20,7 @@
     CCTableView *_tableView;
     CCTextField *_textField;
   
-  NSMutableArray *_allCells;
+    NSMutableArray *_allCells;
 }
 
 #pragma mark - Lifecycle
@@ -120,8 +120,21 @@
 }
 
 - (void)tableViewCellSelected:(CCTableViewCell*)sender {
-    CCLOG(@"Index selected:%d", _tableView.selectedRow);
-  [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
+  NSInteger index = _tableView.selectedRow;
+  
+  id currentCell = _allCells[index];
+  
+  if ([currentCell isKindOfClass:[NSString class]]) {
+    // this is a section and we don't need user interaction
+    return;
+  } else {
+    NSDictionary *selectedGame = _allCells[index];
+    
+    CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+    PreMatchScene *prematchScene = scene.children[0];
+    prematchScene.game = selectedGame;
+    [[CCDirector sharedDirector] pushScene:scene];
+  }
 }
 
 #pragma mark - Button Callbacks

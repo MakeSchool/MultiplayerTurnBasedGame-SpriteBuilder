@@ -34,4 +34,8 @@
   _opponentNameLabel.string = getOpponentName(self.game);
 }
 
+- (void)backButtonPressed {
+  [[CCDirector sharedDirector] popScene];
+}
+
 @end
