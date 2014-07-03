@@ -67,7 +67,7 @@
     @"losses" : @(0),
     @"name" : @"mgwu bot friend",
     @"rankpoints" : @(0),
-    @"username" : [@(746384398726503) stringValue],
+    @"username" : [@(99) stringValue],
     @"wins" : @(0),
     };
   
