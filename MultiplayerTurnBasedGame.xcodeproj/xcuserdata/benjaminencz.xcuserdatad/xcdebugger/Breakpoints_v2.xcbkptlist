@@ -19,28 +19,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/PreMatchScene.m"
-            timestampString = "426032116.654227"
+            filePath = "Source/GameplayScene.m"
+            timestampString = "426042763.812514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "-fillRoundLabels"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/GameplayScene.m"
-            timestampString = "426041747.022125"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
             landmarkName = "-completeRound"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,6 +58,22 @@
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "-receivedRandomGame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/FriendListScene.m"
+            timestampString = "426044294.867435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-tableViewCellSelected:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

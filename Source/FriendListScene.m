@@ -42,7 +42,7 @@
     NSNumber *matchID = doesPlayerHaveMatchWithFriend(selectedPlayerCell.player[@"username"]);
     gameInfo = getMatchById(matchID);
   } else if (selectedPlayerCell.actionType == PlayerCellActionTypeStartGame) {
-
+    gameInfo = @{@"opponent":selectedPlayerCell.player[@"username"]};
   }
   
   CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];

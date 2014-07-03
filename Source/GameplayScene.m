@@ -35,14 +35,16 @@
   int nextMoveNumber = [self.game[@"movecount"] intValue];
   int gameID =  [self.game[@"gameid"] intValue];
   NSString *oponnentUserName = getOpponentName(self.game);
-  NSString *playerUserName = [[UserInfo sharedUserInfo] name];
+  NSString *playerUserName = [[UserInfo sharedUserInfo] username];
   NSString *newGameState = self.game[@"gamestate"];
+  
+  if (newGameState == nil) {
+    newGameState = GAME_STATE_STARTED;
+  }
   
   // After 6 rounds, mark game as completed
   if (nextMoveNumber > 6) {
     newGameState = GAME_STATE_COMPLETED;
-  } else {
-    newGameState = GAME_STATE_IN_PROGRESS;
   }
   
   // add a move to the game data
@@ -66,7 +68,7 @@
   
   currentRoundGameData[playerUserName] = _selectedElement;
   
-  [MGWU move:@{@"selectedElement":_selectedElement} withMoveNumber:nextMoveNumber forGame:gameID withGameState:newGameState withGameData:@{} againstPlayer:oponnentUserName withPushNotificationMessage:@"Round completed" withCallback:@selector(moveCompleted:) onTarget:self];
+  [MGWU move:@{@"selectedElement":_selectedElement} withMoveNumber:nextMoveNumber forGame:gameID withGameState:newGameState withGameData:gameData againstPlayer:oponnentUserName withPushNotificationMessage:@"Round completed" withCallback:@selector(moveCompleted:) onTarget:self];
 }
 
 - (void)moveCompleted:(NSMutableDictionary*)newGame {
