@@ -151,6 +151,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		623608C819637C1100A2FA3C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Constants.h; sourceTree = "<group>"; };
 		624331AA1951067A00EAB009 /* GameDataUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameDataUtils.h; path = Source/GameDataUtils.h; sourceTree = "<group>"; };
 		624331AB1951293800EAB009 /* SectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionCell.h; path = Source/SectionCell.h; sourceTree = "<group>"; };
 		624331AC1951293800EAB009 /* SectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionCell.m; path = Source/SectionCell.m; sourceTree = "<group>"; };
@@ -444,6 +445,7 @@
 				625C137419534D4800FAD9FD /* GameDataUtils.m */,
 				625C13711952730C00FAD9FD /* FriendListScene.h */,
 				625C13721952730D00FAD9FD /* FriendListScene.m */,
+				623608C819637C1100A2FA3C /* Constants.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
