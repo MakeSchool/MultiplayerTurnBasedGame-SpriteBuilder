@@ -18,7 +18,8 @@ extern NSString* friendNameForUsername(NSString *username);
  */
 extern NSNumber* doesPlayerHaveMatchWithFriend(NSString *username);
 
-
 extern NSDictionary* getMatchById(NSNumber *matchID);
+
+extern void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictionary* game, id target, SEL callback);
 
 #endif

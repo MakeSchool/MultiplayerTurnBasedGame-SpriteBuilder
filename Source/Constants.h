@@ -9,9 +9,9 @@
 #ifndef MultiplayerTurnBasedGame_Constants_h
 #define MultiplayerTurnBasedGame_Constants_h
 
-NSString * const GAME_STATE_STARTED = @"started";
-NSString * const GAME_STATE_IN_PROGRESS = @"inprogress";
-NSString * const GAME_STATE_COMPLETED = @"ended";
+static NSString * const GAME_STATE_STARTED = @"started";
+static NSString * const GAME_STATE_IN_PROGRESS = @"inprogress";
+static NSString * const GAME_STATE_COMPLETED = @"ended";
 
 /* Game Data for this game */
 
