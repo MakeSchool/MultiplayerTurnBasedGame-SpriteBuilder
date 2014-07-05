@@ -10,6 +10,10 @@
 #import <mgwuSDK/MGWU.h>
 #import "UserInfo.h"
 #import "GameDataUtils.h"
+#import "Constants.h"
+
+NSString * const START_ROUND_STRING = @"It’s your turn to start this round!";
+NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
 
 @implementation PreMatchScene {
   CCLabelTTF *_playerNameLabel;
@@ -24,6 +28,8 @@
   CCLabelTTF *_opponentRound1;
   CCLabelTTF *_opponentRound2;
   CCLabelTTF *_opponentRound3;
+  
+  CCLabelTTF *_actionInfoLabel;
 }
 
 - (void)onEnter {
@@ -61,14 +67,44 @@
   NSString *playerUsername = [[UserInfo sharedUserInfo] username];
   NSString *opponentUsername = getOpponentName(self.game);
   
+  BOOL round1Complete = [[self.game[@"gamedata"][@"1"] allKeys] count] == MOVES_PER_ROUND;
+  BOOL round2Complete = [[self.game[@"gamedata"][@"2"] allKeys] count] == MOVES_PER_ROUND;
+  BOOL round3Complete = [[self.game[@"gamedata"][@"3"] allKeys] count] == MOVES_PER_ROUND;
+  
+  NSInteger moveNumber = [self.game[@"movecount"] integerValue];
+  
+  if ((moveNumber % MOVES_PER_ROUND) == 0) {
+    _actionInfoLabel.string = START_ROUND_STRING;
+  } else {
+    _actionInfoLabel.string = FINISH_ROUND_STRING;
+  }
+  
   NSString *playerMoveRound1 = round1[playerUsername];
+  _playerRound1.string = playerMoveRound1 ? playerMoveRound1 : @"_";
   NSString *opponentMoveRound1 = round1[opponentUsername];
+  // only show choice of opponent if this round is complete
+  if (opponentMoveRound1) {
+    opponentMoveRound1 = round1Complete ? opponentMoveRound1 : @"?";
+  }
+  _opponentRound1.string = opponentMoveRound1 ? opponentMoveRound1: @"_";
   
   NSString *playerMoveRound2 = round2[playerUsername];
+  _playerRound2.string = playerMoveRound2 ? playerMoveRound2 : @"_";
   NSString *opponentMoveRound2 = round2[opponentUsername];
-  
+  // only show choice of opponent if this round is complete
+  if (opponentMoveRound2) {
+    opponentMoveRound2 = round2Complete ? opponentMoveRound2 : @"?";
+  }
+  _opponentRound2.string = opponentMoveRound2 ? opponentMoveRound2: @"_";
+
   NSString *playerMoveRound3 = round3[playerUsername];
+  _playerRound3.string = playerMoveRound3 ? playerMoveRound3 : @"_";
   NSString *opponentMoveRound3 = round3[opponentUsername];
+  // only show choice of opponent if this round is complete
+  if (opponentMoveRound3) {
+    opponentMoveRound3 = round3Complete ? opponentMoveRound3 : @"?";
+  }
+  _opponentRound3.string = opponentMoveRound3 ? opponentMoveRound3: @"_";
 }
 
 @end

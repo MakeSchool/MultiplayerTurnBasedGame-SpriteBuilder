@@ -17,17 +17,17 @@
 }
 
 - (void)completeRoundWithScissors {
-  _selectedElement = @"Scissors";
+  _selectedElement = CHOICE_SCISSORS;
   [self completeRound];
 }
 
 - (void)completeRoundWithRock {
-  _selectedElement = @"Rock";
+  _selectedElement = CHOICE_ROCK;
   [self completeRound];
 }
 
 - (void)completeRoundWithPaper {
-  _selectedElement = @"Paper";
+  _selectedElement = CHOICE_PAPER;
   [self completeRound];
 }
 
@@ -36,12 +36,37 @@
 }
 
 - (void)moveCompleted:(NSMutableDictionary*)newGame {
-  if ([getOpponentName(self.game) isEqualToString:BOT_USERNAME]) {
-    CCLOG(@"Playing against Bot");
+  if (isCurrentRoundCompleted(newGame)) {
+    // if the current round is completed with this move, we need to present the result scene
+    [self presentResultScene:newGame];
+  } else {
+    // if this round is not completed, we return to the main scene and wait until other player finishes round before presenting results
+    [self backToMainScene];
   }
-  
+}
+
+- (void)botCompleted:(NSMutableDictionary*)newGame {
   CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
   [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
+}
+
+#pragma mark - Transition after move was performed
+
+- (void)backToMainScene {
+  if ([getOpponentName(self.game) isEqualToString:BOT_USERNAME]) {
+    CCLOG(@"Playing against Bot");
+  } else {
+    CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
+    [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
+  }
+}
+
+- (void)presentResultScene:(NSDictionary *)game {
+  CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
+  [gameResultScene.children[0] setGame:self.game];
+  
+  CCTransition *pushTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:0.3f];
+  [[CCDirector sharedDirector] pushScene:gameResultScene withTransition:pushTransition];
 }
 
 @end

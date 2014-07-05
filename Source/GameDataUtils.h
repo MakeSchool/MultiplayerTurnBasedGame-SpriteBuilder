@@ -20,6 +20,17 @@ extern NSNumber* doesPlayerHaveMatchWithFriend(NSString *username);
 
 extern NSDictionary* getMatchById(NSNumber *matchID);
 
+extern BOOL isCurrentRoundCompleted(NSDictionary *game);
+
+extern NSInteger currentRoundInGame(NSDictionary *game);
+
 extern void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictionary* game, id target, SEL callback);
+
+/**
+ 0 = draw between both choices
+ -1 = choice 1 wins
+ +1 = choice 2 wins
+ */
+extern NSInteger calculateWinner(NSString *movePlayer1, NSString *movePlayer2);
 
 #endif

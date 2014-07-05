@@ -69,18 +69,27 @@ NSDictionary* getMatchById(NSNumber *matchID) {
 }
 
 void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictionary* game, id target, SEL callback) {
-  int nextMoveNumber = [game[@"movecount"] intValue];
+  int nextMoveNumber = [game[@"movecount"] intValue] + 1;
   int gameID =  [game[@"gameid"] intValue];
+  
   NSString *oponnentUserName = getOpponentName(game);
-  NSString *playerUserName = [[UserInfo sharedUserInfo] username];
+  NSString *playerUserName = playerName;
   NSString *newGameState = game[@"gamestate"];
+  
+#ifdef DEBUG
+  if ([playerName isEqualToString:BOT_USERNAME]) {
+    oponnentUserName = playerUserName;
+  }
+#endif
   
   if (newGameState == nil) {
     newGameState = GAME_STATE_STARTED;
+  } else if (nextMoveNumber > 1) {
+    newGameState = GAME_STATE_IN_PROGRESS;
   }
   
   // After 6 rounds, mark game as completed
-  if (nextMoveNumber > 6) {
+  if (nextMoveNumber == 6) {
     newGameState = GAME_STATE_COMPLETED;
   }
   
@@ -92,8 +101,7 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
   }
   
   // calculate current round (move 0 and 1 are part of round 1, move 2 and 3 are part of round 2, etc.)
-  NSInteger currentRound = [game[@"movecount"] intValue] / 2;
-  currentRound += 1;
+  NSInteger currentRound = currentRoundInGame(game);
   NSString *currentRoundString = [NSString stringWithFormat:@"%i",currentRound];
   
   NSMutableDictionary *currentRoundGameData = game[@"gamedata"][currentRoundString];
@@ -107,4 +115,73 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
   
   [MGWU move:@{@"selectedElement":move} withMoveNumber:nextMoveNumber forGame:gameID withGameState:newGameState withGameData:gameData againstPlayer:oponnentUserName withPushNotificationMessage:@"Round completed" withCallback:callback onTarget:target];
 }
+
+BOOL isCurrentRoundCompleted(NSDictionary *game) {
+  NSInteger currentRound = currentRoundInGame(game) - 1;
+  NSString *currentRoundString = [NSString stringWithFormat:@"%d", currentRound];
+  
+  // the current round is completed if we have MOVES_PER_ROUND moves for this round
+  return [[game[@"gamedata"][currentRoundString] allKeys] count] == MOVES_PER_ROUND;
+}
+
+NSInteger currentRoundInGame(NSDictionary *game) {
+  NSInteger currentRound = [game[@"movecount"] intValue] / 2;
+  currentRound += 1;
+    
+  return currentRound;
+}
+
+
+NSInteger calculateWinner(NSString *movePlayer1, NSString *movePlayer2) {
+  if ([movePlayer1 isEqualToString:movePlayer2]) {
+    return 0;
+  }
+
+  NSArray *choiceArray = @[movePlayer1, movePlayer2];
+  
+  NSArray *sortedArray = [choiceArray sortedArrayUsingComparator:^NSComparisonResult(NSString *choice1, NSString *choice2) {
+    NSComparisonResult comparisonResult = NSOrderedSame;
+    
+    if ([choice1 isEqualToString:CHOICE_SCISSORS]) {
+      if ([choice2 isEqualToString:CHOICE_ROCK]) {
+        // scissors loses against rock
+        comparisonResult = NSOrderedDescending;
+      } else if ([choice2 isEqualToString:CHOICE_PAPER]) {
+        // scissors wins against paper
+        comparisonResult = NSOrderedAscending;
+      }
+    }
+    
+    if ([choice1 isEqualToString:CHOICE_ROCK]) {
+      if ([choice2 isEqualToString:CHOICE_PAPER]) {
+        // rock loses against paper
+        comparisonResult = NSOrderedDescending;
+      } else if ([choice2 isEqualToString:CHOICE_SCISSORS]) {
+        // rock wins against scissors
+        comparisonResult = NSOrderedAscending;
+      }
+    }
+    
+    if ([choice1 isEqualToString:CHOICE_PAPER]) {
+      if ([choice2 isEqualToString:CHOICE_SCISSORS]) {
+        // paper loses against scissors
+        comparisonResult = NSOrderedDescending;
+      } else if ([choice2 isEqualToString:CHOICE_ROCK]) {
+        // paper wins against rock
+        comparisonResult = NSOrderedAscending;
+      }
+    }
+    
+    return comparisonResult;
+  }];
+  
+  if ([sortedArray indexOfObject:movePlayer1] < [sortedArray indexOfObject:movePlayer2]) {
+    // player 1 wins
+    return -1;
+  } else {
+    // player 2 wins
+    return 1;
+  }
+}
+
 
