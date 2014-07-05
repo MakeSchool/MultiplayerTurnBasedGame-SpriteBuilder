@@ -51,11 +51,11 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
   
-  _playerNameLabel.string = [UserInfo sharedUserInfo].name;
+  _playerNameLabel.string = @"You";
   _opponentNameLabel.string = friendNameForUsername(getOpponentName(self.game));
-  _currentRound.string = [self.game[@"movecount"] stringValue] ? [self.game[@"movecount"] stringValue] : @"1";
-  
-  _playersTurn = ([self.game[@"gamedata"][@"turn"] isEqualToString:[[UserInfo sharedUserInfo] username]]);
+  _currentRound.string = [NSString stringWithFormat:@"%d",currentRoundInGame(self.game)];
+    
+  _playersTurn = isPlayersTurn(self.game);
   
   [self fillRoundLabels];
 }

@@ -131,7 +131,7 @@
   } else {
     NSDictionary *selectedGame = _allCells[index];
     
-    if (isCurrentRoundCompleted(selectedGame) && !isGameCompleted(selectedGame)) {
+    if (isCurrentRoundCompleted(selectedGame) && isPlayersTurn(selectedGame) && !isGameCompleted(selectedGame)) {
       // present results of previous game
       CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
       [gameResultScene.children[0] setGame:selectedGame];
@@ -153,6 +153,7 @@
 #pragma mark - Button Callbacks
 
 - (void)playNow {
+  //TODO: 1) games with your turn, 2) start game against friend, 3) random match
   [MGWU getRandomGameWithCallback:@selector(receivedRandomGame:) onTarget:self];
 }
 

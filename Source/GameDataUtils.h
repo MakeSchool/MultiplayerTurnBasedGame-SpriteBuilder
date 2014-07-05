@@ -24,6 +24,8 @@ extern BOOL isCurrentRoundCompleted(NSDictionary *game);
 
 extern BOOL isGameCompleted(NSDictionary *game);
 
+extern BOOL isPlayersTurn(NSDictionary *game);
+
 extern NSInteger currentRoundInGame(NSDictionary *game);
 
 extern void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictionary* game, id target, SEL callback);

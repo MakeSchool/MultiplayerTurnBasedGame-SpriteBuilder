@@ -235,4 +235,19 @@ NSInteger calculateWinnerOfGame(NSDictionary *game) {
   return 0;
 }
 
+BOOL isPlayersTurn(NSDictionary *game) {
+  BOOL playersTurn = NO;
+  
+  NSString *turnPlayerUsername = game[@"turn"];
+  
+  if (!game[@"gamestate"]) {
+    // if we're just starting this game, it is our turn
+    playersTurn = YES;
+  } else {
+    playersTurn = ([turnPlayerUsername isEqualToString:[[UserInfo sharedUserInfo] username]]);
+  }
+  
+  return playersTurn;
+}
+
 

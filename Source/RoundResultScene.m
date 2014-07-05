@@ -19,6 +19,10 @@ NSString * const DRAW = @"It's a draw!";
 @implementation RoundResultScene {
   CCSprite *_playerChoiceSprite;
   CCSprite *_opponentChoiceSprite;
+  
+  CCLabelTTF *_playerNameLabel;
+  CCLabelTTF *_opponentNameLabel;
+  
   CCLabelTTF *_roundResultLabel;
   CCLabelTTF *_roundCaptionLabel;
 }
@@ -27,6 +31,9 @@ NSString * const DRAW = @"It's a draw!";
   [super onEnter];
   
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
+  
+  _playerNameLabel.string = @"You";
+  _opponentNameLabel.string = friendNameForUsername(getOpponentName(self.game));
   
   // we want to display results of last round
   NSInteger currentRound = currentRoundInGame(self.game) - 1;
