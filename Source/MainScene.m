@@ -14,6 +14,7 @@
 #import "UserInfo.h"
 #import "GameDataUtils.h"
 #import "SectionCell.h"
+#import "RoundResultScene.h"
 
 @implementation MainScene {
     CCNode *_tableViewContentNode;
@@ -130,10 +131,22 @@
   } else {
     NSDictionary *selectedGame = _allCells[index];
     
-    CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
-    PreMatchScene *prematchScene = scene.children[0];
-    prematchScene.game = selectedGame;
-    [[CCDirector sharedDirector] pushScene:scene];
+    if (isCurrentRoundCompleted(selectedGame)) {
+      // present results of previous game
+      CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
+      [gameResultScene.children[0] setGame:selectedGame];
+      // after presenting round results switch to the prematch scene
+      [gameResultScene.children[0] setNextScene:RoundResultSceneNextScenePreMatchScene];
+      
+      CCTransition *pushTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:0.3f];
+      [[CCDirector sharedDirector] pushScene:gameResultScene withTransition:pushTransition];
+    } else {
+      // show prematch scene, because player needs to complete this round
+      CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+      PreMatchScene *prematchScene = scene.children[0];
+      prematchScene.game = selectedGame;
+      [[CCDirector sharedDirector] pushScene:scene];
+    }
   }
 }
 

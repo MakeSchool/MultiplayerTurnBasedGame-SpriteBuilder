@@ -117,11 +117,7 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
 }
 
 BOOL isCurrentRoundCompleted(NSDictionary *game) {
-  NSInteger currentRound = currentRoundInGame(game) - 1;
-  NSString *currentRoundString = [NSString stringWithFormat:@"%d", currentRound];
-  
-  // the current round is completed if we have MOVES_PER_ROUND moves for this round
-  return [[game[@"gamedata"][currentRoundString] allKeys] count] == MOVES_PER_ROUND;
+  return (([game[@"movecount"] intValue] % MOVES_PER_ROUND) == 0);
 }
 
 NSInteger currentRoundInGame(NSDictionary *game) {
@@ -132,7 +128,7 @@ NSInteger currentRoundInGame(NSDictionary *game) {
 }
 
 
-NSInteger calculateWinner(NSString *movePlayer1, NSString *movePlayer2) {
+NSInteger calculateWinnerOfRound(NSString *movePlayer1, NSString *movePlayer2) {
   if ([movePlayer1 isEqualToString:movePlayer2]) {
     return 0;
   }
@@ -182,6 +178,40 @@ NSInteger calculateWinner(NSString *movePlayer1, NSString *movePlayer2) {
     // player 2 wins
     return 1;
   }
+}
+
+NSInteger calculateWinnerOfGame(NSDictionary *game) {
+  NSInteger scorePlayer = 0;
+  NSInteger scoreOpponent = 0;
+  
+  NSString *oponnentUserName = getOpponentName(game);
+  NSString *playerUserName = [[UserInfo sharedUserInfo] username];
+  NSDictionary *gamedata = game[@"gamedata"];
+  
+  for (int i = 1; i <= ROUNDS_PER_GAME; i++) {
+    NSString *currentRoundString = [NSString stringWithFormat:@"%d", i];
+    
+    NSString *playerMoveCurrentRound = gamedata[currentRoundString][playerUserName];
+    NSString *opponentMoveCurrentRound = gamedata[currentRoundString][oponnentUserName];
+    NSInteger winnerCurrentRound = calculateWinnerOfRound(playerMoveCurrentRound, opponentMoveCurrentRound);
+    
+    if (winnerCurrentRound == -1) {
+      scorePlayer++;
+    } else if (winnerCurrentRound == 1) {
+      scoreOpponent++;
+    }
+  }
+  
+  if (scorePlayer == scoreOpponent) {
+    return 0;
+  } else if (scorePlayer > scoreOpponent) {
+    return -1;
+  } else if (scorePlayer < scoreOpponent) {
+    return +1;
+  }
+ 
+  // should never be reached
+  return 0;
 }
 
 

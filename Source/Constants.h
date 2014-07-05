@@ -14,6 +14,7 @@ static NSString * const GAME_STATE_IN_PROGRESS = @"inprogress";
 static NSString * const GAME_STATE_COMPLETED = @"ended";
 
 static NSInteger MOVES_PER_ROUND = 2;
+static NSInteger ROUNDS_PER_GAME = 3;
 
 static NSString * const CHOICE_SCISSORS = @"Scissors";
 static NSString * const CHOICE_ROCK = @"Rock";

@@ -31,6 +31,13 @@ extern void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSD
  -1 = choice 1 wins
  +1 = choice 2 wins
  */
-extern NSInteger calculateWinner(NSString *movePlayer1, NSString *movePlayer2);
+extern NSInteger calculateWinnerOfRound(NSString *movePlayer1, NSString *movePlayer2);
+
+/**
+ 0 = draw between both players
+ -1 = player wins
+ +1 = oponnent wins
+ */
+extern NSInteger calculateWinnerOfGame(NSDictionary *game);
 
 #endif

@@ -15,6 +15,10 @@
 NSString * const START_ROUND_STRING = @"It’s your turn to start this round!";
 NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
 
+NSString * const GAME_OVER_WIN = @"Game ended. You won!";
+NSString * const GAME_OVER_LOSE = @"Game ended. You lost!";
+NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
+
 @implementation PreMatchScene {
   CCLabelTTF *_playerNameLabel;
   CCLabelTTF *_opponentNameLabel;
@@ -47,6 +51,11 @@ NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
 - (void)startGame {
   CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
   
+  if ([self.game[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
+    // start a new game, since old one is completed
+    self.game = @{@"opponent":getOpponentName(self.game)};
+  }
+  
   GameplayScene *gameplayScene = guessScene.children[0];
   gameplayScene.game = self.game;
   
@@ -54,7 +63,7 @@ NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
 }
 
 - (void)backButtonPressed {
-  [[CCDirector sharedDirector] popScene];
+  [[CCDirector sharedDirector] popToRootScene];
 }
 
 #pragma mark - Fill User Interface
@@ -77,6 +86,18 @@ NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
     _actionInfoLabel.string = START_ROUND_STRING;
   } else {
     _actionInfoLabel.string = FINISH_ROUND_STRING;
+  }
+  
+  if ([_currentRound.string isEqualToString:@"6"]) {
+    NSInteger winner = calculateWinnerOfGame(self.game);
+    
+    if (winner == 0) {
+      _actionInfoLabel.string = GAME_OVER_DRAW;
+    } else if (winner == -1) {
+      _actionInfoLabel.string = GAME_OVER_WIN;
+    } else if (winner == 1) {
+      _actionInfoLabel.string = GAME_OVER_LOSE;
+    }
   }
   
   NSString *playerMoveRound1 = round1[playerUsername];

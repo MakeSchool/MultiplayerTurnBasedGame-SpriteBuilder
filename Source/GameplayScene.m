@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import <mgwuSDK/MGWU.h>
 #import "UserInfo.h"
+#import "RoundResultScene.h"
 
 @implementation GameplayScene {
   NSString *_selectedElement;
@@ -33,6 +34,11 @@
 
 - (void)completeRound {
   performMoveForPlayerInGame(_selectedElement, [[UserInfo sharedUserInfo] username], self.game, self, @selector(moveCompleted:));
+}
+
+- (void)cancel {
+  CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
+  [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
 }
 
 - (void)moveCompleted:(NSMutableDictionary*)newGame {
@@ -63,7 +69,9 @@
 
 - (void)presentResultScene:(NSDictionary *)game {
   CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
-  [gameResultScene.children[0] setGame:self.game];
+  [gameResultScene.children[0] setGame:game];
+  // after presenting results, return to main scene
+  [gameResultScene.children[0] setNextScene:RoundResultSceneNextSceneMainScene];
   
   CCTransition *pushTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:0.3f];
   [[CCDirector sharedDirector] pushScene:gameResultScene withTransition:pushTransition];
