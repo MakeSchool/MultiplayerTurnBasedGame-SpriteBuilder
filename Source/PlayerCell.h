@@ -20,6 +20,6 @@ typedef NS_ENUM(NSInteger, PlayerCellActionType) {
 @property (strong) CCLabelTTF *actionLabel;
 
 @property (assign) PlayerCellActionType actionType;
-@property (nonatomic, weak) NSDictionary *player;
+@property (nonatomic, copy) NSDictionary *player;
 
 @end

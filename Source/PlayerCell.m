@@ -7,7 +7,16 @@
 //
 
 #import "PlayerCell.h"
+#import "CCSpriteDownloadImage.h"
 
-@implementation PlayerCell
+@implementation PlayerCell {
+  CCSpriteDownloadImage *_playerImage;
+}
+
+- (void)setPlayer:(NSDictionary *)player {
+  _player = [player copy];
+  
+  [_playerImage setUsername:_player[@"username"]];
+}
 
 @end

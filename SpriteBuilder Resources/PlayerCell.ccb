@@ -895,11 +895,11 @@
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
-				<string></string>
+				<string>CCSpriteDownloadImage</string>
 				<key>displayName</key>
 				<string>WhiteGhost</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_playerImage</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>

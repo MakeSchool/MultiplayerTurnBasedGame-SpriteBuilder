@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		623468C3196880260030AC0A /* RoundResultScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 623468C2196880260030AC0A /* RoundResultScene.m */; };
 		623468C7196882E40030AC0A /* UserInterfaceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 623468C6196882E40030AC0A /* UserInterfaceUtils.m */; };
+		623468CA1968BA660030AC0A /* CCSpriteDownloadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 623468C91968BA660030AC0A /* CCSpriteDownloadImage.m */; };
 		624331AD1951293800EAB009 /* SectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 624331AC1951293800EAB009 /* SectionCell.m */; };
 		62468A24192D3FE000E41128 /* ghosty.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62468A23192D3FE000E41128 /* ghosty.otf */; };
 		62468AC3192D6EEE00E41128 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62468AC2192D6EEE00E41128 /* PlayerCell.m */; };
@@ -157,6 +158,8 @@
 		623468C2196880260030AC0A /* RoundResultScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundResultScene.m; path = Source/RoundResultScene.m; sourceTree = "<group>"; };
 		623468C5196882C00030AC0A /* UserInterfaceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserInterfaceUtils.h; path = Source/UserInterfaceUtils.h; sourceTree = "<group>"; };
 		623468C6196882E40030AC0A /* UserInterfaceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInterfaceUtils.m; path = Source/UserInterfaceUtils.m; sourceTree = "<group>"; };
+		623468C81968BA660030AC0A /* CCSpriteDownloadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteDownloadImage.h; sourceTree = "<group>"; };
+		623468C91968BA660030AC0A /* CCSpriteDownloadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSpriteDownloadImage.m; sourceTree = "<group>"; };
 		623608C819637C1100A2FA3C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Constants.h; sourceTree = "<group>"; };
 		624331AA1951067A00EAB009 /* GameDataUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameDataUtils.h; path = Source/GameDataUtils.h; sourceTree = "<group>"; };
 		624331AB1951293800EAB009 /* SectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionCell.h; path = Source/SectionCell.h; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 				625C13711952730C00FAD9FD /* FriendListScene.h */,
 				625C13721952730D00FAD9FD /* FriendListScene.m */,
 				623608C819637C1100A2FA3C /* Constants.h */,
+				623468C81968BA660030AC0A /* CCSpriteDownloadImage.h */,
+				623468C91968BA660030AC0A /* CCSpriteDownloadImage.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -739,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				623468CA1968BA660030AC0A /* CCSpriteDownloadImage.m in Sources */,
 				625C13731952730D00FAD9FD /* FriendListScene.m in Sources */,
 				62468AC3192D6EEE00E41128 /* PlayerCell.m in Sources */,
 				62C4F43619427DD80047553C /* PreMatchScene.m in Sources */,
