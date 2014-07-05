@@ -131,7 +131,7 @@
   } else {
     NSDictionary *selectedGame = _allCells[index];
     
-    if (isCurrentRoundCompleted(selectedGame)) {
+    if (isCurrentRoundCompleted(selectedGame) && !isGameCompleted(selectedGame)) {
       // present results of previous game
       CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
       [gameResultScene.children[0] setGame:selectedGame];

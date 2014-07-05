@@ -42,10 +42,16 @@ NSString* friendNameForUsername(NSString *username) {
   return @"Random Player";
 }
 
-NSNumber* doesPlayerHaveMatchWithFriend(NSString *username) {
+NSNumber* doesPlayerHaveMatchWithUser(NSString *username) {
   NSArray *games = [UserInfo sharedUserInfo].allGames;
   
   for (NSDictionary *game in games) {
+    
+    if ([game[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
+      // don't count completed matches as matches with user
+      continue;
+    }
+    
     for (NSString *playerID in  game[@"players"]) {
       if ([playerID isEqualToString:username]) {
         return game[@"gameid"];
@@ -72,13 +78,13 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
   int nextMoveNumber = [game[@"movecount"] intValue] + 1;
   int gameID =  [game[@"gameid"] intValue];
   
-  NSString *oponnentUserName = getOpponentName(game);
+  NSString *opponentUserName = getOpponentName(game);
   NSString *playerUserName = playerName;
   NSString *newGameState = game[@"gamestate"];
   
 #ifdef DEBUG
   if ([playerName isEqualToString:BOT_USERNAME]) {
-    oponnentUserName = playerUserName;
+    opponentUserName = playerUserName;
   }
 #endif
   
@@ -86,11 +92,6 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
     newGameState = GAME_STATE_STARTED;
   } else if (nextMoveNumber > 1) {
     newGameState = GAME_STATE_IN_PROGRESS;
-  }
-  
-  // After 6 rounds, mark game as completed
-  if (nextMoveNumber == 6) {
-    newGameState = GAME_STATE_COMPLETED;
   }
   
   // add a move to the game data
@@ -113,7 +114,19 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
   
   currentRoundGameData[playerUserName] = move;
   
-  [MGWU move:@{@"selectedElement":move} withMoveNumber:nextMoveNumber forGame:gameID withGameState:newGameState withGameData:gameData againstPlayer:oponnentUserName withPushNotificationMessage:@"Round completed" withCallback:callback onTarget:target];
+  // After 6 rounds, mark game as completed
+  if (nextMoveNumber == ROUNDS_PER_GAME * MOVES_PER_ROUND) {
+    newGameState = GAME_STATE_COMPLETED;
+    NSInteger winner = calculateWinnerOfGame(game);
+    
+    if (winner == -1) {
+      gameData[@"winner"] = playerUserName;
+    } else if (winner == 1) {
+      gameData[@"winner"] = opponentUserName;
+    }
+  }
+
+  [MGWU move:@{@"selectedElement":move} withMoveNumber:nextMoveNumber forGame:gameID withGameState:newGameState withGameData:gameData againstPlayer:opponentUserName withPushNotificationMessage:@"Round completed" withCallback:callback onTarget:target];
 }
 
 BOOL isCurrentRoundCompleted(NSDictionary *game) {
@@ -125,6 +138,14 @@ NSInteger currentRoundInGame(NSDictionary *game) {
   currentRound += 1;
     
   return currentRound;
+}
+
+BOOL isGameCompleted(NSDictionary *game) {
+  if ([game[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
+    return YES;
+  } else {
+    return NO;
+  }
 }
 
 
@@ -184,7 +205,7 @@ NSInteger calculateWinnerOfGame(NSDictionary *game) {
   NSInteger scorePlayer = 0;
   NSInteger scoreOpponent = 0;
   
-  NSString *oponnentUserName = getOpponentName(game);
+  NSString *opponentUserName = getOpponentName(game);
   NSString *playerUserName = [[UserInfo sharedUserInfo] username];
   NSDictionary *gamedata = game[@"gamedata"];
   
@@ -192,7 +213,7 @@ NSInteger calculateWinnerOfGame(NSDictionary *game) {
     NSString *currentRoundString = [NSString stringWithFormat:@"%d", i];
     
     NSString *playerMoveCurrentRound = gamedata[currentRoundString][playerUserName];
-    NSString *opponentMoveCurrentRound = gamedata[currentRoundString][oponnentUserName];
+    NSString *opponentMoveCurrentRound = gamedata[currentRoundString][opponentUserName];
     NSInteger winnerCurrentRound = calculateWinnerOfRound(playerMoveCurrentRound, opponentMoveCurrentRound);
     
     if (winnerCurrentRound == -1) {

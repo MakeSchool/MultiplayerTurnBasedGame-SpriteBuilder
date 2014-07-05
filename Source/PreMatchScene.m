@@ -14,12 +14,22 @@
 
 NSString * const START_ROUND_STRING = @"It’s your turn to start this round!";
 NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
+NSString * const WAITING_STRING = @"You are waiting on %@";
 
 NSString * const GAME_OVER_WIN = @"Game ended. You won!";
 NSString * const GAME_OVER_LOSE = @"Game ended. You lost!";
 NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
 
+NSString * const ACTION_BUTTON_PLAY = @"PLAY";
+NSString * const ACTION_BUTTON_OK = @"OK";
+NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
+
+
 @implementation PreMatchScene {
+  BOOL _playersTurn;
+  
+  CCButton *_actionButton;
+  
   CCLabelTTF *_playerNameLabel;
   CCLabelTTF *_opponentNameLabel;
   CCLabelTTF *_currentRound;
@@ -45,21 +55,33 @@ NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
   _opponentNameLabel.string = friendNameForUsername(getOpponentName(self.game));
   _currentRound.string = [self.game[@"movecount"] stringValue] ? [self.game[@"movecount"] stringValue] : @"1";
   
+  _playersTurn = ([self.game[@"gamedata"][@"turn"] isEqualToString:[[UserInfo sharedUserInfo] username]]);
+  
   [self fillRoundLabels];
 }
 
 - (void)startGame {
-  CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
-  
-  if ([self.game[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
-    // start a new game, since old one is completed
-    self.game = @{@"opponent":getOpponentName(self.game)};
+  if (!_playersTurn) {
+    [[CCDirector sharedDirector] popToRootScene];
+  } else {
+    if ([self.game[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
+      // start a new game, since old one is completed
+      
+      // but first check if we already have a match with this player
+      if (!doesPlayerHaveMatchWithUser(getOpponentName(self.game))) {
+        self.game = @{@"opponent":getOpponentName(self.game)};
+      } else {
+        [MGWU showMessage:@"You already have a match with this player" withImage:nil];
+        return;
+      }
+    }
+    
+    CCScene *guessScene = [CCBReader loadAsScene:@"GameplayScene"];
+    GameplayScene *gameplayScene = guessScene.children[0];
+    gameplayScene.game = self.game;
+    
+    [[CCDirector sharedDirector] pushScene:guessScene];
   }
-  
-  GameplayScene *gameplayScene = guessScene.children[0];
-  gameplayScene.game = self.game;
-  
-  [[CCDirector sharedDirector] pushScene:guessScene];
 }
 
 - (void)backButtonPressed {
@@ -88,6 +110,14 @@ NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
     _actionInfoLabel.string = FINISH_ROUND_STRING;
   }
   
+  if (!_playersTurn) {
+    // it's the other's players turn
+    _actionInfoLabel.string = [NSString stringWithFormat:WAITING_STRING, friendNameForUsername(getOpponentName(self.game))];
+    [_actionButton setTitle:ACTION_BUTTON_OK];
+  } else {
+    [_actionButton setTitle:ACTION_BUTTON_PLAY];
+  }
+  
   if ([_currentRound.string isEqualToString:@"6"]) {
     NSInteger winner = calculateWinnerOfGame(self.game);
     
@@ -98,6 +128,10 @@ NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
     } else if (winner == 1) {
       _actionInfoLabel.string = GAME_OVER_LOSE;
     }
+    
+    [_actionButton setTitle:ACTION_BUTTON_REMATCH];
+    // allow player to rematch
+    _playersTurn = YES;
   }
   
   NSString *playerMoveRound1 = round1[playerUsername];

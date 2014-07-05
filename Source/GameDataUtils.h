@@ -16,11 +16,13 @@ extern NSString* friendNameForUsername(NSString *username);
  If player has a match with this friend, this method returns the game id.
  If there's no match, this method returns nil.
  */
-extern NSNumber* doesPlayerHaveMatchWithFriend(NSString *username);
+extern NSNumber* doesPlayerHaveMatchWithUser(NSString *username);
 
 extern NSDictionary* getMatchById(NSNumber *matchID);
 
 extern BOOL isCurrentRoundCompleted(NSDictionary *game);
+
+extern BOOL isGameCompleted(NSDictionary *game);
 
 extern NSInteger currentRoundInGame(NSDictionary *game);
 
@@ -36,7 +38,7 @@ extern NSInteger calculateWinnerOfRound(NSString *movePlayer1, NSString *movePla
 /**
  0 = draw between both players
  -1 = player wins
- +1 = oponnent wins
+ +1 = opponent wins
  */
 extern NSInteger calculateWinnerOfGame(NSDictionary *game);
 

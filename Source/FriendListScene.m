@@ -39,7 +39,7 @@
   NSDictionary *gameInfo = nil;
   
   if (selectedPlayerCell.actionType == PlayerCellActionTypeShowGame) {
-    NSNumber *matchID = doesPlayerHaveMatchWithFriend(selectedPlayerCell.player[@"username"]);
+    NSNumber *matchID = doesPlayerHaveMatchWithUser(selectedPlayerCell.player[@"username"]);
     gameInfo = getMatchById(matchID);
   } else if (selectedPlayerCell.actionType == PlayerCellActionTypeStartGame) {
     gameInfo = @{@"opponent":selectedPlayerCell.player[@"username"]};
@@ -66,7 +66,7 @@
     cellContent.nameLabel.string = friendName;
     cellContent.player = [UserInfo sharedUserInfo].friends[index];
     
-    if (doesPlayerHaveMatchWithFriend(friendUsername)) {
+    if (doesPlayerHaveMatchWithUser(friendUsername)) {
       cellContent.actionLabel.string = @"SHOW";
       cellContent.actionType = PlayerCellActionTypeShowGame;
     } else {
