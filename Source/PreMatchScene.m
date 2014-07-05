@@ -118,7 +118,7 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
     [_actionButton setTitle:ACTION_BUTTON_PLAY];
   }
   
-  if ([_currentRound.string isEqualToString:@"6"]) {
+  if ([self.game[@"movecount"] integerValue] == ROUNDS_PER_GAME * MOVES_PER_ROUND) {
     NSInteger winner = calculateWinnerOfGame(self.game);
     
     if (winner == 0) {
@@ -128,6 +128,8 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
     } else if (winner == 1) {
       _actionInfoLabel.string = GAME_OVER_LOSE;
     }
+    
+    _currentRound.string = @"-";
     
     [_actionButton setTitle:ACTION_BUTTON_REMATCH];
     // allow player to rematch
