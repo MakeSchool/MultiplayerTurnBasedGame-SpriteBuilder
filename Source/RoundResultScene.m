@@ -11,6 +11,7 @@
 #import "UserInfo.h"
 #import "UserInterfaceUtils.h"
 #import "PreMatchScene.h"
+#import "CCSpriteDownloadImage.h"
 
 NSString * const YOU_WIN = @"You win this round!";
 NSString * const YOU_LOSE = @"You lose this round!";
@@ -25,6 +26,9 @@ NSString * const DRAW = @"It's a draw!";
   
   CCLabelTTF *_roundResultLabel;
   CCLabelTTF *_roundCaptionLabel;
+  
+  CCSpriteDownloadImage *_playerSprite;
+  CCSpriteDownloadImage *_opponentSprite;
 }
 
 - (void)onEnter {
@@ -33,8 +37,11 @@ NSString * const DRAW = @"It's a draw!";
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
   
   _playerNameLabel.string = @"You";
+  _playerSprite.username = [[UserInfo sharedUserInfo] username];
+
   _opponentNameLabel.string = friendNameForUsername(getOpponentName(self.game));
-  
+  _opponentSprite.username = getOpponentName(self.game);
+
   // we want to display results of last round
   NSInteger currentRound = currentRoundInGame(self.game) - 1;
   NSString *currentRoundString = [NSString stringWithFormat:@"%d", currentRound];

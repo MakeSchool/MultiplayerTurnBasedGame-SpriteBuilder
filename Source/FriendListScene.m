@@ -106,4 +106,8 @@
   [[CCDirector sharedDirector] popScene];
 }
 
+- (void)inviteFriends {
+  [MGWU inviteFriendsWithMessage:@"I'm challenging you to play Rock, Paper, Scissors!"];
+}
+
 @end
