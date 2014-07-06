@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /** 
- The User Info object stores all of the information received from the MGWU server.
+ The User Info class stores all of the information received from the MGWU server.
  UserInfo is implemented as a singleton. If you want to access information do it as follows:
  @code
  // access username
