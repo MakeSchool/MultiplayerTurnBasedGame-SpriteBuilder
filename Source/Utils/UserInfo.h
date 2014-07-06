@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef DEBUG
-static NSString * const BOT_USERNAME = @"99";
-#endif
-
 @interface UserInfo : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;

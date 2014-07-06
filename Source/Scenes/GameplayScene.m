@@ -51,20 +51,11 @@
   }
 }
 
-- (void)botCompleted:(NSMutableDictionary*)newGame {
-  CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
-  [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
-}
-
 #pragma mark - Transition after move was performed
 
 - (void)backToMainScene {
-  if ([getOpponentName(self.game) isEqualToString:BOT_USERNAME]) {
-    
-  } else {
-    CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
-    [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
-  }
+  CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
+  [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
 }
 
 - (void)presentResultScene:(NSDictionary *)game {

@@ -82,12 +82,6 @@ void performMoveForPlayerInGame(NSString *move, NSString *playerName, NSDictiona
   NSString *playerUserName = playerName;
   NSString *newGameState = game[@"gamestate"];
   
-#ifdef DEBUG
-  if ([playerName isEqualToString:BOT_USERNAME]) {
-    opponentUserName = playerUserName;
-  }
-#endif
-  
   if (newGameState == nil) {
     newGameState = GAME_STATE_STARTED;
   } else if (nextMoveNumber > 1) {

@@ -60,21 +60,6 @@
   [self splitGames:userInfo];
   
   _friends = [NSMutableArray arrayWithArray:userInfo[@"friends"]];
-  
-#ifdef DEBUG
-  // in debug mode add a test friend that always plays back immediately
-  NSDictionary *botFriend = @{
-    @"fbid" : [@(INT_MAX) stringValue],
-    @"lastplayed" : @"1403140089",
-    @"losses" : @(0),
-    @"name" : @"mgwu bot friend",
-    @"rankpoints" : @(0),
-    @"username" : [@(99) stringValue],
-    @"wins" : @(0),
-    };
-  
-  [_friends addObject:botFriend];
-#endif
 }
 
 - (void)splitGames:(NSDictionary *)userInfo {
