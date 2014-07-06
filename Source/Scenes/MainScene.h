@@ -8,6 +8,10 @@
 
 #import "CCNode.h"
 
+/**
+ This scene represent the main list of games, displayed immediately after the game starts.
+ */
+
 @interface MainScene : CCNode <CCTableViewDataSource>
 
 - (void)loadedUserInfo:(NSDictionary *)userInfo;

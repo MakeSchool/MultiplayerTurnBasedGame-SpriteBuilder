@@ -15,36 +15,41 @@
 #import "GameDataUtils.h"
 #import "SectionCell.h"
 #import "RoundResultScene.h"
+#import "Constants.h"
 
 @implementation MainScene {
-    CCNode *_tableViewContentNode;
-    CCTableView *_tableView;
-    CCTextField *_textField;
-  
-    NSMutableArray *_allCells;
+  // container node for the table view
+  CCNode *_tableViewContentNode;
+  CCTableView *_tableView;
+  // array that will hold all cells in the table view
+  NSMutableArray *_allCells;
 }
 
 #pragma mark - Lifecycle
 
 - (void)dealloc {
+  // remove table view delegate when this class is deallocated
   [_tableView setTarget:nil selector:nil];
 }
 
 - (void)didLoadFromCCB {
-    _tableView = [[CCTableView alloc] init];
-    [_tableViewContentNode addChild:_tableView];
-    _tableView.contentSizeType = CCSizeTypeNormalized;
-    _tableView.contentSize = CGSizeMake(1.f, 1.f);
-    [_tableView setTarget:self selector:@selector(tableViewCellSelected:)];
-  
-    _allCells = [NSMutableArray array];
+  // setup table view
+  _tableView = [[CCTableView alloc] init];
+  [_tableViewContentNode addChild:_tableView];
+  _tableView.contentSizeType = CCSizeTypeNormalized;
+  _tableView.contentSize = CGSizeMake(1.f, 1.f);
+  [_tableView setTarget:self selector:@selector(tableViewCellSelected:)];
 
-    _tableView.dataSource = self;
+  // create an array that will hold all cells in the table view
+  _allCells = [NSMutableArray array];
+
+  _tableView.dataSource = self;
 }
 
 - (void)onEnterTransitionDidFinish {
   [super onEnterTransitionDidFinish];
   
+  // whenever MainScene becomes visible, reload data from server
   [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
 }
 
@@ -53,6 +58,7 @@
 - (void)loadedUserInfo:(NSDictionary *)userInfo {
   _allCells = [NSMutableArray array];
   
+  // setup sections in the tableview and add games into the according sections
   [_allCells addObject:@"Your Turn"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesYourTurn];
   [_allCells addObject:@"Waiting on"];
@@ -60,18 +66,12 @@
   [_allCells addObject:@"Completed"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesCompleted];
   
-  
+  // after "_allCells" is set up entirely, call "reloadData" to update the table view with the latest information
   [_tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)receivedRandomGame:(NSDictionary *)gameInfo {
-
-  if (gameInfo[@"gameid"]) {
-    // if server returns game, continue that game
-  } else {
-    // if the server responds with no existing random game, start a new one
-  }
-  
+  // when we reveive a random game, present the PreMatchScene with this game
   CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
   PreMatchScene *prematchScene = scene.children[0];
   prematchScene.game = gameInfo;
@@ -86,13 +86,14 @@
   id currentCell = _allCells[index];
   
   if ([currentCell isKindOfClass:[NSString class]]) {
-    // this is a section
+    // Current cell is a section, create a "SectionCell" for it
     SectionCell *cellContent = (SectionCell *)[CCBReader load:@"SectionCell"];
     cellContent.sectionTitleLabel.string = currentCell;
     [cell addChild:cellContent];
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);
   } else {
+    // Current cell represents a match. Create a "PlayerCell"
     NSDictionary *currentGame = _allCells[index];
     PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
     cellContent.nameLabel.string = friendNameForUsername(getOpponentName(currentGame));
@@ -101,14 +102,19 @@
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);
     
-    //TODO: refactor this
-    if (index < [[UserInfo sharedUserInfo].gamesYourTurn count] + 1) {
-      cellContent.actionLabel.string = @"PLAY";
-    } else if (index < [[UserInfo sharedUserInfo].gamesYourTurn count] + [[UserInfo sharedUserInfo].gamesTheirTurn count]+2) {
-      cellContent.actionLabel.string = @"SHOW";
-    } else if (index < [[UserInfo sharedUserInfo].gamesCompleted count] + [[UserInfo sharedUserInfo].gamesYourTurn count] + [[UserInfo sharedUserInfo].gamesTheirTurn count] +3) {
+    if ([currentGame[@"gamestate"] isEqualToString:GAME_STATE_IN_PROGRESS]) {
+      if (isPlayersTurn(currentGame)) {
+        // if it's the player's turn in the the game, set the action to be "PLAY"
+        cellContent.actionLabel.string = @"PLAY";
+      } else {
+        // if the current player is waiting, set the action to "SHOW"
+        cellContent.actionLabel.string = @"SHOW";
+      }
+    } else if ([currentGame[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
+      // if game is completed, set action to "REMATCH"
       cellContent.actionLabel.string = @"REMATCH";
     }
+
   }
   
   return cell;
@@ -131,10 +137,11 @@
     // this is a section and we don't need user interaction
     return;
   } else {
+    // if a game cell was tapped, pick the selected game from the '_allCells' array
     NSDictionary *selectedGame = _allCells[index];
     
     if (isCurrentRoundCompleted(selectedGame) && isPlayersTurn(selectedGame) && !isGameCompleted(selectedGame)) {
-      // present results of previous game
+      // present results of previous round
       CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
       [gameResultScene.children[0] setGame:selectedGame];
       // after presenting round results switch to the prematch scene
@@ -155,12 +162,13 @@
 #pragma mark - Button Callbacks
 
 - (void)reload {
+  // update data with newest from MGWU server
   [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
 }
 
 - (void)playNow {
+  // get a list of friends against which we don't have an open match
   NSArray *openFriends = friendsWithoutOpenMatches();
-
   
   if ([[[UserInfo sharedUserInfo] gamesYourTurn] count] > 0)
   {
@@ -198,6 +206,7 @@
 }
 
 - (void)showFriendList {
+  // switch to the friendlist
   CCScene *friendListScene = [CCBReader loadAsScene:@"FriendListScene"];
   [[CCDirector sharedDirector] pushScene:friendListScene];
 }
