@@ -1,7 +1,7 @@
 #Rock, Paper, Scissors - A simple turn based multiplayer game
 
 This game is an example and a template for the multiplayer functionality of the MGWU SDK. The goal of the game is to win against Facebook friends in three rounds of Rock, Paper, Scissors:
-![image](Screenshot.png)
+![image](Screenshot.png? =290x)
 
 ##Scene Structure of the Game
 ![image](RockPaperScissors_Scenes.png)
@@ -33,18 +33,18 @@ The `UserInfo` class stores all of the information received from the MGWU server
 
 	  [MGWU getMyInfoWithCallback:@selector(refreshCompleted:) onTarget:self];
 
-and stores the results in a structurded manner. The `UserInfo` class provides different properties to provide easy access to the information received from the MGWU SDK server.
+and stores the results in a structurded manner. The `UserInfo` class consists of different properties that provide easy access to the information received from the MGWU SDK server.
 
 `UserInfo` is implemented as a singleton. If you want to access information do it as follows:
  
  	// access username
  	NSString *playerUsername = [[UserInfo sharedUserInfo] username];
 
- If you want to the `UserInfo` class to download the latest information from the MGWU server you should call:
+ If you want the `UserInfo` class to download the latest information from the MGWU server you should call:
  
 	 [[UserInfo sharedUserInfo] refreshWithCallback:@selector(yourCallback) onTarget:self];
 
-The callback you provide within this method call will be called as soon as the data is retrieved from the server.
+The callback you provide within this method call will be called as soon as the data is retrieved from the server. In the template the `MainScene` methods calls the `refreshWithCallback` method of `UserInfo` in the `onEnterTransitionDidFinish` method; whenever the `MainScene` appears, the latest data from the MGWU server is loaded.
 
 
 ##GameDataUtils
