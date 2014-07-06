@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>11</integer>
+	<integer>12</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -362,9 +362,9 @@
 								<string>Color4</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
+									<real>0.13715638220310211</real>
+									<real>0.13715638220310211</real>
+									<real>0.13715638220310211</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -509,9 +509,119 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>0.31430387496948242</real>
-							<real>0.32335969805717468</real>
-							<real>0.30527082085609436</real>
+							<real>0.9200894832611084</real>
+							<real>0.92623507976531982</real>
+							<real>0.91976267099380493</real>
+							<real>1</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>opacity</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>1</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>blendFunc</string>
+						<key>type</key>
+						<string>Blendmode</string>
+						<key>value</key>
+						<array>
+							<integer>770</integer>
+							<integer>771</integer>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>UUID</key>
+				<integer>11</integer>
+				<key>baseClass</key>
+				<string>CCNodeColor</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>TopDivider</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>1</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>name</string>
+						<key>type</key>
+						<string>StringSimple</string>
+						<key>value</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>50</real>
+							<integer>1</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>contentSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<integer>2</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>color</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>0.3104415237903595</real>
+							<real>0.29832300543785095</real>
+							<real>0.29550805687904358</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -946,9 +1056,9 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>0.61761265993118286</real>
-							<real>0.65680110454559326</real>
-							<real>0.64476048946380615</real>
+							<real>0.9200894832611084</real>
+							<real>0.92623507976531982</real>
+							<real>0.91976267099380493</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -1383,9 +1493,9 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>0.61761265993118286</real>
-							<real>0.65680110454559326</real>
-							<real>0.64476048946380615</real>
+							<real>0.9200894832611084</real>
+							<real>0.92623507976531982</real>
+							<real>0.91976267099380493</real>
 							<real>1</real>
 						</array>
 					</dict>

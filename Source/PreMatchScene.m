@@ -12,6 +12,7 @@
 #import "GameDataUtils.h"
 #import "Constants.h"
 #import "CCSpriteDownloadImage.h"
+#import "UserInterfaceUtils.h"
 
 NSString * const START_ROUND_STRING = @"It’s your turn to start this round!";
 NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
@@ -35,14 +36,14 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   CCLabelTTF *_opponentNameLabel;
   CCLabelTTF *_currentRound;
   
-  // labels
-  CCLabelTTF *_playerRound1;
-  CCLabelTTF *_playerRound2;
-  CCLabelTTF *_playerRound3;
+  // round images
+  CCSprite *_playerRound1;
+  CCSprite *_playerRound2;
+  CCSprite *_playerRound3;
   
-  CCLabelTTF *_opponentRound1;
-  CCLabelTTF *_opponentRound2;
-  CCLabelTTF *_opponentRound3;
+  CCSprite *_opponentRound1;
+  CCSprite *_opponentRound2;
+  CCSprite *_opponentRound3;
   
   CCLabelTTF *_actionInfoLabel;
   
@@ -143,31 +144,37 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   }
   
   NSString *playerMoveRound1 = round1[playerUsername];
-  _playerRound1.string = playerMoveRound1 ? playerMoveRound1 : @"_";
+  playerMoveRound1 = playerMoveRound1 ? playerMoveRound1 : @"_";
+  _playerRound1.spriteFrame = spriteFrameForChoice(playerMoveRound1);
   NSString *opponentMoveRound1 = round1[opponentUsername];
   // only show choice of opponent if this round is complete
   if (opponentMoveRound1) {
     opponentMoveRound1 = round1Complete ? opponentMoveRound1 : @"?";
   }
-  _opponentRound1.string = opponentMoveRound1 ? opponentMoveRound1: @"_";
+  opponentMoveRound1 = opponentMoveRound1 ? opponentMoveRound1: @"_";
+  _opponentRound1.spriteFrame = spriteFrameForChoice(opponentMoveRound1);
   
   NSString *playerMoveRound2 = round2[playerUsername];
-  _playerRound2.string = playerMoveRound2 ? playerMoveRound2 : @"_";
+  playerMoveRound2 = playerMoveRound2 ? playerMoveRound2 : @"_";
+  _playerRound2.spriteFrame = spriteFrameForChoice(playerMoveRound2);
   NSString *opponentMoveRound2 = round2[opponentUsername];
   // only show choice of opponent if this round is complete
   if (opponentMoveRound2) {
     opponentMoveRound2 = round2Complete ? opponentMoveRound2 : @"?";
   }
-  _opponentRound2.string = opponentMoveRound2 ? opponentMoveRound2: @"_";
+  opponentMoveRound2 = opponentMoveRound2 ? opponentMoveRound2: @"_";
+  _opponentRound2.spriteFrame = spriteFrameForChoice(opponentMoveRound2);
 
   NSString *playerMoveRound3 = round3[playerUsername];
-  _playerRound3.string = playerMoveRound3 ? playerMoveRound3 : @"_";
+  playerMoveRound3 = playerMoveRound3 ? playerMoveRound3 : @"_";
+  _playerRound3.spriteFrame = spriteFrameForChoice(playerMoveRound3);
   NSString *opponentMoveRound3 = round3[opponentUsername];
   // only show choice of opponent if this round is complete
   if (opponentMoveRound3) {
     opponentMoveRound3 = round3Complete ? opponentMoveRound3 : @"?";
   }
-  _opponentRound3.string = opponentMoveRound3 ? opponentMoveRound3: @"_";
+  opponentMoveRound3 = opponentMoveRound3 ? opponentMoveRound3: @"_";
+  _opponentRound3.spriteFrame = spriteFrameForChoice(opponentMoveRound3);
 }
 
 @end

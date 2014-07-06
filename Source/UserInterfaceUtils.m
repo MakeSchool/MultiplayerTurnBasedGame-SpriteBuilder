@@ -18,6 +18,10 @@ CCSpriteFrame* spriteFrameForChoice(NSString *choice) {
     spriteFrame = [CCSpriteFrame frameWithImageNamed:@"Resources/Paper_Rock_Scissors/Icon-Rock-Small.png"];
   } else if ([choice isEqualToString:CHOICE_PAPER]) {
     spriteFrame = [CCSpriteFrame frameWithImageNamed:@"Resources/Paper_Rock_Scissors/Icon-Paper-Small.png"];
+  } else if ([choice isEqualToString:@"?"]) {
+    spriteFrame = [CCSpriteFrame frameWithImageNamed:@"Resources/Paper_Rock_Scissors/Icon-Unknown-Small.png"];
+  } else if ([choice isEqualToString:@"_"]) {
+    spriteFrame = [CCSpriteFrame frameWithImageNamed:@"Resources/Paper_Rock_Scissors/Icon-Blank-Small.png"];
   }
   
   return spriteFrame;

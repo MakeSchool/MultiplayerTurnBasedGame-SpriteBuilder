@@ -53,11 +53,11 @@
 - (void)loadedUserInfo:(NSDictionary *)userInfo {
   _allCells = [NSMutableArray array];
   
-  [_allCells addObject:@"your turn"];
+  [_allCells addObject:@"Your Turn"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesYourTurn];
-  [_allCells addObject:@"waiting on"];
+  [_allCells addObject:@"Waiting on"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesTheirTurn];
-  [_allCells addObject:@"completed"];
+  [_allCells addObject:@"Completed"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesCompleted];
   
   
