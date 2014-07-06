@@ -70,8 +70,14 @@
 - (void)presentResultScene:(NSDictionary *)game {
   CCScene *gameResultScene = [CCBReader loadAsScene:@"RoundResultScene"];
   [gameResultScene.children[0] setGame:game];
-  // after presenting results, return to main scene
-  [gameResultScene.children[0] setNextScene:RoundResultSceneNextSceneMainScene];
+  
+  if (isGameCompleted(game)) {
+    // if game is finished, show prematch scene to summarize results
+    [gameResultScene.children[0] setNextScene:RoundResultSceneNextScenePreMatchScene];
+  } else {
+    // after presenting results, return to main scene
+    [gameResultScene.children[0] setNextScene:RoundResultSceneNextSceneMainScene];
+  }
   
   CCTransition *pushTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:0.3f];
   [[CCDirector sharedDirector] pushScene:gameResultScene withTransition:pushTransition];

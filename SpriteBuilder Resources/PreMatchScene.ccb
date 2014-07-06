@@ -10,11 +10,11 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>38</integer>
+	<integer>40</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -3097,10 +3097,10 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>0.5</real>
 							<real>78</real>
 							<integer>1</integer>
-							<integer>0</integer>
+							<integer>2</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -3111,7 +3111,7 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>0.5</real>
 							<real>0.5</real>
 						</array>
 					</dict>
@@ -3173,7 +3173,7 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>0.89999997615814209</real>
 							<real>48</real>
 							<integer>2</integer>
 							<integer>0</integer>

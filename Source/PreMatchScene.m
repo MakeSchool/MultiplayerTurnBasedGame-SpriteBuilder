@@ -22,9 +22,9 @@ NSString * const GAME_OVER_WIN = @"Game ended. You won!";
 NSString * const GAME_OVER_LOSE = @"Game ended. You lost!";
 NSString * const GAME_OVER_DRAW = @"Game ended with a draw";
 
-NSString * const ACTION_BUTTON_PLAY = @"PLAY";
+NSString * const ACTION_BUTTON_PLAY = @"Play";
 NSString * const ACTION_BUTTON_OK = @"OK";
-NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
+NSString * const ACTION_BUTTON_REMATCH = @"Rematch";
 
 
 @implementation PreMatchScene {
@@ -45,6 +45,9 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   CCSprite *_opponentRound2;
   CCSprite *_opponentRound3;
   
+  NSArray *_moveSpritesPlayer;
+  NSArray *_moveSpritesOpponent;
+  
   CCLabelTTF *_actionInfoLabel;
   
   CCSpriteDownloadImage *_playerSprite;
@@ -53,6 +56,9 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
 
 - (void)onEnter {
   [super onEnter];
+  
+  _moveSpritesPlayer = @[_playerRound1, _playerRound2, _playerRound3];
+  _moveSpritesOpponent = @[_opponentRound1, _opponentRound2, _opponentRound3];
   
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
   
@@ -65,6 +71,29 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   _playersTurn = isPlayersTurn(self.game);
   
   [self fillRoundLabels];
+  
+  if (currentRoundInGame(self.game) > ROUNDS_PER_GAME) {
+    return;
+  }
+  
+  // highlight current move
+  if (_playersTurn) {
+    CCSprite *currentMoveSprite = (CCSprite *) _moveSpritesPlayer[currentRoundInGame(self.game)-1];
+    if (currentMoveSprite) {
+      CCNode *particleSystem = [CCBReader load:@"CurrentRoundParticle"];
+      particleSystem.positionType = CCPositionTypeNormalized;
+      particleSystem.position = ccp(0.5, 0.5);
+      [currentMoveSprite addChild:particleSystem];
+    }
+  } else {
+    CCSprite *currentMoveSprite = (CCSprite *) _moveSpritesOpponent[currentRoundInGame(self.game)-1];
+    if (currentMoveSprite) {
+      CCNode *particleSystem = [CCBReader load:@"CurrentRoundParticle"];
+      particleSystem.positionType = CCPositionTypeNormalized;
+      particleSystem.position = ccp(0.5, 0.5);
+      [currentMoveSprite addChild:particleSystem];
+    }
+  }
 }
 
 - (void)startGame {

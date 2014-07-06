@@ -154,6 +154,10 @@
 
 #pragma mark - Button Callbacks
 
+- (void)reload {
+  [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
+}
+
 - (void)playNow {
   NSArray *openFriends = friendsWithoutOpenMatches();
 
