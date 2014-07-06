@@ -33,23 +33,7 @@
   _tableView.dataSource = self;
 }
 
-- (void)tableViewCellSelected:(CCTableViewCell*)sender {
-  PlayerCell *selectedPlayerCell = [self cellContentForRowAtIndex:_tableView.selectedRow];
-  
-  NSDictionary *gameInfo = nil;
-  
-  if (selectedPlayerCell.actionType == PlayerCellActionTypeShowGame) {
-    NSNumber *matchID = doesPlayerHaveMatchWithUser(selectedPlayerCell.player[@"username"]);
-    gameInfo = getMatchById(matchID);
-  } else if (selectedPlayerCell.actionType == PlayerCellActionTypeStartGame) {
-    gameInfo = @{@"opponent":selectedPlayerCell.player[@"username"]};
-  }
-  
-  CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
-  PreMatchScene *prematchScene = scene.children[0];
-  prematchScene.game = gameInfo;
-  [[CCDirector sharedDirector] pushScene:scene];
-}
+#pragma mark - TableView Content Creation
 
 - (PlayerCell *)cellContentForRowAtIndex:(NSUInteger)index {
   if (!_playerCellForIndex) {
@@ -80,6 +64,26 @@
   }
 }
 
+#pragma mark - TableView Cell Selection
+
+- (void)tableViewCellSelected:(CCTableViewCell*)sender {
+  PlayerCell *selectedPlayerCell = [self cellContentForRowAtIndex:_tableView.selectedRow];
+  
+  NSDictionary *gameInfo = nil;
+  
+  if (selectedPlayerCell.actionType == PlayerCellActionTypeShowGame) {
+    NSNumber *matchID = doesPlayerHaveMatchWithUser(selectedPlayerCell.player[@"username"]);
+    gameInfo = getMatchById(matchID);
+  } else if (selectedPlayerCell.actionType == PlayerCellActionTypeStartGame) {
+    gameInfo = @{@"opponent":selectedPlayerCell.player[@"username"]};
+  }
+  
+  CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+  PreMatchScene *prematchScene = scene.children[0];
+  prematchScene.game = gameInfo;
+  [[CCDirector sharedDirector] pushScene:scene];
+}
+
 #pragma mark - CCTableViewDataSource Protocol
 
 - (CCTableViewCell*)tableView:(CCTableView*)tableView nodeForRowAtIndex:(NSUInteger)index {
@@ -103,10 +107,12 @@
 #pragma mark - Button Callbacks
 
 - (void)backButtonPressed {
+  // pop back to previous scene when back button is pressed
   [[CCDirector sharedDirector] popScene];
 }
 
 - (void)inviteFriends {
+  // invite facebook friends
   [MGWU inviteFriendsWithMessage:@"I'm challenging you to play Rock, Paper, Scissors!"];
 }
 

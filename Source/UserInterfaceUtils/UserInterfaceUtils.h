@@ -9,6 +9,9 @@
 #ifndef MultiplayerTurnBasedGame_UserInterfaceUtils_h
 #define MultiplayerTurnBasedGame_UserInterfaceUtils_h
 
+/**
+ Returns a sprite frame for the provided player move.
+ */
 extern CCSpriteFrame* spriteFrameForChoice(NSString *choice);
 
 #endif

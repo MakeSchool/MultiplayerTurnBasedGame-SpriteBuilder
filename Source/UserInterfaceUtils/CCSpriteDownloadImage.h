@@ -8,10 +8,17 @@
 
 #import "CCSprite.h"
 
+/**
+ This is a CCSprite subclass that will download a facebook profile picture and cache
+ the result in memory and on the disk. To trigger download set the "username" property.
+ Once the download is completed this CCSprite subclass will update its texture to the downloaded
+ image.
+ */
 @interface CCSpriteDownloadImage : CCSprite
 
+/**
+ Setting this facebook username will trigger the download of the profile picture.
+ */
 @property (nonatomic, copy) NSString *username;
-
-- (void)setDownloadImage:(NSString *)urlString;
 
 @end

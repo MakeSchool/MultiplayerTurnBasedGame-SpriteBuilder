@@ -17,6 +17,8 @@
   NSString *_selectedElement;
 }
 
+#pragma mark - Button Callbacks
+
 - (void)completeRoundWithScissors {
   _selectedElement = CHOICE_SCISSORS;
   [self completeRound];
@@ -41,6 +43,8 @@
   [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];
 }
 
+#pragma mark - MGWU SDK Callbacks
+
 - (void)moveCompleted:(NSMutableDictionary*)newGame {
   if (isCurrentRoundCompleted(newGame)) {
     // if the current round is completed with this move, we need to present the result scene
@@ -63,10 +67,10 @@
   [gameResultScene.children[0] setGame:game];
   
   if (isGameCompleted(game)) {
-    // if game is finished, show prematch scene to summarize results
+    // if game is finished, show prematch scene after the round result scene to summarize results
     [gameResultScene.children[0] setNextScene:RoundResultSceneNextScenePreMatchScene];
   } else {
-    // after presenting results, return to main scene
+    // after presenting results, return to main scene if this is not the last move in the game
     [gameResultScene.children[0] setNextScene:RoundResultSceneNextSceneMainScene];
   }
   

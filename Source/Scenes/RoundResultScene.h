@@ -19,6 +19,10 @@ typedef NS_ENUM(NSInteger, RoundResultSceneNextScene)
 @interface RoundResultScene : CCNode
 
 @property (nonatomic, copy) NSDictionary *game;
+
+/**
+ This property allows caller to configure which scene is displayed after the RoundResultScene.
+ */
 @property (nonatomic, assign) RoundResultSceneNextScene nextScene;
 
 @end

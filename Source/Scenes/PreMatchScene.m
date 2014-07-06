@@ -40,7 +40,6 @@ NSString * const ACTION_BUTTON_REMATCH = @"Rematch";
   CCSprite *_playerRound1;
   CCSprite *_playerRound2;
   CCSprite *_playerRound3;
-  
   CCSprite *_opponentRound1;
   CCSprite *_opponentRound2;
   CCSprite *_opponentRound3;
@@ -48,11 +47,14 @@ NSString * const ACTION_BUTTON_REMATCH = @"Rematch";
   NSArray *_moveSpritesPlayer;
   NSArray *_moveSpritesOpponent;
   
+  // label at the top of the screen that informs player about next move
   CCLabelTTF *_actionInfoLabel;
   
   CCSpriteDownloadImage *_playerSprite;
   CCSpriteDownloadImage *_opponentSprite;
 }
+
+#pragma mark - Lifecycle
 
 - (void)onEnter {
   [super onEnter];
@@ -96,6 +98,8 @@ NSString * const ACTION_BUTTON_REMATCH = @"Rematch";
   }
 }
 
+#pragma mark - Button Callbacks
+
 - (void)startGame {
   if (!_playersTurn) {
     [[CCDirector sharedDirector] popToRootScene];
@@ -126,6 +130,10 @@ NSString * const ACTION_BUTTON_REMATCH = @"Rematch";
 
 #pragma mark - Fill User Interface
 
+/**
+ This method displays the current round and the results of all previous rounds. It also marks
+ the next move in the game with a particle effect.
+ */
 - (void)fillRoundLabels {
   NSDictionary *round1 = self.game[@"gamedata"][@"1"];
   NSDictionary *round2 = self.game[@"gamedata"][@"2"];
