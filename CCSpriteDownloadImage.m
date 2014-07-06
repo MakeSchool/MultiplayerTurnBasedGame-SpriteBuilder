@@ -8,21 +8,51 @@
 
 #import "CCSpriteDownloadImage.h"
 
-@implementation CCSpriteDownloadImage {
-  NSString *_username;
-}
+@implementation CCSpriteDownloadImage
 
 static NSOperationQueue *imageDownloadQueue;
+static NSCache *profilePictureCache;
+
+- (id)initWithTexture:(CCTexture *)texture rect:(CGRect)rect rotated:(BOOL)rotated {
+  self = [super initWithTexture:texture rect:rect rotated:rotated];
+  
+  if (self) {
+    if (!imageDownloadQueue) {
+      imageDownloadQueue = [[NSOperationQueue alloc] init];
+    }
+    
+    if (!profilePictureCache) {
+      profilePictureCache = [[NSCache alloc] init];
+    }
+    
+  }
+  
+  return self;
+}
 
 - (void)setUsername:(NSString *)username {
-  _username = username;
-  NSString *downloadPath = [NSString stringWithFormat: @"https://graph.facebook.com/%@/picture?width=120&height=120", username];
-  [self setDownloadImage:downloadPath];
+  _username = [username copy];
+  
+  CCTexture *textureForUserName = [profilePictureCache objectForKey:username];
+  
+  if (textureForUserName) {
+    [self setTexture:textureForUserName];
+  } else {
+    NSString *downloadPath = [NSString stringWithFormat: @"https://graph.facebook.com/%@/picture?width=240&height=240", username];
+    [self setDownloadImage:downloadPath];
+  }
 }
 
 - (void)setDownloadImage:(NSString *)urlString {
-  if (!imageDownloadQueue) {
-    imageDownloadQueue = [[NSOperationQueue alloc] init];
+  NSString *path = [self downloadPathForUsername:self.username];
+  UIImage *profilePicture = [[UIImage alloc] initWithContentsOfFile:path];
+
+  if (profilePicture) {
+    CCTexture *texture = [[CCTexture alloc] initWithCGImage:profilePicture.CGImage contentScale:1.f];
+    [self setTexture:texture];
+    [profilePictureCache setObject:texture forKey:self.username];
+
+    return;
   }
   
   NSURL *url = [NSURL URLWithString:urlString];
@@ -30,8 +60,6 @@ static NSOperationQueue *imageDownloadQueue;
   
   [NSURLConnection sendAsynchronousRequest:urlRequest queue:imageDownloadQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:_username];
     [data writeToFile: path atomically: TRUE];
     
     UIImage *profilePicture = [[UIImage alloc] initWithContentsOfFile:path];
@@ -39,9 +67,17 @@ static NSOperationQueue *imageDownloadQueue;
     dispatch_async(dispatch_get_main_queue(), ^{
       CCTexture *texture = [[CCTexture alloc] initWithCGImage:profilePicture.CGImage contentScale:1.f];
       [self setTexture:texture];
+      [profilePictureCache setObject:texture forKey:self.username];
     });
     
   }];
+}
+
+- (NSString *)downloadPathForUsername:(NSString *)username {
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+  NSString *path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:username];
+  
+  return path;
 }
 
 @end

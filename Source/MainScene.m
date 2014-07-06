@@ -95,6 +95,7 @@
     NSDictionary *currentGame = _allCells[index];
     PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
     cellContent.nameLabel.string = friendNameForUsername(getOpponentName(currentGame));
+    cellContent.playerUsername = getOpponentName(currentGame);
     [cell addChild:cellContent];
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);

@@ -11,6 +11,7 @@
 #import "UserInfo.h"
 #import "GameDataUtils.h"
 #import "Constants.h"
+#import "CCSpriteDownloadImage.h"
 
 NSString * const START_ROUND_STRING = @"It’s your turn to start this round!";
 NSString * const FINISH_ROUND_STRING = @"It's your turn to finish this round!";
@@ -44,6 +45,9 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   CCLabelTTF *_opponentRound3;
   
   CCLabelTTF *_actionInfoLabel;
+  
+  CCSpriteDownloadImage *_playerSprite;
+  CCSpriteDownloadImage *_opponentSprite;
 }
 
 - (void)onEnter {
@@ -52,7 +56,9 @@ NSString * const ACTION_BUTTON_REMATCH = @"REMATCH";
   NSAssert(self.game != nil, @"Game object needs to be assigned before prematch scene is displayed");
   
   _playerNameLabel.string = @"You";
+  _playerSprite.username = [[UserInfo sharedUserInfo] username];
   _opponentNameLabel.string = friendNameForUsername(getOpponentName(self.game));
+  _opponentSprite.username = getOpponentName(self.game);
   _currentRound.string = [NSString stringWithFormat:@"%d",currentRoundInGame(self.game)];
     
   _playersTurn = isPlayersTurn(self.game);

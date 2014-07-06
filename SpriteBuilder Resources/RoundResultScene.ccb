@@ -47,7 +47,7 @@
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
-				<string></string>
+				<string>CCSpriteDownloadImage</string>
 				<key>displayName</key>
 				<string>WhiteGhost-hd</string>
 				<key>memberVarAssignmentName</key>
@@ -550,7 +550,7 @@
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
-				<string></string>
+				<string>CCSpriteDownloadImage</string>
 				<key>displayName</key>
 				<string>RedGhost-hd</string>
 				<key>memberVarAssignmentName</key>

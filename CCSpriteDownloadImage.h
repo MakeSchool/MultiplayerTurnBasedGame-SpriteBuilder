@@ -10,7 +10,8 @@
 
 @interface CCSpriteDownloadImage : CCSprite
 
-- (void)setUsername:(NSString *)username;
+@property (nonatomic, copy) NSString *username;
+
 - (void)setDownloadImage:(NSString *)urlString;
 
 @end
