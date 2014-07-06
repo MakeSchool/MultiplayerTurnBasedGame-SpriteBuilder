@@ -1,7 +1,7 @@
 #Rock, Paper, Scissors - A simple turn based multiplayer game
 
 This game is an example and a template for the multiplayer functionality of the MGWU SDK. The goal of the game is to win against Facebook friends in three rounds of Rock, Paper, Scissors:
-![image](Screenshot.png? =290x)
+![image](Screenshot.png)
 
 ##Scene Structure of the Game
 ![image](RockPaperScissors_Scenes.png)
