@@ -7,6 +7,7 @@
 //
 
 #import "UserInfo.h"
+#import "GameDataUtils.h"
 #import <mgwuSDK/MGWU.h>
 
 @interface UserInfo ()
@@ -59,6 +60,7 @@
   [self splitGames:userInfo];
   
   _friends = [NSMutableArray arrayWithArray:userInfo[@"friends"]];
+  
 #ifdef DEBUG
   // in debug mode add a test friend that always plays back immediately
   NSDictionary *botFriend = @{

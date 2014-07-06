@@ -10,7 +10,7 @@
 //
 //  Contains open source code and SDKs from Crashlytics, Inc. (SecureUDID, CrashlyticsSDK), Matej Bukovinski (MBProgressHUD), Stig Brautaset (SBJson), Ray Wenderlich (iAPHelper), Facebook (FacebookConnect iOS), Tapjoy (TapjoyConnect), Arash Payan (Appirater), Benjamin Borowski and Stephane Peter (GKAchievementNotification) thank you to all!
 //
-//  MGWU_BUILD_NUMBER 466
+//  MGWU_BUILD_NUMBER 473
 //
 
 #import <UIKit/UIKit.h>
@@ -125,6 +125,7 @@
 + (void)preFacebook;
 + (void)noFacebookPrompt;
 + (BOOL)isFacebookActive;
++ (BOOL)isFacebookLoginRequired;
 + (NSString*)getUsername;
 + (void)likeAppWithPageId:(NSString*)pageid;
 + (void)likeMGWU;

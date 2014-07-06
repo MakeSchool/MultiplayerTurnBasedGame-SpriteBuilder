@@ -18,6 +18,8 @@ extern NSString* friendNameForUsername(NSString *username);
  */
 extern NSNumber* doesPlayerHaveMatchWithUser(NSString *username);
 
+extern NSArray* friendsWithoutOpenMatches();
+
 extern NSDictionary* getMatchById(NSNumber *matchID);
 
 extern BOOL isCurrentRoundCompleted(NSDictionary *game);

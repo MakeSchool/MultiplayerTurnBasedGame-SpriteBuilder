@@ -60,7 +60,7 @@
 
 - (void)backToMainScene {
   if ([getOpponentName(self.game) isEqualToString:BOT_USERNAME]) {
-    CCLOG(@"Playing against Bot");
+    
   } else {
     CCTransition *popTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.3f];
     [[CCDirector sharedDirector] popToRootSceneWithTransition:popTransition];

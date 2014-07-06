@@ -60,6 +60,11 @@ static NSCache *profilePictureCache;
   
   [NSURLConnection sendAsynchronousRequest:urlRequest queue:imageDownloadQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
     
+    NSInteger statusCode = [((NSHTTPURLResponse *) response) statusCode];
+    if (statusCode == 404) {
+      return;
+    }
+    
     [data writeToFile: path atomically: TRUE];
     
     UIImage *profilePicture = [[UIImage alloc] initWithContentsOfFile:path];

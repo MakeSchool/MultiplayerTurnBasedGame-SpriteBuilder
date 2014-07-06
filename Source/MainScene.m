@@ -37,13 +37,13 @@
     _tableView.contentSize = CGSizeMake(1.f, 1.f);
     [_tableView setTarget:self selector:@selector(tableViewCellSelected:)];
   
-  _allCells = [NSMutableArray array];
+    _allCells = [NSMutableArray array];
 
     _tableView.dataSource = self;
 }
 
 - (void)onEnterTransitionDidFinish {
-    [super onEnterTransitionDidFinish];
+  [super onEnterTransitionDidFinish];
   
   [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:self];
 }
@@ -60,7 +60,8 @@
   [_allCells addObject:@"completed"];
   [_allCells addObjectsFromArray:[UserInfo sharedUserInfo].gamesCompleted];
   
-  [_tableView reloadData];
+  
+  [_tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)receivedRandomGame:(NSDictionary *)gameInfo {
@@ -154,8 +155,42 @@
 #pragma mark - Button Callbacks
 
 - (void)playNow {
-  //TODO: 1) games with your turn, 2) start game against friend, 3) random match
-  [MGWU getRandomGameWithCallback:@selector(receivedRandomGame:) onTarget:self];
+  NSArray *openFriends = friendsWithoutOpenMatches();
+
+  
+  if ([[[UserInfo sharedUserInfo] gamesYourTurn] count] > 0)
+  {
+    /*
+     1) If you have open games on which it is your turn to play, play one of these games
+     */
+    NSDictionary *game = [[[UserInfo sharedUserInfo] gamesYourTurn] objectAtIndex:0];
+   
+    CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+    PreMatchScene *prematchScene = scene.children[0];
+    prematchScene.game = game;
+    [[CCDirector sharedDirector] pushScene:scene];
+    
+  } else if ([openFriends count] > 0)
+  {
+    /*
+     2) If you have friends playing that you are currently not having a match with, challenge them
+     */
+    int randPlayer = arc4random_uniform([openFriends count]);
+    NSString *playerUsername = openFriends[randPlayer];
+    NSDictionary *game = @{@"opponent":playerUsername};
+    
+    CCScene *scene = [CCBReader loadAsScene:@"PreMatchScene"];
+    PreMatchScene *prematchScene = scene.children[0];
+    prematchScene.game = game;
+    [[CCDirector sharedDirector] pushScene:scene];
+
+  } else
+  {
+    /*
+     3) Start a random match
+     */
+    [MGWU getRandomGameWithCallback:@selector(receivedRandomGame:) onTarget:self];
+  }
 }
 
 - (void)showFriendList {

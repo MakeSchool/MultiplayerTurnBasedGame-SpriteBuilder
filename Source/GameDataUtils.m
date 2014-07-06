@@ -246,8 +246,19 @@ BOOL isPlayersTurn(NSDictionary *game) {
   } else {
     playersTurn = ([turnPlayerUsername isEqualToString:[[UserInfo sharedUserInfo] username]]);
   }
-  
+    
   return playersTurn;
 }
 
-
+NSArray* friendsWithoutOpenMatches() {
+  NSMutableArray *friendsWithoutOpenMatches = [NSMutableArray array];
+  
+  for (NSDictionary *friend in [[UserInfo sharedUserInfo] friends]) {
+    NSString *friendUsername = friend[@"username"];
+    if (!doesPlayerHaveMatchWithUser(friendUsername)) {
+      [friendsWithoutOpenMatches addObject:friendUsername];
+    }
+  }
+  
+  return friendsWithoutOpenMatches;
+}

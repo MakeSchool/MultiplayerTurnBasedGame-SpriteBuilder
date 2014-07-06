@@ -65,7 +65,7 @@
   
     _mainScene = _startScene.children[0];
   
-    if ([MGWU isFacebookActive]) {
+    if (![MGWU isFacebookLoginRequired]) {
       [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
     } else {
       CCScene *fbLoginScene = [CCBReader loadAsScene:@"FacebookLoginScene" owner:self];
@@ -82,9 +82,9 @@
 }
 
 -(void) applicationDidBecomeActive:(UIApplication *)application {
-  if ([MGWU isFacebookActive]) {
-    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
-  }
+  [super applicationDidBecomeActive:application];
+  
+  [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
 }
 
 - (void)facebookLoginButtonSelected {
@@ -93,7 +93,6 @@
 
 - (void)facebookLoginCompleted:(id)serverData {
   if ([serverData isEqualToString:@"Success"]) {
-    [[UserInfo sharedUserInfo] refreshWithCallback:@selector(loadedUserInfo:) onTarget:_mainScene];
     [[CCDirector sharedDirector] popScene];
   }
 }
