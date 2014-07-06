@@ -20,20 +20,4 @@ static NSString * const CHOICE_SCISSORS = @"Scissors";
 static NSString * const CHOICE_ROCK = @"Rock";
 static NSString * const CHOICE_PAPER = @"Paper";
 
-/* Game Data for this game */
-
-/*
- 1:
-    player1: scissors
-    player2: scissors
- 
- 2:
-    player1: scissors
-    player1: scissors
-
- 3:
-   player1: scissors
-   player1: scissors
- */
-
 #endif
