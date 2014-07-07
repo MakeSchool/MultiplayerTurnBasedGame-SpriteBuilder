@@ -737,7 +737,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>SHOW</string>
+							<string>Placeholder</string>
 							<false/>
 						</array>
 					</dict>
@@ -886,6 +886,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

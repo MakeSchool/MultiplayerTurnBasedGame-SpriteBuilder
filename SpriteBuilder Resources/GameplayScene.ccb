@@ -516,7 +516,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonHighlighted.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Rock-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -540,7 +540,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonNormal.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Rock-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -559,7 +559,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonNormal.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Rock-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -842,7 +842,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Resources/Paper_Rock_Scissors/Icon-Rock.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Paper-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -866,7 +866,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Resources/Paper_Rock_Scissors/Icon-Rock.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Paper-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -885,7 +885,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonNormal.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Paper-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1168,7 +1168,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonHighlighted.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Scissors-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1192,7 +1192,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonNormal.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Scissors-Small.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1211,7 +1211,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonNormal.png</string>
+									<string>Resources/Paper_Rock_Scissors/Icon-Scissors-Small.png</string>
 								</array>
 							</dict>
 							<dict>

@@ -102,19 +102,18 @@
     cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
     cell.contentSize = CGSizeMake(1.f, 50.f);
     
-    if ([currentGame[@"gamestate"] isEqualToString:GAME_STATE_IN_PROGRESS]) {
+    if ([currentGame[@"gamestate"] isEqualToString:GAME_STATE_IN_PROGRESS] || [currentGame[@"gamestate"] isEqualToString:GAME_STATE_STARTED]) {
       if (isPlayersTurn(currentGame)) {
         // if it's the player's turn in the the game, set the action to be "PLAY"
         cellContent.actionLabel.string = @"PLAY";
       } else {
         // if the current player is waiting, set the action to "SHOW"
-        cellContent.actionLabel.string = @"SHOW";
+        cellContent.actionLabel.string = @"VIEW";
       }
     } else if ([currentGame[@"gamestate"] isEqualToString:GAME_STATE_COMPLETED]) {
       // if game is completed, set action to "REMATCH"
       cellContent.actionLabel.string = @"REMATCH";
     }
-
   }
   
   return cell;

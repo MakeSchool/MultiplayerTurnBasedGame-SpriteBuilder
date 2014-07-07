@@ -51,7 +51,7 @@
     cellContent.player = [UserInfo sharedUserInfo].friends[index];
     
     if (doesPlayerHaveMatchWithUser(friendUsername)) {
-      cellContent.actionLabel.string = @"SHOW";
+      cellContent.actionLabel.string = @"VIEW";
       cellContent.actionType = PlayerCellActionTypeShowGame;
     } else {
       cellContent.actionLabel.string = @"PLAY";
