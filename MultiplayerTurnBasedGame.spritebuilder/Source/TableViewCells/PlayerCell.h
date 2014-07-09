@@ -13,7 +13,7 @@
 @property (strong) CCLabelTTF *nameLabel;
 @property (strong) CCLabelTTF *actionLabel;
 
-// either set player or playerUsername in order for FB profile picture to load
+// either set player in order for FB profile picture to load
 @property (nonatomic, copy) NSDictionary *player;
 
 @end

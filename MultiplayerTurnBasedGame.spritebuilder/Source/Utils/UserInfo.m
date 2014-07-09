@@ -7,7 +7,6 @@
 //
 
 #import "UserInfo.h"
-#import "GameDataUtils.h"
 
 @interface UserInfo ()
 
@@ -33,12 +32,15 @@
 
 + (NSString *)shortNameFromName:(NSString*)name
 {
+	if ([name isEqualToString:@"Random Player"])
+		return @"Random Player";
+		
 	NSArray *names = [name componentsSeparatedByString:@" "];
 	int count = [names count];
 	if (count == 1)
 		return name;
 	else
-		return [NSString stringWithFormat:@"%@ %@", names[0], names[count-1]];
+		return [NSString stringWithFormat:@"%@ %@", names[0], [names[count-1] substringToIndex:1]];
 }
 
 #pragma mark - Refreshing
@@ -81,18 +83,18 @@
 	
 	for (NSMutableDictionary *game in self.allGames)
 	{
-		NSString* gameState = [game objectForKey:@"gamestate"];
-		NSString* turn = [game objectForKey:@"turn"];
+		NSString* gameState = game[@"gamestate"];
+		NSString* turn = game[@"turn"];
 		
 		NSString* opponent;
-		NSArray* gamers = [game objectForKey:@"players"];
-		if ([[gamers objectAtIndex:0] isEqualToString:self.username])
-			opponent = [gamers objectAtIndex:1];
+		NSArray* gamers = game[@"players"];
+		if ([gamers[0] isEqualToString:self.username])
+			opponent = gamers[1];
 		else
-			opponent = [gamers objectAtIndex:0];
-		NSString* oppName = [game objectForKey:opponent];
-		[game setObject:opponent forKey:@"opponent"];
-		[game setObject:oppName forKey:@"opponentName"];
+			opponent = gamers[0];
+		NSString* oppName = game[opponent];
+		game[@"opponent"] = opponent;
+		game[@"opponentName"] = oppName;
 		
 		if ([gameState isEqualToString:@"ended"])
 			[self.gamesCompleted addObject:game];

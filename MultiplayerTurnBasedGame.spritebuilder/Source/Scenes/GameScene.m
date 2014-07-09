@@ -16,6 +16,7 @@
 	
 	CCButton *_oneButton;
 	CCButton *_twoButton;
+	CCButton *_rematchButton;
 	
 	CCLabelTTF *_playerNameLabel;
 	CCLabelTTF *_opponentNameLabel;
@@ -33,18 +34,15 @@
 - (void)onEnter {
 	[super onEnter];
 	
-	NSAssert(self.game != nil, @"Game object needs to be assigned before game scene is displayed");
+	NSAssert(_game != nil, @"Game object needs to be assigned before game scene is displayed");
 	
-	_opponent = self.game[@"opponent"];
+	_opponent = _game[@"opponent"];
 	
 	_playerNameLabel.string = [UserInfo shortNameFromName:[UserInfo sharedUserInfo].name];
 	_playerSprite.username = [[UserInfo sharedUserInfo] username];
 	
-	NSString *opponentName = self.game[@"opponentName"];
-	if (!opponentName)
-		_opponentNameLabel.string = @"Random Player";
-	else
-		_opponentNameLabel.string = [UserInfo shortNameFromName:opponentName];
+	NSString *opponentName = _game[@"opponentName"];
+	_opponentNameLabel.string = [UserInfo shortNameFromName:opponentName];
 	_opponentSprite.username = _opponent;
 	
 	[self reload];
@@ -52,39 +50,41 @@
 
 - (void)reload
 {
-	_gameState = self.game[@"gamestate"];
+	_gameState = _game[@"gamestate"];
+	_gameData = _game[@"gamedata"];
 	
 	if (!_gameState)
 	{
-		//No game exists, allow user to start a new game
+		//No game exists, create starting game state and game data
 		_gameState = @"started";
 		_gameData = [@{@"number":@10} mutableCopy];
-		_titleBarLabel.string = @"Start Game!";
 	}
-	else if ([_gameState isEqualToString:@"started"])
-	{
-		//If game was already started, update state to inprogress
-		_gameState = @"inprogress";
-	}
-	else if ([_gameState isEqualToString:@"ended"])
+	
+	_oneButton.visible = YES;
+	_twoButton.visible = YES;
+	_rematchButton.visible = NO;
+	_titleBarLabel.string = @"Play!";
+	_numberLabel.string = [NSString stringWithFormat:@"%@", _gameData[@"number"]];
+	
+	if ([_gameState isEqualToString:@"ended"])
 	{
 		//Game is over, disable buttons
+		_titleBarLabel.string = @"Game Over";
 		if ([_gameData[@"winner"] isEqualToString:_opponent])
-			_titleBarLabel.string = @"You Lost";
+			_numberLabel.string = @"You Lost";
 		else
-			_titleBarLabel.string = @"You Won!";
+			_numberLabel.string = @"You Won!";
 		_oneButton.visible = NO;
 		_twoButton.visible = NO;
+		_rematchButton.visible = YES;
 	}
-	else if ([self.game[@"turn"] isEqualToString:_opponent])
+	else if ([_game[@"turn"] isEqualToString:_opponent])
 	{
 		//Waiting for opponent, disable buttons
 		_titleBarLabel.string = @"Waiting";
 		_oneButton.visible = NO;
 		_twoButton.visible = NO;
 	}
-	
-	_numberLabel.string = [NSString stringWithFormat:@"%@", _gameData[@"number"]];
 }
 
 #pragma mark - Button Callbacks
@@ -99,6 +99,15 @@
 
 - (void)submitMove:(int)count {
 	
+	//Set gameid and movenumber, these will be 0 if you're just starting the game
+	int gameId = [_game[@"gameid"] intValue];
+	int moveNumber = [_game[@"movecount"] intValue] + 1;
+	if (moveNumber > 1)
+		_gameState = @"inprogress";
+	
+	//Create move dictionary
+	NSDictionary *moveDict = @{@"count":@(count)};
+	
 	//Reduce the number based on which button was clicked
 	int newNumber = [_gameData[@"number"] intValue] - count;
 	if (newNumber < 1)
@@ -110,13 +119,6 @@
 	}
 	_gameData[@"number"] = @(newNumber);
 	
-	//Set movenumber and gameid
-	int moveNumber = [_game[@"movecount"] intValue] + 1;
-	int gameId = [_game[@"gameid"] intValue];
-	
-	//Create move dictionary
-	NSDictionary *moveDict = @{@"count":@(count)};
-	
 	//Set push message
 	NSString *message = [NSString stringWithFormat:@"%@ played you in Nim, play them back!", [UserInfo shortNameFromName:[UserInfo sharedUserInfo].name]];
 	
@@ -125,8 +127,13 @@
 }
 
 - (void)gotGame:(NSMutableDictionary*)game {
-	self.game = game;
+	_game = game;
 	//Reload view based on received game
+	[self reload];
+}
+
+- (void)rematchPressed {
+	_game = @{@"opponent":_opponent, @"opponentName":_game[@"opponentName"]};
 	[self reload];
 }
 

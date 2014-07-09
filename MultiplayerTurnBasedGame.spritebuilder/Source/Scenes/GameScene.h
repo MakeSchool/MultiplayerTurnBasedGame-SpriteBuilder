@@ -10,6 +10,6 @@
 
 @interface GameScene : CCNode
 
-@property (nonatomic, copy) NSDictionary *game;
+@property (nonatomic, strong) NSDictionary *game;
 
 @end

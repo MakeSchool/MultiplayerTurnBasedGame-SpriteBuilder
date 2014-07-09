@@ -77,7 +77,7 @@
 		/*
 		 1) If you have open games on which it is your turn to play, play one of these games
 		 */
-		NSDictionary *game = [[[UserInfo sharedUserInfo] gamesYourTurn] objectAtIndex:0];
+		NSDictionary *game = [[UserInfo sharedUserInfo] gamesYourTurn][0];
 		
 		CCScene *scene = [CCBReader loadAsScene:@"GameScene"];
 		GameScene *gameScene = scene.children[0];
@@ -125,14 +125,17 @@
 		// Current cell represents a match. Create a "PlayerCell"
 		NSDictionary *currentGame = _allCells[index];
 		PlayerCell *cellContent = (PlayerCell *)[CCBReader load:@"PlayerCell"];
-		cellContent.nameLabel.string = [UserInfo shortNameFromName:[currentGame objectForKey:@"opponentName"]];
+		cellContent.nameLabel.string = [UserInfo shortNameFromName:currentGame[@"opponentName"]];
+		cellContent.player = @{@"username":currentGame[@"opponent"]};
 		[cell addChild:cellContent];
 		cell.contentSizeType = CCSizeTypeMake(CCSizeUnitNormalized, CCSizeUnitPoints);
 		cell.contentSize = CGSizeMake(1.f, 50.f);
     
 		if ([currentGame[@"gamestate"] isEqualToString:@"ended"]) {
-			// if game is completed, set action to "REMATCH"
-			cellContent.actionLabel.string = @"REMATCH";
+			if ([currentGame[@"gamedata"][@"winner"] isEqualToString:currentGame[@"opponent"]])
+				cellContent.actionLabel.string = @"LOST";
+			else
+				cellContent.actionLabel.string = @"WON";
 		} else {
 			if ([currentGame[@"turn"] isEqualToString:currentGame[@"opponent"]]) {
 				// if the current player is waiting, set the action to "VIEW"
@@ -164,22 +167,13 @@
 		// this is a section and we don't need user interaction
 		return;
 	} else {
-	// if a game cell was tapped, pick the selected game from the '_allCells' array
+		// if a game cell was tapped, pick the selected game from the '_allCells' array
 		NSDictionary *selectedGame = _allCells[index];
     
-		if ([selectedGame[@"gamestate"] isEqualToString:@"ended"]) {
-			//If game is completed, create new game with same opponent
-			CCScene *scene = [CCBReader loadAsScene:@"GameScene"];
-			GameScene *gameScene = scene.children[0];
-			gameScene.game = @{@"opponent":selectedGame[@"opponnent"], @"opponentName":selectedGame[@"opponentName"]};
-			[[CCDirector sharedDirector] pushScene:scene];
-		} else {
-			//Otherwise, enter game
-			CCScene *scene = [CCBReader loadAsScene:@"GameScene"];
-			GameScene *gameScene = scene.children[0];
-			gameScene.game = selectedGame;
-			[[CCDirector sharedDirector] pushScene:scene];
-		}
+		CCScene *scene = [CCBReader loadAsScene:@"GameScene"];
+		GameScene *gameScene = scene.children[0];
+		gameScene.game = selectedGame;
+		[[CCDirector sharedDirector] pushScene:scene];
   }
 }
 
