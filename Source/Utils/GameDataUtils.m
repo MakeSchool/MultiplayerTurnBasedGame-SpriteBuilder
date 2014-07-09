@@ -9,13 +9,11 @@
 #import "GameDataUtils.h"
 #import "Constants.h"
 #import "UserInfo.h"
-#import <mgwuSDK/MGWU.h>
 
 NSString* getOpponentName(NSDictionary *gameData) {
   // get all players in game
   NSArray *players = gameData[@"players"];
   NSString *opponentName;
-  
   if (players) {
     if ([[players objectAtIndex:0] isEqualToString:[UserInfo sharedUserInfo].username])
       // check if first player is user, if yes, then second player is opponent
@@ -23,7 +21,6 @@ NSString* getOpponentName(NSDictionary *gameData) {
     else
       // else the first player is the opponent and the second player is the suer
       opponentName = [players objectAtIndex:0];
-    
     return opponentName;
     
   } else {

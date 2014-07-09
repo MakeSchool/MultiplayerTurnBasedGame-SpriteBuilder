@@ -7,7 +7,6 @@
 //
 
 #import "PreMatchScene.h"
-#import <mgwuSDK/MGWU.h>
 #import "UserInfo.h"
 #import "GameDataUtils.h"
 #import "Constants.h"

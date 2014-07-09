@@ -9,7 +9,6 @@
 #import "GameplayScene.h"
 #import "GameDataUtils.h"
 #import "Constants.h"
-#import <mgwuSDK/MGWU.h>
 #import "UserInfo.h"
 #import "RoundResultScene.h"
 

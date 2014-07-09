@@ -19,10 +19,4 @@
   [_playerImage setUsername:_player[@"username"]];
 }
 
-- (void)setPlayerUsername:(NSString *)playerUsername {
-  _playerUsername = [playerUsername copy];
-  
-  [_playerImage setUsername:_playerUsername];
-}
-
 @end
