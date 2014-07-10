@@ -17,16 +17,15 @@
 
 @implementation UserInfo
 
+static id _sharedInstance = nil;
+
 #pragma mark - Initializer
 
-+ (instancetype)sharedUserInfo {
-	static dispatch_once_t once;
-	static id _sharedInstance = nil;
-	
-	dispatch_once(&once, ^{
-		_sharedInstance = [[self alloc] init];
-	});
-	
++ (UserInfo*)sharedUserInfo {
+	//If our singleton instance has not been created (first time it is being accessed)
+	if (_sharedInstance == nil)
+		//Create our singleton instance
+		_sharedInstance = [[UserInfo alloc] init];
 	return _sharedInstance;
 }
 
@@ -34,7 +33,8 @@
 {
 	if ([name isEqualToString:@"Random Player"])
 		return @"Random Player";
-		
+	
+	//Split the name into first name + last initial
 	NSArray *names = [name componentsSeparatedByString:@" "];
 	int count = [names count];
 	if (count == 1)
@@ -54,7 +54,8 @@
 
 - (void)refreshCompleted:(NSDictionary *)userInfo {
 	[self extractUserInformation:userInfo];
-	
+
+	//Pragma clang diagnostic is a message to the compiler to ignore a warning, it's not really code
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 	[self.refreshTarget performSelector:self.refreshCallback withObject:userInfo];

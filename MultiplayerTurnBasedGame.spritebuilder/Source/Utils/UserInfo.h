@@ -58,7 +58,7 @@
 + (instancetype)sharedUserInfo;
 
 /**
- Converts Ashu Desai to Ashu D
+ Converts a name like Ashu Desai to Ashu D
  */
 + (NSString *)shortNameFromName:(NSString*)name;
 

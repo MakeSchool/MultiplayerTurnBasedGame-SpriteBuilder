@@ -20,7 +20,7 @@ There are a few parts of the mgwuSDK you should become familiar with before you 
     c. Getting the User's Data
     d. Making Moves
 
-If you're interested in the additional features, you can also take a look at the [full SDK documentation](https://s3.amazonaws.com/mgwu/mgwuSDK-instructions.html#a).
+If you're interested in additional multiplayer features like chat, or general game features like analytics and crash reporting, take a look at the [full SDK documentation](https://s3.amazonaws.com/mgwu/mgwuSDK-instructions.html).
 
 ###a. Callbacks and Targets and Data
 
@@ -274,11 +274,11 @@ When you plug in your game and replace the GameScene, you need to ensure that yo
 
 ###MainScene
 Displays a list of all current games, divided into three categories:
-- Games where it is the players turn
-- Games where it is the opponents turn
-- Games that are completed
+- Games where it's the player's turn
+- Games where it's the opponent's turn
+- Completed games
 
-Allows to "Play now" which will either continue an existing game, start a new game against a friend which whom the player hasn't started a game yet or will start a game against a random other player of the game.
+Allows to "Play now" which will either continue an existing game or will start a game against a random player.
 
 ###FriendListScene
 This scene lists all Facebook players who are also playing the game. From where a player can start games against his friends. An "invite Friends" button allows players to invite Facebook friends who aren't playing the game yet.

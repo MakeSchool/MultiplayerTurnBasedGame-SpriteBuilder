@@ -109,6 +109,7 @@
 
 #pragma mark - CCTableViewDataSource Protocol
 
+//This method is called automatically by the CCTableView to create cells
 - (CCTableViewCell*)tableView:(CCTableView*)tableView nodeForRowAtIndex:(NSUInteger)index {
     CCTableViewCell *cell = [[CCTableViewCell alloc] init];
 	
@@ -150,14 +151,17 @@
 	return cell;
 }
 
+//This method is called automatically by the CCTableView to create cells
 - (float) tableView:(CCTableView*)tableView heightForRowAtIndex:(NSUInteger) index {
 	return 50;
 }
 
+//This method is called automatically by the CCTableView to create cells
 - (NSUInteger) tableViewNumberOfRows:(CCTableView*) tableView {
 	return [_allCells count];
 }
 
+//This method is called automatically by the CCTableView when cells are tapped
 - (void)tableViewCellSelected:(CCTableViewCell*)sender {
 	NSInteger index = _tableView.selectedRow;
 	
