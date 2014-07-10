@@ -7,18 +7,19 @@ The template takes care of all the menus, while the SDK takes care of all the se
 
 Table of Contents
 -----------------
-1. Understanding the mgwuSDK
-2. SDK Setup
-3. How to Plug in Your Game
+
+	1. Understanding the mgwuSDK
+	2. SDK Setup
+	3. How to Plug in Your Game
 
 1. Understanding the mgwuSDK
 ---------------------------
 There are a few parts of the mgwuSDK you should become familiar with before you begin:
 
-a. Callbacks and Targets and Data
-b. The Game Object
-c. Getting the User's Data
-d. Making Moves
+	a. Callbacks and Targets and Data
+	b. The Game Object
+	c. Getting the User's Data
+	d. Making Moves
 
 If you're interested in the additional features, you can also take a look at the [full SDK documentation](https://s3.amazonaws.com/mgwu/mgwuSDK-instructions.html#a).
 
