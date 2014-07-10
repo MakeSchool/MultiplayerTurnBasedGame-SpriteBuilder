@@ -119,7 +119,7 @@ The Game object represents a single game between two players. It is a dictionary
 
 **(All timestamps are in [epoch time](https://gist.github.com/4507119))**
 
-The gamedata and moves are defined by you. The array of moves is limited to the last 3 moves (contact me at ashu@makegameswith.us if you have a game that needs more of the past moves).
+The gamedata and moves are defined by you.
 
 @"newmessages" is the number of unread messages in the chat for each game. 
 
