@@ -281,13 +281,13 @@ Displays a list of all current games, divided into three categories:
 - Games where it's the opponent's turn
 - Completed games
 
-Allows to "Play now" which will either continue an existing game or will start a game against a random player.
+"Play now" button will either continue an existing game or start a game against a random player.
 
 ###FriendListScene
-This scene lists all Facebook players who are also playing the game. From where a player can start games against his friends. An "invite Friends" button allows players to invite Facebook friends who aren't playing the game yet.
+Lists all Facebook friends who are also playing the game. "Invite Friends" button allows players to invite Facebook friends to the game.
 
 ###GameScene
 This scene is the actual game, you need to replace it!
 
 ###UserInfo
-UserInfo is a singleton that calles the **getMyInfo** method of the SDK and stores the user info it receives.
+Singleton that calles the **getMyInfo** method of the SDK and stores the user info it receives.
