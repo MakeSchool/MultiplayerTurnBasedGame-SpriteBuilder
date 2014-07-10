@@ -7,9 +7,11 @@ The template takes care of all the menus, while the SDK takes care of all the se
 
 Table of Contents
 -----------------
-1. Understanding the mgwuSDK
-2. SDK Setup
-3. How to Plug in Your Game
+
+    1. Understanding the mgwuSDK
+    2. SDK Setup
+    3. How to Plug in Your Game
+    
 
 1. Understanding the mgwuSDK
 ---------------------------
@@ -118,7 +120,7 @@ The Game object represents a single game between two players. It is a dictionary
 
 **(All timestamps are in [epoch time](https://gist.github.com/4507119))**
 
-The gamedata and moves are defined by you. The array of moves is limited to the last 3 moves (contact me at ashu@makegameswith.us if you have a game that needs more of the past moves).
+The gamedata and moves are defined by you.
 
 @"newmessages" is the number of unread messages in the chat for each game. 
 
@@ -244,7 +246,7 @@ In the left bar of Xcode, click on your project, then navigate to "info" (see sc
 
 ![image](https://s3.amazonaws.com/mgwu-misc/mgwuSDK+Tutorial/bundle.png)
 
-Now open the file AppDelegate.m. In the method `application: didFinishLaunchingWithOptions:` find the line:
+Now open the file AppDelegate.m. In the method **application: didFinishLaunchingWithOptions:** find the line:
 
 <!--hfmd>.. sourcecode:: objective-c<hfmd-->
 
@@ -274,6 +276,7 @@ When you plug in your game and replace the GameScene, you need to ensure that yo
 
 ###MainScene
 Displays a list of all current games, divided into three categories:
+
 - Games where it's the player's turn
 - Games where it's the opponent's turn
 - Completed games
@@ -288,4 +291,3 @@ This scene is the actual game, you need to replace it!
 
 ###UserInfo
 UserInfo is a singleton that calles the **getMyInfo** method of the SDK and stores the user info it receives.
-	
