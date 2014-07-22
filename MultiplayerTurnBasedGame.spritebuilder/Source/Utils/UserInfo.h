@@ -63,6 +63,11 @@
 + (NSString *)shortNameFromName:(NSString*)name;
 
 /**
+ Parses game dictionary and sets additional values for keys opponent and opponentName
+ */
++ (void)setOpponentAndOpponentName:(NSMutableDictionary*)game;
+
+/**
  Download latest information from server and update UserInfo with the latest data.
  After successful download this method calls the provided callback on the provided target
  */

@@ -43,6 +43,21 @@ static id _sharedInstance = nil;
 		return [NSString stringWithFormat:@"%@ %@", names[0], [names[count-1] substringToIndex:1]];
 }
 
++ (void)setOpponentAndOpponentName:(NSMutableDictionary*)game {
+    if (game[@"players"])
+    {
+        NSArray* gamers = game[@"players"];
+        NSString* opponent;
+        if ([gamers[0] isEqualToString:[UserInfo sharedUserInfo].username])
+            opponent = gamers[1];
+        else
+            opponent = gamers[0];
+        NSString* oppName = game[opponent];
+        game[@"opponent"] = opponent;
+        game[@"opponentName"] = oppName;
+    }
+}
+
 #pragma mark - Refreshing
 
 - (void)refreshWithCallback:(SEL)callback onTarget:(id)target {
@@ -86,16 +101,8 @@ static id _sharedInstance = nil;
 	{
 		NSString* gameState = game[@"gamestate"];
 		NSString* turn = game[@"turn"];
-		
-		NSString* opponent;
-		NSArray* gamers = game[@"players"];
-		if ([gamers[0] isEqualToString:self.username])
-			opponent = gamers[1];
-		else
-			opponent = gamers[0];
-		NSString* oppName = game[opponent];
-		game[@"opponent"] = opponent;
-		game[@"opponentName"] = oppName;
+        
+        [UserInfo setOpponentAndOpponentName:game];
 		
 		if ([gameState isEqualToString:@"ended"])
 			[self.gamesCompleted addObject:game];

@@ -93,8 +93,11 @@
 	}
 }
 
-- (void)receivedRandomGame:(NSDictionary *)game {
-	// when we reveive a random game, present the GameScene with this game
+- (void)receivedRandomGame:(NSMutableDictionary *)game {
+	// when we reveive a random game, first set the opponent and opponent name
+    [UserInfo setOpponentAndOpponentName:game];
+    
+    // present the GameScene with this game
 	CCScene *scene = [CCBReader loadAsScene:@"GameScene"];
 	GameScene *gameScene = scene.children[0];
 	gameScene.game = game;
