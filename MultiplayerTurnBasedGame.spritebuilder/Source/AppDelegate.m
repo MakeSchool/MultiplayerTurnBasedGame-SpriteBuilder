@@ -60,6 +60,8 @@
     [self setupCocos2dWithOptions:cocos2dSetup];
   
     [MGWU loadMGWU:@"MultiplayerTurnBasedGame"];
+    
+    [MGWU useFacebook];
     [MGWU noFacebookPrompt];
   
     _mainScene = _startScene.children[0];
